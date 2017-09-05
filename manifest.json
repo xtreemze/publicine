@@ -1,7 +1,7 @@
 {
   "name": "PubliCine",
   "short_name": "PubliCine",
-  "start_url": "./?utm_source=web_app_manifest",
+  "start_url": "./index.html?utm_source=homescreen",
   "display": "fullscreen",
   "background_color": "#1A1A1A",
   "theme_color": "#0A0A0A",
