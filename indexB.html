@@ -18,57 +18,128 @@
 </head>
 
 <body>
-  <nav class="nav-extended yellow darken-2">
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">PubliCine</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi mdi-menu"></i></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
+  <header>
+    <nav class="nav-extended grey darken-4">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">
+          <img src="./src/banner-02.svg" alt=""></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi mdi-menu"></i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">Noticias</a></li>
+          <li><a href="#">Cinelat</a></li>
+          <li><a href="#">Promociones</a></li>
+        </ul>
+        <ul class="side-nav " id="mobile-demo">
+          <li><a href="#">Noticias</a></li>
+          <li><a href="#">Cinelat</a></li>
+          <li><a href="#">Promociones</a></li>
+        </ul>
+      </div>
+      <div class="nav-content">
+        <ul class="tabs tabs-transparent">
+          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" class="active"
+              href="#test1">Agosto</a></li>
+          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" href="#test2">Septiembre</a></li>
+          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" href="#test3">Octubre</a></li>
+          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" href="#test4">Noviembre</a></li>
+          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" href="#test5">Diciembre</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="grey darken-4">
+    <div id="test1" class="">
+      <h4 class="center yellow-text text-darken-3">Estrenos en Agosto 2017</h4>
+      <div class="carousel">
+        <a href="#" class="carousel-item"><img src="./posters/2017/08/atomic_blonde_teaser_poster.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/08/baby_driver_teaser_poster.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/08/la_familia_monster.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/08/La_Torre_Oscura_Poster_Final_Latino.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/08/Monster-Family.jpg" alt=""></a>
+      </div>
     </div>
-    <div class="nav-content">
-      <ul class="tabs tabs-transparent">
-        <li class="tab"><a href="#test1">Test 1</a></li>
-        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
-        <li class="tab"><a href="#test4">Test 4</a></li>
-      </ul>
+    <div id="test2" class="">
+      <h4 class="center yellow-text text-darken-3">Estrenos en Septiembre 2017</h4>
+      <div class="carousel">
+        <a href="#" class="carousel-item"><img src="./posters/2017/09/American_Assassin_Poster_Final.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/09/It_Eso_Teaser_Poster_Latino.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/09/Kingsman_The_Golden_Circle_Poster_Final.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/09/Lego_Ninjango_La_Pelicula_Poster_Latino.jpg" alt=""></a>
+      </div>
     </div>
-  </nav>
-  <div id="test1" class="col s12">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, dignissimos.
-    Commodi, temporibus ut minus laborum dolorum obcaecati inventore voluptas
-    earum amet in, accusamus delectus tempora! Eum deserunt culpa vel omnis?</div>
-  <div id="test2" class="col s12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quod quisquam,
-    a magnam illo atque? Ullam distinctio id et, assumenda impedit debitis
-    enim explicabo eveniet laborum cumque fuga minima perferendis. </div>
-  <div id="test4" class="col s12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, aut totam ipsum
-    sunt velit fugit aspernatur. Nisi recusandae, voluptas molestias impedit
-    dicta accusantium, quisquam atque qui quasi consectetur laudantium deserunt!</div>
-  <div class="carousel">
-    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
-    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
-    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
-    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
-    <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
-  </div>
-  <div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
-    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
-    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
-    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
-  </div>
+    <div id="test3" class="">
+      <h4 class="center yellow-text text-darken-3">Estrenos en Octubre 2017</h4>
+      <div class="carousel">
+        <a href="#" class="carousel-item"><img src="./posters/2017/10/All Saints Poster.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/10/Blade_Runner_2049_Official_Character_Teaser_Poster_b.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/10/Condorito La Pelicula poster.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/10/Feliz_Dia_De_Tu_Muerte_Poster_Teaser_Latino.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/10/Geo_Tormenta-783905451-large.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img src="./posters/2017/10/Jigsaw_Teaser_Poster_Latino.jpg" alt=""></a>
+      </div>
+    </div>
+    <div id="test4" class="">
+      <h4 class="center yellow-text text-darken-3">Estrenos en Noviembre 2017</h4>
+      <div class="carousel">
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Asesinato_En_El_Expreso_del_Oriente_Poster_2_Latino.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Coco_Poster_3_Latino.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/El_Muñeco_De_Nieve_Teaser_Poster_Latino.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/La_Liga_de_La_Justicia_Parte_1_Poster_Comic-Con_Latino_.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Logan_Lucky_Poster_2_.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Thor_Ragnarok_Poster_Latino_2_.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Wonder_Poster_Teaser_.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Y Los tamales poster.png" alt=""></a>
+      </div>
+    </div>
+    <div id="test5" class="">
+      <h4 class="center yellow-text text-darken-3">Estrenos en Diciembre 2017</h4>
+      <div class="carousel">
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/A bad moms christmas.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/Jumanji_Teaser_2_Latino_.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/Ole_El_Viaje_De_Ferdinand_Poster_3_Latino_.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/Star_Wars_The_Last_Jedi_Official_Teaser_Poster_b_.jpg" alt=""></a>
+        <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/Victoria_y_Abdul_Poster_Latino_2_.jpg" alt=""></a>
+      </div>
+    </div>
+    <section class="container section">
+      <article class="card horizontal black">
+        <div class="card-image">
+          <img class="materialboxed" src="./posters/2017/08/La_Torre_Oscura_Poster_Final_Latino.jpg">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content grey-text text-lighten-2">
+            <span class="card-title yellow-text text-darken-3">La Torre Oscura</span>
+            <ul>
+              <li>/ C / 1h 35min / Ciencia Ficcion</li>
+              <li>Director: Nicolaj Arcel</li>
+              <li>Reparto:Idris Elba, Matthew McConaughey </li>
+            </ul>
+            <p>
+              Existen otros mundos además de éste. The Dark Tower, de Stephen King, la ambiciosa
+              y extensa historia de uno de los autores más famosos del mundo,
+              llega a la gran pantalla. El último Caballero Guerrero, Roland
+              Deschain (Idris Elba), está confinado en una eterna batalla con
+              Walter O’Dim, también conocido como el Hombre de Negro (Matthew
+              McConaughey), decidido a evitar que destruya la Torre Oscura,
+              que mantiene unido al universo. Con el destino de los mundos
+              en peligro, el bien y el mal colisionan en la batalla final,
+              pues únicamente Roland puede defender la Torre contra el Hombre
+              de Negro.
+            </p>
+          </div>
+          <div class="card-action">
+            <h6 class="yellow-text text-darken-3">Fecha de estreno: 24 de Agosto</h6>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
   <footer class="page-footer yellow darken-3">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">
+          <p class="grey-text text-lighten-3">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis eveniet
             vero repudiandae laboriosam voluptates quidem quia fugiat rerum
             maxime nostrum quisquam temporibus tempora dolorum molestias possimus,
@@ -84,7 +155,14 @@
           </p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
+          <h5 class="white-text">Contactenos</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul>
+          <h5 class="white-text">Trabaja con Nosotros</h5>
           <ul>
             <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
             <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
@@ -105,6 +183,15 @@
   <script src="js/materialize.min.js"></script>
   <link rel="stylesheet" href="main.css">
   <script src="bundle.js" async></script>
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106538829-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments) };
+    gtag('js', new Date());
+
+    gtag('config', 'UA-106538829-1');
+  </script>
 </body>
 
 </html>

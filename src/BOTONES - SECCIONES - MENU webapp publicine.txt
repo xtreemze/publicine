@@ -1,0 +1,23 @@
+BOTONES / SECCIONES / MENU
+
+-Busqueda
+-Cartelera (la semanal)
+-Proximamente
+-Cines
+-Trailers
+-Noticias
+-Correo(acceso oculto/solo para personal)
+-Idioma(me gustaria contar con esta opcion para los extranjeros que viven en latino america)
+-Cinelat
+-Promociones
+-Contactenos
+-Trabaja con Nosotros
+-Redes Sociales
+
+
+
+
+
+
+
+

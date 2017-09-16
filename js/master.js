@@ -1,4 +1,6 @@
 $(document).ready(function() {
-  $(".carousel").carousel();
+  $(".carousel").carousel({
+    dist: -45,
+    padding: 10
+  });
 });
-$(".carousel.carousel-slider").carousel({ fullWidth: true });

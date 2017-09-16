@@ -1,0 +1,40 @@
+__TEGUCIGALPA__
+
+CINÉPOLIS MALL CASCADAS 
+CINÉPOLIS MALL CASCADAS VIP 
+CINÉPOLIS MALL PREMIER 
+CINEMARK MULTIPLAZA 
+CINEMARK CITYMALL 
+METROCINEMAS AMÉRICA 
+METROCINEMAS METROMALL 
+METROCINEMAS MIRAFLORES 
+METROCINEMAS NOVACENTRO 
+METROCINEMAS NOVACENTRO VIP 
+-------------------------------------
+__SAN PEDRO SULA__
+
+CINÉPOLIS ALTARA 
+CINEMARK MALL GALERÍAS 
+CINEMARK CITYMALL 
+METROCINEMAS MEGAPLAZA 
+-------------------------------------
+__COMAYAGUA__
+
+UNICINES MALL PREMIERE 
+CINEMAS VALLADOLID 
+------------------------------------
+UNICINES UNIMAL - CHOLUTECA
+------------------------------------
+CINEMA AVENTURA - SIGUATEPEQUE
+-----------------------------------
+METROCINEMAS MEGAPLAZA - EL PROGRESO
+-----------------------------------
+METROCINEMAS LAS AMERICAS - CHOLOMA
+-------------------------------------
+CINES PREMIERE PLAZA PREMIER - LA CEIBA
+---------------------------------------
+CINES BAHIA - TELA
+---------------------------------------
+METROCINEMAS SUPERMALL - PUERTO CORTES
+--------------------------------------
+
