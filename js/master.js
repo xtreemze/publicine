@@ -1,3 +1,4 @@
+let Peliculas = new Set();
 let EnCines = new Set();
 let Septiembre = new Set();
 let Octubre = new Set();
@@ -26,6 +27,7 @@ class Movie {
     synopsis,
     cartelera
   }) {
+    Peliculas.add(this);
     this.titulo = titulo;
     this.estreno = estreno;
     this.mes = mes;
@@ -96,4 +98,12 @@ $(document).ready(function() {
     dist: -45,
     padding: 10
   });
+  importJSON();
 });
+
+function importJSON() {
+  const imported = require("./export.json");
+  imported.export.forEach(function(item) {
+    new Movie(item);
+  });
+}
