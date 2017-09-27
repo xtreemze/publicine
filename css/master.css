@@ -14,3 +14,7 @@ main {
 li.tab {
   width: 20%;
 }
+
+div.card-image.col {
+  padding: 0;
+}
