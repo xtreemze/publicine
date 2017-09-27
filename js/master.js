@@ -22,6 +22,7 @@ class Movie {
     estreno,
     mes,
     duracion,
+    genero,
     director,
     elenco,
     synopsis,
@@ -32,6 +33,7 @@ class Movie {
     this.estreno = estreno;
     this.mes = mes;
     this.duracion = duracion;
+    this.genero = genero;
     this.director = director;
     this.elenco = elenco;
     this.synopsis = synopsis;
