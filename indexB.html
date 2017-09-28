@@ -15,6 +15,9 @@
   <link rel="shortcut icon" href="https://xtreemze.github.io/publicine/favicon.ico">
   <meta name="msapplication-config" content="https://xtreemze.github.io/publicine/browserconfig.xml">
   <meta name="theme-color" content="#ffc40d">
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="bundle.js" async></script>
 </head>
 
 <body>
@@ -30,72 +33,17 @@
         </ul>
       </div>
       <div class="nav-content">
-        <ul class="tabs tabs-transparent">
-          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" class="active"
-              href="#test1">Agosto</a></li>
-          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" href="#test2">Septiembre</a></li>
-          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" href="#test3">Octubre</a></li>
-          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" href="#test4">Noviembre</a></li>
-          <li class="tab"><a onclick="$('.carousel').fadeOut(0).carousel().fadeIn();" href="#test5">Diciembre</a></li>
+        <ul class="tabs tabs-transparent tabs-fixed-width">
+          <li class="tab"><a onclick="roundListMovies(M9)">Septiembre</a></li>
+          <li class="tab"><a onclick="roundListMovies(M10)">Octubre</a></li>
+          <li class="tab"><a onclick="roundListMovies(M11)">Noviembre</a></li>
+          <li class="tab"><a onclick="roundListMovies(M12)">Diciembre</a></li>
         </ul>
       </div>
     </nav>
   </header>
   <main class="grey darken-4">
-    <section class="section row">
-      <div id="test1" class="">
-        <!-- <h5 class="center yellow-text text-darken-3">Estrenos en Agosto 2017</h5> -->
-        <div class="carousel">
-          <a href="#" class="carousel-item"><img src="./posters/2017/08/atomic_blonde_teaser_poster.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/08/baby_driver_teaser_poster.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/08/la_familia_monster.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/08/La_Torre_Oscura_Poster_Final_Latino.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/08/Monster-Family.jpg" alt=""></a>
-        </div>
-      </div>
-      <div id="test2" class="">
-        <!-- <h5 class="center yellow-text text-darken-3">Estrenos en Septiembre 2017</h5> -->
-        <div class="carousel">
-          <a href="#" class="carousel-item"><img src="./posters/2017/09/American_Assassin_Poster_Final.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/09/It_Eso_Teaser_Poster_Latino.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/09/Kingsman_The_Golden_Circle_Poster_Final.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/09/Lego_Ninjango_La_Pelicula_Poster_Latino.jpg" alt=""></a>
-        </div>
-      </div>
-      <div id="test3" class="">
-        <!-- <h5 class="center yellow-text text-darken-3">Estrenos en Octubre 2017</h5> -->
-        <div class="carousel">
-          <a href="#" class="carousel-item"><img src="./posters/2017/10/All Saints Poster.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/10/Blade_Runner_2049_Official_Character_Teaser_Poster_b.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/10/Condorito La Pelicula poster.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/10/Feliz_Dia_De_Tu_Muerte_Poster_Teaser_Latino.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/10/Geo_Tormenta-783905451-large.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img src="./posters/2017/10/Jigsaw_Teaser_Poster_Latino.jpg" alt=""></a>
-        </div>
-      </div>
-      <div id="test4" class="">
-        <!-- <h5 class="center yellow-text text-darken-3">Estrenos en Noviembre 2017</h5> -->
-        <div class="carousel">
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Asesinato_En_El_Expreso_del_Oriente_Poster_2_Latino.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Coco_Poster_3_Latino.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/El_Muñeco_De_Nieve_Teaser_Poster_Latino.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/La_Liga_de_La_Justicia_Parte_1_Poster_Comic-Con_Latino_.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Logan_Lucky_Poster_2_.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Thor_Ragnarok_Poster_Latino_2_.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Wonder_Poster_Teaser_.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/11/Y Los tamales poster.png" alt=""></a>
-        </div>
-      </div>
-      <div id="test5" class="">
-        <!-- <h5 class="center yellow-text text-darken-3">Estrenos en Diciembre 2017</h5> -->
-        <div class="carousel">
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/A bad moms christmas.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/Jumanji_Teaser_2_Latino_.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/Ole_El_Viaje_De_Ferdinand_Poster_3_Latino_.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/Star_Wars_The_Last_Jedi_Official_Teaser_Poster_b_.jpg" alt=""></a>
-          <a href="#" class="carousel-item"><img class="" src="./posters/2017/12/Victoria_y_Abdul_Poster_Latino_2_.jpg" alt=""></a>
-        </div>
-      </div>
+    <section id="roundList" class="section row">
     </section>
     <section id="movieCard" class="container section row">
     </section>
@@ -127,9 +75,6 @@
       </div>
     </div>
   </footer>
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/materialize.min.js"></script>
-  <script src="bundle.js" async></script>
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106538829-1"></script>
   <script>

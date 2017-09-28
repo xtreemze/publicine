@@ -11,10 +11,10 @@ main {
   flex: 1 0 auto;
 }
 
-li.tab {
-  width: 20%;
-}
-
 div.card-image.col {
   padding: 0;
+}
+
+.pointer {
+  cursor: pointer;
 }

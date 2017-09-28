@@ -1,15 +1,21 @@
-let Peliculas = new Set();
-let EnCines = new Set();
-let Septiembre = new Set();
-let Octubre = new Set();
-let Noviembre = new Set();
+window.Peliculas = new Set();
+window.EnCines = new Set();
+window.Months = new Set();
+for (var index = 1; index <= 12; index++) {
+  const name = "M" + index;
+  window[name] = new Set();
+  Months.add(window[name]);
+}
 class Movie {
   /**
    * Creates an instance of Movie.
    * @param {Object} {
    *     titulo,
    *     estreno,
+   *     mes,
    *     duracion,
+   *     genero,
+   *     clasificacion,
    *     director,
    *     elenco,
    *     synopsis,
@@ -23,89 +29,118 @@ class Movie {
     mes,
     duracion,
     genero,
+    clasificacion,
     director,
     elenco,
     synopsis,
     cartelera
   }) {
-    Peliculas.add(this);
-    this.titulo = titulo;
-    this.estreno = estreno;
-    this.mes = mes;
-    this.duracion = duracion;
-    this.genero = genero;
-    this.director = director;
-    this.elenco = elenco;
-    this.synopsis = synopsis;
-    this.cartelera = cartelera;
+    window.Peliculas.add(this);
+    this.titulo = titulo.trim() || "No disponible.";
+    window[this.titulo] = this;
+    this.estreno = estreno.trim() || "No disponible.";
+    const month =
+      "M" + parseInt(estreno[3] + estreno[4], 10) || "No disponible.";
+    window[month].add(this);
+    this.clasificacion = clasificacion.trim() || "No disponible.";
+    this.duracion = duracion.trim() || "No disponible.";
+    this.genero = genero.trim() || "No disponible.";
+    this.director = director.trim() || "No disponible.";
+    this.elenco = elenco.trim() || "No disponible.";
+    this.synopsis = synopsis.trim() || "No disponible.";
+    this.cartelera = cartelera.trim() || "No disponible.";
+    let carteleraCut = this.cartelera.replace(
+      "https://drive.google.com/open?id=",
+      ""
+    );
+    this.image = `<img class="" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">`;
+    this.roundListContent = `<a onclick="listMovie(window['${this
+      .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
+    this.cardContent = ` <div class="card-content grey-text text-lighten-2">
+    <span class="card-title yellow-text text-darken-3">${titulo}</span>
+    <ul>
+    <li>Genero: ${genero}</li>
+    <li>Clasificacion: ${clasificacion}</li>
+    <li>Duracion: ${duracion}</li>
+    <li>Director: ${director}</li>
+    <li>Reparto: ${elenco}</li>
+    </ul>
+    <p>
+    ${synopsis}
+    </p>
+  </div>`;
+    this.cardAction = `<div class="card-action">
+  <h6 class="yellow-text text-darken-3">Fecha de estreno: ${estreno}</h6>
+</div>`;
     this.card = `<article class="card horizontal black hide-on-med-and-down show-on-large-only">
     <div class="card-image col m4 l3">
-      <img class="" src="${cartelera}">
+      ${this.image}
     </div>
     <div class="card-stacked col m8 l9">
-      <div class="card-content grey-text text-lighten-2">
-        <span class="card-title yellow-text text-darken-3">${titulo}</span>
-        <ul>
-          <li>${duracion}</li>
-          <li>Director: ${director}</li>
-          <li>Reparto: ${elenco}</li>
-        </ul>
-        <p>
-        ${synopsis}
-        </p>
-      </div>
-      <div class="card-action">
-        <h6 class="yellow-text text-darken-3">Fecha de estreno: ${estreno}</h6>
-      </div>
+    ${this.cardContent}
+    ${this.cardAction}
     </div>
   </article>
   <article class="card black hide-on-large-only">
     <div class="card-image">
-      <img src="${cartelera}">
+     ${this.image}
     </div>
     <div class="card black">
-      <div class="card-content grey-text text-lighten-2">
-        <span class="card-title yellow-text text-darken-3">${titulo}</span>
-        <ul>
-          <li>/ C / 1h 35min / Ciencia Ficcion</li>
-          <li>Director: ${director}</li>
-          <li>Reparto: ${elenco}</li>
-        </ul>
-        <p>
-        ${synopsis}
-        </p>
-      </div>
-      <div class="card-action">
-        <h6 class="yellow-text text-darken-3">Fecha de estreno: ${estreno}}</h6>
-      </div>
+     ${this.cardContent}
+     ${this.cardAction}
     </div>
   </article>`;
   }
 }
 
-const torreOscura = new Movie({
-  titulo: "La Torre Oscura",
-  estreno: "24",
-  duracion: "/ C / 1h 35min / Ciencia Ficcion",
-  director: "Nicolaj Arcel",
-  elenco: "Idris Elba, Matthew McConaughey",
-  synopsis:
-    "Existen otros mundos además de éste. The Dark Tower, de Stephen King, la ambiciosa y extensa historia de uno de los autores más famosos del mundo, llega a la gran pantalla. El último Caballero Guerrero, Roland Deschain (Idris Elba), está confinado en una eterna batalla con Walter O’Dim, también conocido como el Hombre de Negro (Matthew McConaughey), decidido a evitar que destruya la Torre Oscura, que mantiene unido al universo. Con el destino de los mundos en peligro, el bien y el mal colisionan en la batalla final, pues únicamente Roland puede defender la Torre contra el Hombre de Negro.",
-  cartelera: "./posters/2017/08/La_Torre_Oscura_Poster_Final_Latino.jpg"
-});
 const movieSection = document.getElementById("movieCard");
-movieSection.innerHTML = torreOscura.card;
+window.listMovies = function(set) {
+  movieSection.innerHTML = "";
+  let content = "";
+  set.forEach(function(item) {
+    content += item.card;
+  });
+  movieSection.innerHTML = content;
+};
+window.listMovie = function(movie) {
+  movieSection.innerHTML = "";
+  let content = "";
+  content += movie.card;
+  movieSection.innerHTML = content;
+};
+window.imported = require("./export.json");
+function importJSON() {
+  window.imported.export.forEach(function(item) {
+    new Movie(item);
+  });
+}
+const roundList = document.getElementById("roundList");
+window.roundListMovies = function(set) {
+  roundList.innerHTML = "";
+  let content = `<div class="">
+  <div class="carousel">`;
+  set.forEach(function(item) {
+    content += item.roundListContent;
+  });
+  content += `</div>
+  </div>`;
+  roundList.innerHTML = content;
+  $(".carousel").carousel({
+    dist: -45,
+    padding: 10
+  });
+};
 $(document).ready(function() {
   $(".carousel").carousel({
     dist: -45,
     padding: 10
   });
-  importJSON();
-});
-
-function importJSON() {
-  const imported = require("./export.json");
-  imported.export.forEach(function(item) {
-    new Movie(item);
+  $(".materialboxed").materialbox();
+  $("ul.tabs").tabs({
+    swipeable: true,
+    responsiveThreshold: "100px"
   });
-}
+});
+importJSON();
+listMovies(Peliculas);
+roundListMovies(M9);
