@@ -54,7 +54,7 @@ class Movie {
       ""
     );
     this.image = `<img class="" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">`;
-    this.roundListContent = `<a onclick="listMovie(window['${this
+    this.roundListContent = `<a onclick="window.listMovie(window['${this
       .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
     this.cardContent = ` <div class="card-content grey-text text-lighten-2">
     <span class="card-title yellow-text text-darken-3">${titulo}</span>
@@ -114,6 +114,14 @@ function importJSON() {
     new Movie(item);
   });
 }
+const navTabs = document.getElementById("navTabs");
+window.navTabPopulate = function() {
+  Months.forEach(function(item) {
+    if (item.size < 0) {
+      navTabs.innerHTML += item;
+    }
+  });
+};
 const roundList = document.getElementById("roundList");
 window.roundListMovies = function(set) {
   roundList.innerHTML = "";
