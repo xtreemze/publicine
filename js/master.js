@@ -74,7 +74,8 @@ class Movie {
       ""
     );
     this.image = `<img class="" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">`;
-    this.roundListContent = `<a onclick="window.listMovie(window['${this
+    this.roundListContent = `<a ontap="window.listMovie(window['${this
+      .titulo}'])" onclick="window.listMovie(window['${this
       .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
     this.cardContent = ` <div class="card-content grey-text text-lighten-2">
     <span class="card-title yellow-text text-darken-3">${titulo}</span>
