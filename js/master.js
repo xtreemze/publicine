@@ -136,11 +136,13 @@ $(document).ready(function() {
     padding: 10
   });
   $(".materialboxed").materialbox();
-  $("ul.tabs").tabs({
-    swipeable: true,
-    responsiveThreshold: "100px"
-  });
+  $("ul.tabs").tabs(
+    {
+      // swipeable: true,
+      // responsiveThreshold: "100px"
+    }
+  );
 });
 importJSON();
-listMovies(Peliculas);
+// listMovies(Peliculas);
 roundListMovies(M9);
