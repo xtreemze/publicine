@@ -1,10 +1,30 @@
 window.Peliculas = new Set();
 window.EnCines = new Set();
 window.Months = new Set();
+window.monthsYear = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre"
+];
 for (var index = 1; index <= 12; index++) {
   const name = "M" + index;
   window[name] = new Set();
   Months.add(window[name]);
+  window[name].name = monthsYear[index - 1];
+  window[
+    name
+  ].tabContent = `<li class="tab"><a onclick="roundListMovies(${name})">${window[
+    name
+  ].name}</a></li>`;
 }
 class Movie {
   /**
@@ -93,6 +113,12 @@ class Movie {
   }
 }
 
+const importJSON = (function() {
+  const imported = require("./export.json");
+  imported.export.forEach(function(item) {
+    new Movie(item);
+  });
+})();
 const movieSection = document.getElementById("movieCard");
 window.listMovies = function(set) {
   movieSection.innerHTML = "";
@@ -108,20 +134,7 @@ window.listMovie = function(movie) {
   content += movie.card;
   movieSection.innerHTML = content;
 };
-window.imported = require("./export.json");
-function importJSON() {
-  window.imported.export.forEach(function(item) {
-    new Movie(item);
-  });
-}
-const navTabs = document.getElementById("navTabs");
-window.navTabPopulate = function() {
-  Months.forEach(function(item) {
-    if (item.size < 0) {
-      navTabs.innerHTML += item;
-    }
-  });
-};
+
 const roundList = document.getElementById("roundList");
 window.roundListMovies = function(set) {
   roundList.innerHTML = "";
@@ -138,19 +151,24 @@ window.roundListMovies = function(set) {
     padding: 10
   });
 };
-$(document).ready(function() {
+window.navTabPopulate = function() {
+  const navTabs = document.getElementById("navTabs");
+  navTabs.innerHTML = "";
+  window.Months.forEach(function(item) {
+    if (item.size > 0) {
+      navTabs.innerHTML += item.tabContent;
+    }
+  });
+  $("ul.tabs").tabs();
+};
+navTabPopulate();
+
+window.addEventListener("load", function() {
   $(".carousel").carousel({
     dist: -45,
     padding: 10
   });
-  $(".materialboxed").materialbox();
-  $("ul.tabs").tabs(
-    {
-      // swipeable: true,
-      // responsiveThreshold: "100px"
-    }
-  );
 });
-importJSON();
+
 // listMovies(Peliculas);
 roundListMovies(M9);
