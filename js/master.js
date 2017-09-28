@@ -74,7 +74,7 @@ class Movie {
       ""
     );
     this.image = `<img class="" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">`;
-    this.roundListContent = `<a ontap="window.listMovie(window['${this
+    this.roundListContent = `<a ontouchend="window.listMovie(window['${this
       .titulo}'])" onclick="window.listMovie(window['${this
       .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
     this.cardContent = ` <div class="card-content grey-text text-lighten-2">
@@ -93,7 +93,7 @@ class Movie {
     this.cardAction = `<div class="card-action">
   <h6 class="yellow-text text-darken-3">Fecha de estreno: ${estreno}</h6>
 </div>`;
-    this.card = `<article class="card horizontal black hide-on-med-and-down show-on-large-only">
+    this.card = `<article class="card horizontal black hide-on-small-only show-on-med-and-up">
     <div class="card-image col m4 l3">
       ${this.image}
     </div>
@@ -102,7 +102,7 @@ class Movie {
     ${this.cardAction}
     </div>
   </article>
-  <article class="card black hide-on-large-only">
+  <article class="card black hide-on-med-and-up">
     <div class="card-image">
      ${this.image}
     </div>
