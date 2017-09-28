@@ -103,10 +103,7 @@ class Movie {
     </div>
   </article>
   <article class="card black hide-on-med-and-up">
-    <div class="card-image">
-     ${this.image}
-    </div>
-    <div class="card black">
+    <div class="black">
      ${this.cardContent}
      ${this.cardAction}
     </div>
