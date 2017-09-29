@@ -186,14 +186,14 @@ window.addEventListener("load", function() {
       position.coords.longitude +
       "&language=es";
 
-    $.getJSON(GEOCODING).done(function(location) {
-      console.log(location);
+    $.getJSON(GEOCODING).done(function(geoLocation) {
+      console.log(geoLocation);
+      window.geo = geoLocation;
       document.getElementById(
         "city"
-      ).innerHTML = `<i class="material-icons">location_city</i> ${location
+      ).innerHTML = `<i class="material-icons">location_city</i> ${geoLocation
         .results[1] || "No disponible"}`;
     });
-    window.geo = location;
   }
 
   function error(err) {
