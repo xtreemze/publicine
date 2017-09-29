@@ -190,9 +190,10 @@ window.addEventListener("load", function() {
       console.log(location);
       document.getElementById(
         "city"
-      ).innerHTML = `<i class="material-icons">location_city</i> ${location[4] ||
-        "No disponible"}`;
+      ).innerHTML = `<i class="material-icons">location_city</i> ${location
+        .results[1] || "No disponible"}`;
     });
+    window.geo = location;
   }
 
   function error(err) {
