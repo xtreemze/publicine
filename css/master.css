@@ -19,6 +19,10 @@ div.card-image.col {
   cursor: pointer;
 }
 
+.nudgeLeft {
+  right: 75px !important;
+}
+
 /* .chip > i,
 .action {
   float: left;
@@ -33,16 +37,32 @@ div.card-image.col {
   height: 32px;
   width: 32px;
 }
+@media only screen and (min-width: 600px) {
+  .carousel .carousel-item {
+    max-height: 54vh;
+    height: 480px;
+    width: 330px;
+    max-width: 48vw;
+    /* max-height: 30vh; */
+  }
 
-.carousel .carousel-item {
-  height: 480px;
-  width: 330px;
+  .carousel {
+    height: 500px;
+    max-height: 48vh;
+    min-height: 500px;
+  }
 }
+@media only screen and (max-width: 599px) {
+  .carousel .carousel-item {
+    max-height: 54vh;
+    /* height: 480px; */
+    /* width: 330px; */
+    max-width: 48vw;
+  }
 
-.carousel {
-  min-height: 500px;
-}
-
-.nudgeLeft {
-  right: 75px !important;
+  .carousel {
+    /* height: 500px; */
+    max-height: 48vh;
+    min-height: 390px;
+  }
 }
