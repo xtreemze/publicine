@@ -187,12 +187,12 @@ window.addEventListener("load", function() {
       "&language=es";
 
     $.getJSON(GEOCODING).done(function(geoLocation) {
-      console.log(geoLocation);
       window.geo = geoLocation;
+      console.log(window.geo);
       document.getElementById(
         "city"
-      ).innerHTML = `<i class="material-icons">location_city</i> ${geoLocation
-        .results[1] || "No disponible"}`;
+      ).innerHTML = `<i class="material-icons">location_city</i> ${window.geo
+        .results[1].formatted_address || "No disponible"}`;
     });
   }
 
