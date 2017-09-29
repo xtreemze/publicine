@@ -192,7 +192,7 @@ window.addEventListener("load", function() {
       document.getElementById(
         "city"
       ).innerHTML = `<i class="material-icons">location_city</i> ${window.geo
-        .results[1].formatted_address || "No disponible"}`;
+        .results[4].formatted_address || "No disponible"}`;
     });
   }
 
