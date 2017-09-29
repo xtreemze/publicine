@@ -18,3 +18,20 @@ div.card-image.col {
 .pointer {
   cursor: pointer;
 }
+
+.chip > i,
+.action {
+  float: left;
+  margin: 3px -8px 0px -7px;
+  height: 32px;
+  width: 32px;
+}
+
+.carousel .carousel-item {
+  height: 480px;
+  width: 330px;
+}
+
+.carousel {
+  min-height: 500px;
+}

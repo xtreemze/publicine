@@ -32,6 +32,7 @@ class Movie {
    * @param {Object} {
    *     titulo,
    *     estreno,
+   *     trailer,
    *     mes,
    *     duracion,
    *     genero,
@@ -46,6 +47,7 @@ class Movie {
   constructor({
     titulo,
     estreno,
+    trailer,
     mes,
     duracion,
     genero,
@@ -56,19 +58,20 @@ class Movie {
     cartelera
   }) {
     window.Peliculas.add(this);
-    this.titulo = titulo.trim() || "No disponible.";
+    this.titulo = titulo.trim() || "No disponible";
     window[this.titulo] = this;
-    this.estreno = estreno.trim() || "No disponible.";
+    this.estreno = estreno.trim() || "No disponible";
+    this.trailer = trailer || "No disponible";
     const month =
-      "M" + parseInt(estreno[3] + estreno[4], 10) || "No disponible.";
+      "M" + parseInt(estreno[3] + estreno[4], 10) || "No disponible";
     window[month].add(this);
-    this.clasificacion = clasificacion.trim() || "No disponible.";
-    this.duracion = duracion.trim() || "No disponible.";
-    this.genero = genero.trim() || "No disponible.";
-    this.director = director.trim() || "No disponible.";
-    this.elenco = elenco.trim() || "No disponible.";
-    this.synopsis = synopsis.trim() || "No disponible.";
-    this.cartelera = cartelera.trim() || "No disponible.";
+    this.clasificacion = clasificacion.trim() || "No disponible";
+    this.duracion = duracion.trim() || "No disponible";
+    this.genero = genero.trim() || "No disponible";
+    this.director = director.trim() || "No disponible";
+    this.elenco = elenco.trim() || "No disponible";
+    this.synopsis = synopsis.trim() || "No disponible";
+    this.cartelera = cartelera.trim() || "No disponible";
     let carteleraCut = this.cartelera.replace(
       "https://drive.google.com/open?id=",
       ""
@@ -77,33 +80,39 @@ class Movie {
     this.roundListContent = `<a ontouchend="window.listMovie(window['${this
       .titulo}'])" onclick="window.listMovie(window['${this
       .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
-    this.cardContent = ` <div class="card-content grey-text text-lighten-2">
-    <span class="card-title yellow-text text-darken-3">${titulo}</span>
-    <ul>
-    <li>Genero: ${genero}</li>
-    <li>Clasificacion: ${clasificacion}</li>
-    <li>Duracion: ${duracion}</li>
-    <li>Director: ${director}</li>
-    <li>Reparto: ${elenco}</li>
-    </ul>
+    this.cardContent = `<div class="card-content grey-text text-lighten-2">
+    <h5 class="yellow-text text-darken-3">${this.titulo}</h5>
+    <span class="yellow-text text-darken-3">
+    <div class="chip yellow darken-3"><i class="material-icons">movie_filter</i> ${this
+      .genero}</div>
+    <div class="chip yellow darken-3"><i class="material-icons">person</i> ${this
+      .clasificacion}</div>
+    <div class="chip yellow darken-3"><i class="material-icons">timer</i> ${this
+      .duracion}</div>
+    <div class="chip yellow darken-3"><i class="material-icons">new_releases</i> ${this
+      .estreno}</div>
+    </span>
     <p>
-    ${synopsis}
+    ${this.synopsis}
     </p>
+    <ul><li>Director: ${this.director}</li>
+    <li>Elenco: ${this.elenco}</li></ul>
   </div>`;
     this.cardAction = `<div class="card-action">
-  <h6 class="yellow-text text-darken-3">Fecha de estreno: ${estreno}</h6>
+    <a class="btn-floating btn-large waves-effect waves-light yellow darken-3"><i class="material-icons large grey-text text-darken-3">play_arrow</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light yellow darken-3"><i class="material-icons large grey-text text-darken-3">event</i></a>
 </div>`;
-    this.card = `<article class="card horizontal black hide-on-small-only show-on-med-and-up">
-    <div class="card-image col m4 l3">
+    this.card = `<article class="card horizontal grey darken-3 hide-on-small-only show-on-med-and-up">
+    <div class="card-image col m5 l3">
       ${this.image}
     </div>
-    <div class="card-stacked col m8 l9">
+    <div class="card-stacked col m7 l9">
     ${this.cardContent}
     ${this.cardAction}
     </div>
   </article>
-  <article class="card black hide-on-med-and-up">
-    <div class="black">
+  <article class="card grey darken-3 hide-on-med-and-up">
+    <div class="">
      ${this.cardContent}
      ${this.cardAction}
     </div>
@@ -131,6 +140,7 @@ window.listMovie = function(movie) {
   let content = "";
   content += movie.card;
   movieSection.innerHTML = content;
+  $(".chips").material_chip();
 };
 
 const roundList = document.getElementById("roundList");
@@ -145,8 +155,9 @@ window.roundListMovies = function(set) {
   </div>`;
   roundList.innerHTML = content;
   $(".carousel").carousel({
-    dist: -45,
-    padding: 10
+    dist: -25,
+    padding: -75,
+    shift: 5
   });
 };
 window.navTabPopulate = function() {
@@ -162,10 +173,31 @@ window.navTabPopulate = function() {
 navTabPopulate();
 
 window.addEventListener("load", function() {
-  $(".carousel").carousel({
-    dist: -45,
-    padding: 10
-  });
+  navigator.geolocation.getCurrentPosition(success, error);
+
+  function success(position) {
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
+
+    var GEOCODING =
+      "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
+      position.coords.latitude +
+      "%2C" +
+      position.coords.longitude +
+      "&language=es";
+
+    $.getJSON(GEOCODING).done(function(location) {
+      console.log(location);
+      document.getElementById(
+        "city"
+      ).innerHTML = `<i class="material-icons">location_city</i> ${location[4] ||
+        "No disponible"}`;
+    });
+  }
+
+  function error(err) {
+    console.log(err);
+  }
 });
 
 // listMovies(Peliculas);
