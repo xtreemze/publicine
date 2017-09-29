@@ -197,10 +197,10 @@ window.addEventListener("load", function() {
   function error(err) {
     console.log(err);
   }
-  function nextCarousel() {
-    $(".carousel").carousel("next");
-  }
-  window.setInterval(nextCarousel, 8000);
+  // function nextCarousel() {
+  //   $(".carousel").carousel("next");
+  // }
+  // window.setInterval(nextCarousel, 8000);
 });
 // listMovies(Peliculas);
 roundListMovies(M9);
