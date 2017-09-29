@@ -19,10 +19,17 @@ div.card-image.col {
   cursor: pointer;
 }
 
-.chip > i,
+/* .chip > i,
 .action {
   float: left;
   margin: 3px -8px 0px -7px;
+  height: 32px;
+  width: 32px;
+} */
+.chip > i,
+.action {
+  float: left;
+  margin: 7px -16px 0px -4px;
   height: 32px;
   width: 32px;
 }

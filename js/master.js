@@ -15,17 +15,7 @@ window.monthsYear = [
   "Noviembre",
   "Diciembre"
 ];
-for (var index = 1; index <= 12; index++) {
-  const name = "M" + index;
-  window[name] = new Set();
-  Months.add(window[name]);
-  window[name].name = monthsYear[index - 1];
-  window[
-    name
-  ].tabContent = `<li class="tab"><a onclick="roundListMovies(${name})">${window[
-    name
-  ].name}</a></li>`;
-}
+
 class Movie {
   /**
    * Creates an instance of Movie.
@@ -83,13 +73,13 @@ class Movie {
     this.cardContent = `<div class="card-content grey-text text-lighten-2">
  
     <span class="yellow-text text-darken-3">
-    <div class="chip yellow darken-3"><i class="material-icons">movie_filter</i> ${this
+    <div class="chip yellow darken-3"><i class="material-icons tiny">movie_filter</i> ${this
       .genero}</div>
-    <div class="chip yellow darken-3"><i class="material-icons">person</i> ${this
+    <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> ${this
       .clasificacion}</div>
-    <div class="chip yellow darken-3"><i class="material-icons">timer</i> ${this
+    <div class="chip yellow darken-3"><i class="material-icons tiny">timer</i> ${this
       .duracion}</div>
-    <div class="chip yellow darken-3"><i class="material-icons">new_releases</i> ${this
+    <div class="chip yellow darken-3"><i class="material-icons tiny">new_releases</i> ${this
       .estreno}</div>
     </span>
     <p>
@@ -121,6 +111,17 @@ class Movie {
 }
 
 const importJSON = (function() {
+  for (var index = 1; index <= 12; index++) {
+    const name = "M" + index;
+    window[name] = new Set();
+    Months.add(window[name]);
+    window[name].name = monthsYear[index - 1];
+    window[
+      name
+    ].tabContent = `<li class="tab"><a onclick="roundListMovies(${name})">${window[
+      name
+    ].name}</a></li>`;
+  }
   const imported = require("./export.json");
   imported.export.forEach(function(item) {
     new Movie(item);
