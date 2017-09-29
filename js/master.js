@@ -81,7 +81,7 @@ class Movie {
       .titulo}'])" onclick="window.listMovie(window['${this
       .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
     this.cardContent = `<div class="card-content grey-text text-lighten-2">
-    <h5 class="yellow-text text-darken-3">${this.titulo}</h5>
+ 
     <span class="yellow-text text-darken-3">
     <div class="chip yellow darken-3"><i class="material-icons">movie_filter</i> ${this
       .genero}</div>
@@ -95,12 +95,12 @@ class Movie {
     <p>
     ${this.synopsis}
     </p>
-    <ul><li>Director: ${this.director}</li>
-    <li>Elenco: ${this.elenco}</li></ul>
+    <p>Director: ${this.director} Elenco: ${this.elenco}</p>
   </div>`;
     this.cardAction = `<div class="card-action">
-    <a class="btn-floating btn-large waves-effect waves-light yellow darken-3"><i class="material-icons large grey-text text-darken-3">play_arrow</i></a>
-    <a class="btn-floating btn-large waves-effect waves-light yellow darken-3"><i class="material-icons large grey-text text-darken-3">event</i></a>
+    <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3"><i class="material-icons large grey-text text-darken-3">play_arrow</i></a>
+    <a class="nudgeLeft btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event</i></a>
+    <a class="yellow-text text-darken-3">${this.titulo}</a>
 </div>`;
     this.card = `<article class="card horizontal grey darken-3 hide-on-small-only show-on-med-and-up">
     <div class="card-image col m5 l3">
@@ -176,9 +176,6 @@ window.addEventListener("load", function() {
   navigator.geolocation.getCurrentPosition(success, error);
 
   function success(position) {
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
-
     var GEOCODING =
       "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
       position.coords.latitude +

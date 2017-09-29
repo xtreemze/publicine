@@ -35,3 +35,7 @@ div.card-image.col {
 .carousel {
   min-height: 500px;
 }
+
+.nudgeLeft {
+  right: 75px !important;
+}
