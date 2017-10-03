@@ -99,7 +99,7 @@ class Movie {
     <div class="card-content grey-text text-lighten-2">
     <article class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/${this
-      .trailerID}?rel=0&amp;controls=0&amp;showinfo=0;autoplay=0" frameborder="0" allowfullscreen></iframe>
+      .trailerID}?rel=0&amp;controls=1&amp;showinfo=0;autoplay=0" frameborder="0" allowfullscreen></iframe>
       </article>
      </div>
     </div>
