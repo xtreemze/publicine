@@ -70,58 +70,96 @@ class Movie {
       "https://drive.google.com/open?id=",
       ""
     );
+    this.image = `<img class="" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">`;
+    this.posterModal = `<div id="posterModal" class="modal grey darken-4">
+      <div class="modal-content">
+      <img class="responsive-img" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">
+      </div>
+      <div class="modal-footer grey darken-4">
+      <a class="modal-title yellow-text text-darken-3 left">${this.titulo}</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons large grey-text text-darken-3">close</i></a>
+      </div>
+    </div>`;
     this.trailerModal = `<div id="trailerModal" class="modal grey darken-4">
       <div class="modal-content">
       <article class="video-container">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/${this
-        .trailerID}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        .trailerID}?rel=0&amp;controls=0&amp;showinfo=0;autoplay=0" frameborder="0" allowfullscreen></iframe>
         </article>
       </div>
       <div class="modal-footer grey darken-4">
+      <a class="modal-title yellow-text text-darken-3 left">${this.titulo}</a>
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons large grey-text text-darken-3">close</i></a>
       </div>
     </div>`;
-    this.image = `<img class="" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">`;
+    this.posterCard = `<article class="card-panel grey darken-3">
+    <a class="modal-trigger" href="#posterModal"> <img class="responsive-img" src="https://drive.google.com/uc?export=download&id=${carteleraCut}"></a>
+  </article>`;
+    this.trailerCard = `
+  <article class="card grey darken-3">
+    <div class="">
+    <div class="card-content grey-text text-lighten-2">
+    <article class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/${this
+      .trailerID}?rel=0&amp;controls=0&amp;showinfo=0;autoplay=0" frameborder="0" allowfullscreen></iframe>
+      </article>
+     </div>
+    </div>
+  </article>`;
     this.roundListContent = `<a ontouchend="window.listMovie(window['${this
       .titulo}'])" onclick="window.listMovie(window['${this
       .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
+    this.chips = `  <article class="card grey darken-3"><div class="card-content grey-text text-lighten-2">
+      <span class="yellow-text text-darken-3">
+      <div class="chip yellow darken-3"><i class="material-icons tiny">movie_filter</i> ${this
+        .genero}</div>
+      <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> ${this
+        .clasificacion}</div>
+      <div class="chip yellow darken-3"><i class="material-icons tiny">timer</i> ${this
+        .duracion}</div>
+      <div class="chip yellow darken-3"><i class="material-icons tiny">new_releases</i> ${this
+        .estreno}</div>
+      </span>
+      </div></article>`;
     this.cardContent = `<div class="card-content grey-text text-lighten-2">
- 
-    <span class="yellow-text text-darken-3">
-    <div class="chip yellow darken-3"><i class="material-icons tiny">movie_filter</i> ${this
-      .genero}</div>
-    <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> ${this
-      .clasificacion}</div>
-    <div class="chip yellow darken-3"><i class="material-icons tiny">timer</i> ${this
-      .duracion}</div>
-    <div class="chip yellow darken-3"><i class="material-icons tiny">new_releases</i> ${this
-      .estreno}</div>
-    </span>
     <p>
     ${this.synopsis}
     </p>
     <p>Director: ${this.director} Elenco: ${this.elenco}</p>
   </div>`;
+    // <a href="#trailerModal" class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 modal-trigger"><i class="material-icons large grey-text text-darken-3">play_arrow</i></a>
     this.cardAction = `<div class="card-action">
-    <a href="#trailerModal" class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 modal-trigger"><i class="material-icons large grey-text text-darken-3">play_arrow</i></a>
-    <a class="nudgeLeft btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event</i></a>
+        <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event</i></a>
     <a class="yellow-text text-darken-3">${this.titulo}</a>
 </div>`;
-    this.card = `<article class="card horizontal grey darken-3 hide-on-small-only show-on-med-and-up">
-    <div class="card-image col m5 l3">
-      ${this.image}
+    this.card = `
+    <section class="row">
+    <div class="col s12 m6 l4">
+    <div class="row">
+    <div class="col s4 m12">
+        ${this.posterCard}
     </div>
-    <div class="card-stacked col m7 l9">
-    ${this.cardContent}
-    ${this.cardAction}
+    <div class="col s8 m12">
+  ${this.chips}
+  </div>
+  </div>
+  </div>
+
+
+<div class="col s12 m6 l8">
+  <article class="card grey darken-3">
+    <div class="">
+      ${this.cardContent} ${this.cardAction}
     </div>
   </article>
-  <article class="card grey darken-3 hide-on-med-and-up">
-    <div class="">
-     ${this.cardContent}
-     ${this.cardAction}
-    </div>
-  </article>`;
+  </div>
+
+  <div class="col s12 m6 l8">
+  ${this.trailerCard}  
+</div>
+
+  </section>
+  `;
   }
 }
 
@@ -155,10 +193,28 @@ window.listMovies = function(set) {
 window.listMovie = function(movie) {
   let content = "";
   content += movie.card;
+  // content += movie.trailerCard;
   movieSection.innerHTML = content;
-  modalSection.innerHTML = movie.trailerModal;
+  // modalSection.innerHTML = movie.trailerModal;
+  modalSection.innerHTML += movie.posterModal;
   $(".chips").material_chip();
-  $(".modal").modal();
+  $(".modal").modal({
+    dismissible: true, // Modal can be dismissed by clicking outside of the modal
+    opacity: 0.9, // Opacity of modal background
+    inDuration: 800, // Transition in duration
+    outDuration: 600, // Transition out duration
+    startingTop: "4%", // Starting top style attribute
+    endingTop: "10%", // Ending top style attribute
+    ready: function(modal, trigger) {
+      // Callback for Modal open. Modal and trigger parameters available.
+      console.log(modal, trigger);
+    },
+    complete: function() {} // Callback for Modal close
+  });
+  // $("#trailerModal")
+  //   .modal("open")
+  //   .delay(200)
+  //   .modal("close");
 };
 
 const roundList = document.getElementById("roundList");
