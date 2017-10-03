@@ -52,6 +52,10 @@ class Movie {
     window[this.titulo] = this;
     this.estreno = estreno.trim() || "No disponible";
     this.trailer = trailer || "No disponible";
+    this.trailerID = this.trailer.replace(
+      "https://www.youtube.com/watch?v=",
+      ""
+    );
     const month =
       "M" + parseInt(estreno[3] + estreno[4], 10) || "No disponible";
     window[month].add(this);
@@ -66,6 +70,17 @@ class Movie {
       "https://drive.google.com/open?id=",
       ""
     );
+    this.trailerModal = `<div id="trailerModal" class="modal grey darken-4">
+      <div class="modal-content">
+      <article class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/${this
+        .trailerID}?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </article>
+      </div>
+      <div class="modal-footer grey darken-4">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons large grey-text text-darken-3">close</i></a>
+      </div>
+    </div>`;
     this.image = `<img class="" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">`;
     this.roundListContent = `<a ontouchend="window.listMovie(window['${this
       .titulo}'])" onclick="window.listMovie(window['${this
@@ -88,8 +103,7 @@ class Movie {
     <p>Director: ${this.director} Elenco: ${this.elenco}</p>
   </div>`;
     this.cardAction = `<div class="card-action">
-    <a href="${this
-      .trailer}" target="_blank" class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3"><i class="material-icons large grey-text text-darken-3">play_arrow</i></a>
+    <a href="#trailerModal" class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 modal-trigger"><i class="material-icons large grey-text text-darken-3">play_arrow</i></a>
     <a class="nudgeLeft btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event</i></a>
     <a class="yellow-text text-darken-3">${this.titulo}</a>
 </div>`;
@@ -128,6 +142,7 @@ const importJSON = (function() {
     new Movie(item);
   });
 })();
+const modals = document.getElementById("modalSection");
 const movieSection = document.getElementById("movieCard");
 window.listMovies = function(set) {
   movieSection.innerHTML = "";
@@ -138,11 +153,12 @@ window.listMovies = function(set) {
   movieSection.innerHTML = content;
 };
 window.listMovie = function(movie) {
-  movieSection.innerHTML = "";
   let content = "";
   content += movie.card;
   movieSection.innerHTML = content;
+  modalSection.innerHTML = movie.trailerModal;
   $(".chips").material_chip();
+  $(".modal").modal();
 };
 
 const roundList = document.getElementById("roundList");
