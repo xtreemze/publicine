@@ -19,6 +19,10 @@ div.card-image.col {
   cursor: pointer;
 }
 
+.cursorZoom {
+  cursor: zoom;
+}
+
 .nudgeLeft {
   right: 75px !important;
 }
@@ -41,7 +45,7 @@ div.card-image.col {
   .carousel .carousel-item {
     max-height: 54vh;
     height: 480px;
-    width: 330px;
+    width: 246px;
     max-width: 48vw;
     /* max-height: 30vh; */
   }
