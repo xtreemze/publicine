@@ -88,7 +88,8 @@ class Movie {
     <p>Director: ${this.director} Elenco: ${this.elenco}</p>
   </div>`;
     this.cardAction = `<div class="card-action">
-    <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3"><i class="material-icons large grey-text text-darken-3">play_arrow</i></a>
+    <a href="${this
+      .trailer}" target="_blank" class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3"><i class="material-icons large grey-text text-darken-3">play_arrow</i></a>
     <a class="nudgeLeft btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event</i></a>
     <a class="yellow-text text-darken-3">${this.titulo}</a>
 </div>`;
