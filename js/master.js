@@ -131,12 +131,12 @@ class Movie {
 </div>`;
     this.card = `
     <section class="row">
-    <div class="col s12 m7 l4">
+    <div class="col s12 m5 l4">
         ${this.posterCard}
   </div>
 
 
-<div class="col s12 m5 l8">
+<div class="col s12 m7 l8">
   <article class="card grey darken-3">
     <div class="">
       ${this.cardContent}
@@ -144,7 +144,7 @@ class Movie {
   </article>
   </div>
 
-  <div class="col s12 m5 l8">
+  <div class="col s12 m7 l8">
   ${this.trailerCard}  
 </div>
 
