@@ -76,3 +76,8 @@ div.card-image.col {
   text-transform: uppercase;
   padding-top: 14px;
 }
+
+.fullHeight {
+  height: 50vh;
+  overflow: hidden;
+}
