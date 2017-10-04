@@ -135,7 +135,6 @@ class Movie {
    </span>
    </div>
    <div class="card-action">
-   <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event</i></a>
 <a class="yellow-text text-darken-3">${this.titulo}</a>
 </div>
   </article>`;
@@ -176,6 +175,10 @@ class Movie {
       </div>
       </div>
      </div>
+     <div class="card-action">
+     <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event_seat</i></a>
+  <a class="yellow-text text-darken-3">Taquilla</a>
+  </div>
   </article>`;
     this.roundListContent = `<a ontouchend="window.listMovie(window['${this
       .titulo}'])" onclick="window.listMovie(window['${this
