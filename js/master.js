@@ -66,6 +66,31 @@ window.monthsYear = [
   "Noviembre",
   "Diciembre"
 ];
+window.Honduras = [
+  "Tegucigalpa",
+  "San Pedro Sula",
+  "Comayagua",
+  "Choluteca",
+  "Siguatepeque",
+  "El Progreso",
+  "Choloma",
+  "La Ceiba",
+  "Tela",
+  "Puerto Cortes",
+  "Danli",
+  "Juticalpa",
+  "Tocoa"
+];
+window.HondurasCiudades = function() {
+  let content = "";
+  for (var ciudad in window.Honduras) {
+    if (window.Honduras.hasOwnProperty(ciudad)) {
+      var city = window.Honduras[ciudad];
+      content += `<option value="${city}">${city}</option>`;
+    }
+  }
+  return content;
+};
 
 class Movie {
   constructor({
@@ -157,9 +182,7 @@ class Movie {
       <i class="material-icons prefix">location_city</i>
       <select id="ciudad">
       <option value="" disabled selected>${this.ciudad}</option>
-      <option value="Tegucigalpa">Tegucigalpa</option>
-      <option value="San Pedro Sula">San Pedro Sula</option>
-      <option value="La Ceiba">La Ceiba</option>
+      ${window.HondurasCiudades()}
       </select>
       <label for="ciudad">Ciudad:</label>
       </div>
