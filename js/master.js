@@ -208,7 +208,7 @@ class Movie {
       <div class="input-field col s12">
       <i class="material-icons prefix">location_city</i>
       <select id="ciudad">
-      <option value="" disabled selected>${this.ciudad}</option>
+      <option value="${this.ciudad}" selected>${this.ciudad}</option>
       ${window.HondurasCiudades()}
       </select>
       <label for="ciudad">Ciudad:</label>
