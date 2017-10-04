@@ -127,12 +127,10 @@ class Movie {
 
 
 <div class="col s12 m7 l8">
-  <article class="card-panel grey darken-3">
-    <div class="card-content grey-text text-lighten-2">
-    <p>Director: ${this.director}</p>
-    <p>Elenco: ${this.elenco}</p>
-    </div>
-  </article>
+    <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> Director: ${this
+      .director}</div>
+    <div class="chip yellow darken-3"><i class="material-icons tiny">group</i> Elenco: ${this
+      .elenco}</div>
   </div>
 
 <div class="col s12 m7 l8">
