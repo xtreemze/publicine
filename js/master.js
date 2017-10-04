@@ -17,23 +17,6 @@ window.monthsYear = [
 ];
 
 class Movie {
-  /**
-   * Creates an instance of Movie.
-   * @param {Object} {
-   *     titulo,
-   *     estreno,
-   *     trailer,
-   *     mes,
-   *     duracion,
-   *     genero,
-   *     clasificacion,
-   *     director,
-   *     elenco,
-   *     synopsis,
-   *     cartelera
-   *   } 
-   * @memberof Movie
-   */
   constructor({
     titulo,
     estreno,
@@ -41,9 +24,12 @@ class Movie {
     mes,
     duracion,
     genero,
-    clasificacion,
     director,
     elenco,
+    lenguaje,
+    formato,
+    ciudad,
+    clasificacion,
     synopsis,
     cartelera
   }) {
@@ -52,6 +38,7 @@ class Movie {
     window[this.titulo] = this;
     this.estreno = estreno.trim() || "No disponible";
     this.estrenoMonth = this.estreno.replace("/2017", "");
+    this.estrenoMonth = this.estreno.replace("/2018", "");
     this.trailer = trailer || "No disponible";
     this.trailerID = this.trailer.replace(
       "https://www.youtube.com/watch?v=",
@@ -60,11 +47,14 @@ class Movie {
     const month =
       "M" + parseInt(estreno[3] + estreno[4], 10) || "No disponible";
     window[month].add(this);
-    this.clasificacion = clasificacion.trim() || "No disponible";
     this.duracion = duracion.trim() || "No disponible";
     this.genero = genero.trim() || "No disponible";
     this.director = director.trim() || "No disponible";
     this.elenco = elenco.trim() || "No disponible";
+    this.lenguaje = lenguaje || "No disponible";
+    this.formato = formato || "No disponible";
+    this.ciudad = ciudad || "No disponible";
+    this.clasificacion = clasificacion || "No disponible";
     this.synopsis = synopsis.trim() || "No disponible";
     this.cartelera = cartelera.trim() || "No disponible";
     let carteleraCut = this.cartelera.replace(
@@ -123,7 +113,7 @@ class Movie {
     <p>
     ${this.synopsis}
     </p>
-    <p>Director: ${this.director} Elenco: ${this.elenco}</p>
+
   </div>`;
     this.cardAction = `<div class="card-action">
         <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event</i></a>
@@ -135,6 +125,15 @@ class Movie {
         ${this.posterCard}
   </div>
 
+
+<div class="col s12 m7 l8">
+  <article class="card-panel grey darken-3">
+    <div class="card-content grey-text text-lighten-2">
+    <p>Director: ${this.director}</p>
+    <p>Elenco: ${this.elenco}</p>
+    </div>
+  </article>
+  </div>
 
 <div class="col s12 m7 l8">
   <article class="card grey darken-3">
