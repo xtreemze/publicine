@@ -280,9 +280,10 @@ const importJSON = (function() {
     window[name] = new Set();
     Months.add(window[name]);
     window[name].name = monthsYear[index - 1];
+    window[name].month = name;
     window[
       name
-    ].tabContent = `<li class="tab pointer"><a onclick="roundListMovies(${name})">${window[
+    ].tabContent = `<li class="tab pointer"><a href="#${name}" onclick="roundListMovies(${name})">${window[
       name
     ].name}</a></li>`;
   }
@@ -331,7 +332,7 @@ window.listMovie = function(movie) {
 const roundList = document.getElementById("roundList");
 window.roundListMovies = function(set) {
   roundList.innerHTML = "";
-  let content = `<div class="">
+  let content = `<div id="${set.month}" class="">
   <div class="carousel">`;
   set.forEach(function(item) {
     content += item.roundListContent;
@@ -353,11 +354,15 @@ window.navTabPopulate = function() {
       navTabs.innerHTML += item.tabContent;
     }
   });
+  // $("ul.tabs").tabs();
   $("ul.tabs").tabs();
 };
 navTabPopulate();
 
 window.addEventListener("load", function() {
+  roundListMovies(M10);
+  $("ul.tabs").tabs("select_tab", "M10");
+
   navigator.geolocation.getCurrentPosition(success, error);
 
   function success(position) {
@@ -387,4 +392,3 @@ window.addEventListener("load", function() {
   // window.setInterval(nextCarousel, 8000);
 });
 // listMovies(Peliculas);
-roundListMovies(M10);
