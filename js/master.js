@@ -155,6 +155,7 @@ class Movie {
     <div class="card-content yellow-text text-darken-3">
     <div class="row">
       <div class="input-field col s12">
+      <i class="material-icons prefix">location_city</i>
       <select id="ciudad">
       <option value="" disabled selected>${this.ciudad}</option>
       <option value="Tegucigalpa">Tegucigalpa</option>
@@ -164,10 +165,14 @@ class Movie {
       <label for="ciudad">Ciudad:</label>
       </div>
       <div class="input-field col s12 m12 l8">
-        <label for="fecha">Fecha:</label> <input id="fecha" type="text" class="datepicker">
+      <i class="material-icons prefix">event</i>
+        <input id="fecha" type="text" class="datepicker">
+        <label for="fecha">Fecha:</label> 
       </div>
       <div class="input-field col s12 m12 l4">
-        <label for="hora">Hora:</label> <input id="hora" type="text" class="timepicker">
+      <i class="material-icons prefix">access_time</i>
+      <input id="hora" type="text" class="timepicker">
+      <label for="hora">Hora:</label>
       </div>
       </div>
      </div>
