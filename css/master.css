@@ -37,9 +37,13 @@ div.card-image.col {
 .chip > i,
 .action {
   float: left;
-  margin: 7px -16px 0px -4px;
-  height: 32px;
-  width: 32px;
+  margin: 7px -16px 0px -2px;
+  height: 16px;
+  width: 34px;
+}
+.chip {
+  font-size: 12px;
+  padding: 0 10px 0 10px;
 }
 @media only screen and (min-width: 1100px) {
   .carousel .carousel-item {
@@ -80,4 +84,115 @@ div.card-image.col {
 .fullHeight {
   height: 50vh;
   overflow: hidden;
+}
+
+.picker__date-display {
+  background-color: #f9a825;
+}
+
+.clockpicker-plate {
+  background-color: rgba(128, 128, 128, 0.16);
+}
+
+.picker__box {
+  /* background: #ffffff; */
+  background: #414141;
+}
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected {
+  background-color: #f9a825;
+  height: 3.1em;
+  color: #ffffff;
+  padding: 1em;
+}
+
+.clockpicker-tick.active,
+.clockpicker-tick:hover {
+  background-color: #f9a825;
+}
+
+.dropdown-content {
+  background-color: #414141;
+}
+
+.picker__nav--prev:hover,
+.picker__nav--next:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #f9a825;
+}
+
+.picker__close,
+.picker__today,
+.picker__day.picker__day--today {
+  color: #f9a825;
+}
+
+select:focus {
+  outline: 1px solid #f9a825;
+}
+
+.clockpicker-canvas line {
+  stroke: #f9a825;
+}
+
+.clockpicker-canvas-bg {
+  fill: #f9a825;
+}
+
+.clockpicker-canvas-bearing {
+  fill: #f9a825;
+}
+
+button.picker__today:focus,
+button.picker__clear:focus,
+button.picker__close:focus {
+  background-color: rgba(128, 128, 128, 0.38);
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: rgba(243, 243, 243, 0.87);
+}
+
+.picker__day--infocus {
+  color: #d1d1d1;
+}
+
+.picker__day--infocus:hover {
+  color: rgba(255, 255, 255, 0.31);
+}
+
+.picker {
+  color: #808080;
+}
+
+.clockpicker-tick {
+  color: rgba(243, 243, 243, 0.87);
+}
+
+.clockpicker-tick.active,
+.clockpicker-tick:hover {
+  background-color: rgba(249, 168, 37, 0.45);
+}
+
+select {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #5a5a5a;
+}
+
+.picker__select--month.browser-default {
+  background-color: #464646;
+}
+
+option :focus {
+  outline: #f9a825 auto 5px;
+  outline-color: #f9a825;
+  outline-style: auto;
+  outline-width: 5px;
+}
+
+.select-wrapper span.caret {
+  color: grey;
 }

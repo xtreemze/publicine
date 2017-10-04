@@ -1,3 +1,54 @@
+// Spanish
+jQuery.extend(jQuery.fn.pickadate.defaults, {
+  monthsFull: [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre"
+  ],
+  monthsShort: [
+    "ene",
+    "feb",
+    "mar",
+    "abr",
+    "may",
+    "jun",
+    "jul",
+    "ago",
+    "sep",
+    "oct",
+    "nov",
+    "dic"
+  ],
+  weekdaysFull: [
+    "domingo",
+    "lunes",
+    "martes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado"
+  ],
+  weekdaysShort: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+  today: "hoy",
+  clear: "borrar",
+  close: "cerrar",
+  firstDay: 1,
+  format: "dddd d !de mmmm !de yyyy",
+  formatSubmit: "yyyy/mm/dd"
+});
+
+jQuery.extend(jQuery.fn.pickatime.defaults, {
+  clear: "borrar"
+});
 window.Peliculas = new Set();
 window.EnCines = new Set();
 window.Months = new Set();
@@ -38,7 +89,6 @@ class Movie {
     window[this.titulo] = this;
     this.estreno = estreno.trim() || "No disponible";
     this.estrenoMonth = this.estreno.replace("/2017", "");
-    this.estrenoMonth = this.estreno.replace("/2018", "");
     this.trailer = trailer || "No disponible";
     this.trailerID = this.trailer.replace(
       "https://www.youtube.com/watch?v=",
@@ -51,8 +101,8 @@ class Movie {
     this.genero = genero.trim() || "No disponible";
     this.director = director.trim() || "No disponible";
     this.elenco = elenco.trim() || "No disponible";
-    this.lenguaje = lenguaje || "No disponible";
-    this.formato = formato || "No disponible";
+    this.lenguaje = lenguaje || "Subtitulado";
+    this.formato = formato || "2D";
     this.ciudad = ciudad || "No disponible";
     this.clasificacion = clasificacion || "No disponible";
     this.synopsis = synopsis.trim() || "No disponible";
@@ -72,10 +122,16 @@ class Movie {
      .genero}</div>
    <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> ${this
      .clasificacion}</div>
+   <div class="chip yellow darken-3"><i class="material-icons tiny">3d_rotation</i> ${this
+     .formato}</div>
+   <div class="chip yellow darken-3"><i class="material-icons tiny">language</i> ${this
+     .lenguaje}</div>
    <div class="chip yellow darken-3"><i class="material-icons tiny">timer</i> ${this
      .duracion}</div>
    <div class="chip yellow darken-3"><i class="material-icons tiny">new_releases</i> ${this
      .estrenoMonth}</div>
+     <div class="chip yellow darken-3"><i class="material-icons tiny">movie_creation</i> ${this
+       .director}</div>
    </span>
    </div>
    <div class="card-action">
@@ -94,27 +150,48 @@ class Movie {
      </div>
     </div>
   </article>`;
+    this.locationCard = `
+    <article class="card grey darken-3">
+    <div class="card-content yellow-text text-darken-3">
+    <div class="row">
+      <div class="input-field col s12">
+      <select id="ciudad">
+      <option value="" disabled selected>${this.ciudad}</option>
+      <option value="Tegucigalpa">Tegucigalpa</option>
+      <option value="San Pedro Sula">San Pedro Sula</option>
+      <option value="La Ceiba">La Ceiba</option>
+      </select>
+      <label for="ciudad">Ciudad:</label>
+      </div>
+      <div class="input-field col s12 m12 l8">
+        <label for="fecha">Fecha:</label> <input id="fecha" type="text" class="datepicker">
+      </div>
+      <div class="input-field col s12 m12 l4">
+        <label for="hora">Hora:</label> <input id="hora" type="text" class="timepicker">
+      </div>
+      </div>
+     </div>
+  </article>`;
     this.roundListContent = `<a ontouchend="window.listMovie(window['${this
       .titulo}'])" onclick="window.listMovie(window['${this
       .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
-    this.chips = `  <article class="card grey darken-3"><div class="card-content grey-text text-lighten-2">
-      <span class="yellow-text text-darken-3">
-      <div class="chip yellow darken-3"><i class="material-icons tiny">movie_filter</i> ${this
-        .genero}</div>
-      <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> ${this
-        .clasificacion}</div>
-      <div class="chip yellow darken-3"><i class="material-icons tiny">timer</i> ${this
-        .duracion}</div>
-      <div class="chip yellow darken-3"><i class="material-icons tiny">new_releases</i> ${this
-        .estrenoMonth}</div>
-      </span>
-      </div></article>`;
-    this.cardContent = `<div class="card-content grey-text text-lighten-2">
-    <p>
-    ${this.synopsis}
-    </p>
+    // this.chips = `  <article class="card grey darken-3"><div class="card-content grey-text text-lighten-2">
+    //   <span class="yellow-text text-darken-3">
+    //   <div class="chip yellow darken-3"><i class="material-icons tiny">movie_filter</i> ${this
+    //     .genero}</div>
+    //   <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> ${this
+    //     .clasificacion}</div>
+    //   <div class="chip yellow darken-3"><i class="material-icons tiny">timer</i> ${this
+    //     .duracion}</div>
+    //   <div class="chip yellow darken-3"><i class="material-icons tiny">new_releases</i> ${this
+    //     .estrenoMonth}</div>
 
-  </div>`;
+    //   </span>
+    //   </div></article>`;
+    this.cardContent = ` <article class="card grey darken-3">
+    <div class="card-content grey-text text-lighten-2">
+    <p>${this.synopsis}</p></div>
+  </article>`;
     this.cardAction = `<div class="card-action">
         <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event</i></a>
     <a class="yellow-text text-darken-3">${this.titulo}</a>
@@ -122,30 +199,19 @@ class Movie {
     this.card = `
     <section class="row">
     <div class="col s12 m5 l4">
-        ${this.posterCard}
-  </div>
-
-
-<div class="col s12 m7 l8">
-    <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> Director: ${this
-      .director}</div>
-    <div class="chip yellow darken-3"><i class="material-icons tiny">group</i> Elenco: ${this
-      .elenco}</div>
-  </div>
-
-<div class="col s12 m7 l8">
-  <article class="card grey darken-3">
-    <div class="">
+      ${this.posterCard}
+    </div>
+    <div class="col s12 m7 l8">
       ${this.cardContent}
     </div>
-  </article>
-  </div>
-
-  <div class="col s12 m7 l8">
-  ${this.trailerCard}  
-</div>
-
+    <div class="col s12 m7 l8">
+      ${this.trailerCard}
+    </div>
+    <div class="col s12 m7 l8">
+      ${this.locationCard}
+    </div>
   </section>
+  
   `;
   }
 }
@@ -182,6 +248,26 @@ window.listMovie = function(movie) {
   movieSection.innerHTML = content;
   $(".chips").material_chip();
   $(".materialboxed").materialbox();
+  $("select").material_select();
+  $(".datepicker").pickadate({
+    selectMonths: false, // Creates a dropdown to control month
+    selectYears: 1, // Creates a dropdown of 15 years to control year,
+    today: "Hoy",
+    clear: "Borrar",
+    close: "Aceptar",
+    closeOnSelect: true // Close upon selecting a date,
+  });
+  $(".timepicker").pickatime({
+    default: "now", // Set default time: 'now', '1:30AM', '16:30'
+    fromnow: 432000, // set default time to * milliseconds from now (using with default = 'now')
+    twelvehour: true, // Use AM/PM or 24-hour format
+    donetext: "Aceptar", // text for done-button
+    cleartext: "Borrar", // text for clear-button
+    canceltext: "Cancelar", // Text for cancel-button
+    autoclose: false, // automatic close timepicker
+    ampmclickable: true, // make AM PM clickable
+    aftershow: function() {} //Function for after opening timepicker
+  });
 };
 
 const roundList = document.getElementById("roundList");
