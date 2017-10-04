@@ -216,7 +216,7 @@ class Movie {
       <div class="input-field col s12">
       <i class="material-icons prefix">location_city</i>
       <select id="ciudad">
-      <option value="${window.geoCity}">${window.geoCity}</option>
+      <option value="${window.yourCity()}">${window.yourCity()}</option>
       ${window.HondurasCiudades()}
       </select>
       <label for="ciudad">Ciudad:</label>
