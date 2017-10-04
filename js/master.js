@@ -72,9 +72,9 @@ function error(err) {
   window.yourCity();
 }
 window.yourCity = function() {
-  if (window.geo) {
+  if (!window.geoCity && window.geo) {
     window.geoCity = window.geo.results[4].formatted_address;
-  } else {
+  } else if (!window.geo) {
     window.geoCity = "GPS no disponible";
   }
   return window.geoCity;
