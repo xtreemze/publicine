@@ -49,6 +49,12 @@ jQuery.extend(jQuery.fn.pickadate.defaults, {
 jQuery.extend(jQuery.fn.pickatime.defaults, {
   clear: "borrar"
 });
+window.yourCity = function() {
+  if (window.geo) {
+    let location = window.geo.results[4].formatted_address || "No disponible";
+  }
+  return location || "No disponible";
+};
 window.Peliculas = new Set();
 window.Cines = new Set();
 window.EnCines = new Set();
@@ -155,7 +161,6 @@ class Movie {
     this.lenguaje = lenguaje || "Subtitulado";
     this.formato = formato || "2D";
     this.ciudad = ciudad || "No disponible";
-    this.ciudad = ciudad || "No disponible";
     this.clasificacion = clasificacion || "No disponible";
     this.synopsis = synopsis.trim() || "No disponible";
     this.cartelera = cartelera.trim() || "No disponible";
@@ -208,7 +213,8 @@ class Movie {
       <div class="input-field col s12">
       <i class="material-icons prefix">location_city</i>
       <select id="ciudad">
-      <option value="${this.ciudad}" selected>${this.ciudad}</option>
+      <option value="${window.yourCity() || this.ciudad}">${window.yourCity() ||
+      this.ciudad}</option>
       ${window.HondurasCiudades()}
       </select>
       <label for="ciudad">Ciudad:</label>
@@ -376,16 +382,16 @@ window.addEventListener("load", function() {
     $.getJSON(GEOCODING).done(function(geoLocation) {
       window.geo = geoLocation;
       console.log(window.geo);
-      document.getElementById(
-        "city"
-      ).innerHTML = `<i class="material-icons">location_city</i> ${window.geo
-        .results[4].formatted_address || "No disponible"}`;
     });
   }
 
   function error(err) {
     console.log(err);
   }
+  document.getElementById(
+    "city"
+  ).innerHTML = `<i class="material-icons">location_city</i> ${window.yourCity() ||
+    "No disponible"}`;
   // function nextCarousel() {
   //   $(".carousel").carousel("next");
   // }
