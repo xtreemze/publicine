@@ -49,6 +49,28 @@ jQuery.extend(jQuery.fn.pickadate.defaults, {
 jQuery.extend(jQuery.fn.pickatime.defaults, {
   clear: "borrar"
 });
+
+navigator.geolocation.getCurrentPosition(success, error);
+
+function success(position) {
+  var GEOCODING =
+    "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
+    position.coords.latitude +
+    "%2C" +
+    position.coords.longitude +
+    "&language=es";
+
+  $.getJSON(GEOCODING).done(function(geoLocation) {
+    window.geo = geoLocation;
+    console.log(window.geo);
+    window.yourCity();
+  });
+}
+
+function error(err) {
+  console.log(err);
+  window.yourCity();
+}
 window.yourCity = function() {
   if (window.geo) {
     window.geoCity = window.geo.results[4].formatted_address;
@@ -377,33 +399,9 @@ window.addEventListener("load", function() {
   window.today.Mmm = "M" + (today.getMonth() + 1);
   roundListMovies([window.today.Mmm]);
   $("ul.tabs").tabs("select_tab", window.today.Mmm);
-
-  navigator.geolocation.getCurrentPosition(success, error);
-
-  function success(position) {
-    var GEOCODING =
-      "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
-      position.coords.latitude +
-      "%2C" +
-      position.coords.longitude +
-      "&language=es";
-
-    $.getJSON(GEOCODING).done(function(geoLocation) {
-      window.geo = geoLocation;
-
-      console.log(window.geo);
-      document.getElementById(
-        "city"
-      ).innerHTML = `<i class="material-icons">location_city</i> ${window.yourCity()}`;
-    });
-  }
-
-  function error(err) {
-    console.log(err);
-    document.getElementById(
-      "city"
-    ).innerHTML = `<i class="material-icons">location_city</i> ${window.yourCity()}`;
-  }
+  document.getElementById(
+    "city"
+  ).innerHTML = `<i class="material-icons">location_city</i> ${window.yourCity()}`;
   // function nextCarousel() {
   //   $(".carousel").carousel("next");
   // }
