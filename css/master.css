@@ -102,9 +102,9 @@ div.card-image.col {
 .picker__day--selected:hover,
 .picker--focused .picker__day--selected {
   background-color: #f9a825;
-  height: 3.4em;
+  /* height: 3.4em; */
   color: #ffffff;
-  padding: 1.1em;
+  /* padding: 1.1em; */
 }
 
 .clockpicker-tick.active,
