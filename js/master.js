@@ -51,11 +51,13 @@ jQuery.extend(jQuery.fn.pickatime.defaults, {
 });
 window.yourCity = function() {
   if (window.geo) {
-    window.geoCity =
-      window.geo.results[4].formatted_address || "GPS no disponible";
+    window.geoCity = window.geo.results[4].formatted_address;
+  } else {
+    window.geoCity = "GPS no disponible";
   }
-  return window.geoCity || "GPS no disponible";
+  return window.geoCity;
 };
+window.yourCity();
 window.Peliculas = new Set();
 window.Cines = new Set();
 window.EnCines = new Set();
@@ -214,7 +216,7 @@ class Movie {
       <div class="input-field col s12">
       <i class="material-icons prefix">location_city</i>
       <select id="ciudad">
-      <option value="${window.yourCity()}">${window.yourCity()}</option>
+      <option value="${window.geoCity}">${window.geoCity}</option>
       ${window.HondurasCiudades()}
       </select>
       <label for="ciudad">Ciudad:</label>
@@ -309,6 +311,9 @@ window.listMovies = function(set) {
 };
 window.listMovie = function(movie) {
   let content = "";
+  if (window.geoCity == "undefined") {
+    window.yourCity();
+  }
   content += movie.card;
   movieSection.innerHTML = content;
   $(".chips").material_chip();
@@ -366,8 +371,12 @@ window.navTabPopulate = function() {
 navTabPopulate();
 
 window.addEventListener("load", function() {
-  roundListMovies(M10);
-  $("ul.tabs").tabs("select_tab", "M10");
+  window.today = new Date();
+  window.today.dd = today.getDate();
+  window.today.mm = today.getMonth() + 1;
+  window.today.Mmm = "M" + (today.getMonth() + 1);
+  roundListMovies([window.today.Mmm]);
+  $("ul.tabs").tabs("select_tab", window.today.Mmm);
 
   navigator.geolocation.getCurrentPosition(success, error);
 
