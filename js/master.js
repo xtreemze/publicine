@@ -50,6 +50,7 @@ jQuery.extend(jQuery.fn.pickatime.defaults, {
   clear: "borrar"
 });
 window.Peliculas = new Set();
+window.Cines = new Set();
 window.EnCines = new Set();
 window.Months = new Set();
 window.monthsYear = [
@@ -92,6 +93,29 @@ window.HondurasCiudades = function() {
   return content;
 };
 
+class Cines {
+  constructor({
+    Ciudad,
+    Nombre,
+    Cadena,
+    Tandas,
+    Salas,
+    Pais,
+    WebURL,
+    Ubicacion
+  }) {
+    this.ciudad = Ciudad || "No disponible";
+    this.nombre = Nombre || "No disponible";
+    this.cadena = Cadena || "No disponible";
+    this.tandas = Tandas || "No disponible";
+    this.salas = Salas || "No disponible";
+    this.pais = Pais || "Honduras";
+    this.web = WebURL || "No disponible";
+    this.ubicacion = Ubicacion || "No disponible";
+    window.Cines.add(this);
+  }
+}
+
 class Movie {
   constructor({
     titulo,
@@ -105,6 +129,7 @@ class Movie {
     lenguaje,
     formato,
     ciudad,
+    cines,
     clasificacion,
     synopsis,
     cartelera
@@ -125,9 +150,11 @@ class Movie {
     this.duracion = duracion.trim() || "No disponible";
     this.genero = genero.trim() || "No disponible";
     this.director = director.trim() || "No disponible";
+    this.cines = cines || "No disponible";
     this.elenco = elenco.trim() || "No disponible";
     this.lenguaje = lenguaje || "Subtitulado";
     this.formato = formato || "2D";
+    this.ciudad = ciudad || "No disponible";
     this.ciudad = ciudad || "No disponible";
     this.clasificacion = clasificacion || "No disponible";
     this.synopsis = synopsis.trim() || "No disponible";
@@ -360,4 +387,4 @@ window.addEventListener("load", function() {
   // window.setInterval(nextCarousel, 8000);
 });
 // listMovies(Peliculas);
-roundListMovies(M9);
+roundListMovies(M10);
