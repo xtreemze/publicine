@@ -11,10 +11,6 @@ main {
   flex: 1 0 auto;
 }
 
-div.card-image.col {
-  /* padding: 0; */
-}
-
 .pointer {
   cursor: pointer;
 }
