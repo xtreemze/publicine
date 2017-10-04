@@ -51,9 +51,9 @@ jQuery.extend(jQuery.fn.pickatime.defaults, {
 });
 window.yourCity = function() {
   if (window.geo) {
-    let location = window.geo.results[4].formatted_address || "No disponible";
+    window.geoCity = window.geo.results[4].formatted_address || "No disponible";
   }
-  return location || "No disponible";
+  return window.geoCity || "No disponible";
 };
 window.Peliculas = new Set();
 window.Cines = new Set();
@@ -381,17 +381,24 @@ window.addEventListener("load", function() {
 
     $.getJSON(GEOCODING).done(function(geoLocation) {
       window.geo = geoLocation;
+
       console.log(window.geo);
+      window.yourCity();
+      document.getElementById(
+        "city"
+      ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity ||
+        "No disponible"}`;
     });
   }
 
   function error(err) {
     console.log(err);
+    window.yourCity();
+    document.getElementById(
+      "city"
+    ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity ||
+      "No disponible"}`;
   }
-  document.getElementById(
-    "city"
-  ).innerHTML = `<i class="material-icons">location_city</i> ${window.yourCity() ||
-    "No disponible"}`;
   // function nextCarousel() {
   //   $(".carousel").carousel("next");
   // }
