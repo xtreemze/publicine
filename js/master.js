@@ -74,7 +74,7 @@ function error(err) {
 window.yourCity = function() {
   if (!window.geoCity && window.geo) {
     window.geoCity = window.geo.results[4].formatted_address;
-  } else if (!window.geo) {
+  } else if (!window.geoCity && !window.geo) {
     window.geoCity = "GPS no disponible";
   }
   return window.geoCity;
