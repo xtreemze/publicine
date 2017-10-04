@@ -263,7 +263,7 @@ window.listMovie = function(movie) {
     today: "Hoy",
     clear: "Borrar",
     close: "Aceptar",
-    closeOnSelect: true // Close upon selecting a date,
+    closeOnSelect: false // Close upon selecting a date,
   });
   $(".timepicker").pickatime({
     default: "now", // Set default time: 'now', '1:30AM', '16:30'

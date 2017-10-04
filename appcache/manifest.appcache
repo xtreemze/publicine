@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-10-4 15:49:29
+#ver:2017-10-4 16:02:56
 #plugin:4.8.4
 
 CACHE:
@@ -19,8 +19,8 @@ CACHE:
 ../fonts/roboto/Roboto-Medium.woff
 ../fonts/roboto/Roboto-Bold.woff2
 ../fonts/roboto/Roboto-Bold.woff
-../img/banner.svg
 ../src/banner-02.svg
+../img/banner.svg
 ../bundle.js
 ../js/materialize.min.js
 ../js/jquery-3.2.1.min.js
