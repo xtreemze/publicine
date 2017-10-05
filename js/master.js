@@ -56,9 +56,11 @@ window.delayedTouch = function(movie) {
     window.clearTimeout(window.timer);
   }, 1000);
   window.timer3 = window.setTimeout(function() {
-    document.getElementById("synopsis").scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("intro")
+      .scrollIntoView({ block: "end", inline: "nearest", behavior: "smooth" });
     window.clearTimeout(window.timer3);
-  }, 4500);
+  }, 3000);
 };
 
 window.clearTimer = function() {
@@ -228,7 +230,7 @@ class Movie {
       ""
     );
     this.image = `<img class="" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">`;
-    this.posterCard = `<article class="card grey darken-3">
+    this.posterCard = `<article id="intro" class="card grey darken-3">
     <div class="card-image hide-on-small-only">
     <a class="cursorZoom materialboxed"> <img class="responsive-img" src="https://drive.google.com/uc?export=download&id=${carteleraCut}"></a>
    </div>
