@@ -18,70 +18,6 @@
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script>
-    window.getPosition = function () {
-      navigator.geolocation.getCurrentPosition(success, error);
-
-      function success(position) {
-        var GEOCODING =
-          "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
-          position.coords.latitude +
-          "%2C" +
-          position.coords.longitude +
-          "&language=es";
-
-        $.getJSON(GEOCODING).done(function (geoLocation) {
-          window.geo = geoLocation;
-          // console.log(window.geo);
-          window.geoCity =
-            window.geo.results[0].address_components[3].long_name ||
-            "GPS no disponible";
-          window.geoCountry =
-            window.geo.results[0].address_components[5].long_name ||
-            "";
-        });
-      }
-      function error(err) {
-        // console.log(err);
-        window.geoCity = "GPS no disponible";
-        window.geoCountry = "";
-      }
-      return window.geoCity;
-    };
-    if (!navigator.geolocation === false) { window.getPosition(); }
-
-    window.HondurasCiudades = function () {
-      const Honduras = [
-        "Tegucigalpa",
-        "San Pedro Sula",
-        "Comayagua",
-        "Choluteca",
-        "Siguatepeque",
-        "El Progreso",
-        "Choloma",
-        "La Ceiba",
-        "Tela",
-        "Puerto Cortes",
-        "Danli",
-        "Juticalpa",
-        "Tocoa"
-      ];
-      window.HondurasCities = "";
-
-      for (var ciudad in Honduras) {
-        if (Honduras.hasOwnProperty(ciudad)) {
-          var city = Honduras[ciudad];
-          window.HondurasCities += `<option value="${city}">${city}</option>`;
-        }
-      }
-      return window.HondurasCities;
-    };
-    window.HondurasCiudades();
-    window.today = new Date();
-    window.today.dd = today.getDate();
-    window.today.mm = today.getMonth() + 1;
-    window.today.Mmm = "M" + (today.getMonth() + 1);
-  </script>
 </head>
 
 <body>
@@ -144,6 +80,83 @@
       </div>
     </div>
   </footer>
+  <script>
+    window.getPosition = function () {
+      navigator.geolocation.getCurrentPosition(success, error);
+
+      function success(position) {
+        var GEOCODING =
+          "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
+          position.coords.latitude +
+          "%2C" +
+          position.coords.longitude +
+          "&language=es";
+
+        $.getJSON(GEOCODING).done(function (geoLocation) {
+          window.geo = geoLocation;
+          // console.log(window.geo);
+          window.geoCity =
+            window.geo.results[0].address_components[3].long_name ||
+            "GPS no disponible";
+          window.geoCountry =
+            window.geo.results[0].address_components[5].long_name ||
+            "";
+        });
+      }
+      function error(err) {
+        // console.log(err);
+        window.geoCity = "GPS no disponible";
+        window.geoCountry = "";
+      }
+      return window.geoCity;
+    };
+    if (!navigator.geolocation === false) { window.getPosition(); }
+
+    window.HondurasCiudades = function () {
+      const Honduras = [
+        "Tegucigalpa",
+        "San Pedro Sula",
+        "Comayagua",
+        "Choluteca",
+        "Siguatepeque",
+        "El Progreso",
+        "Choloma",
+        "La Ceiba",
+        "Tela",
+        "Puerto Cortes",
+        "Danli",
+        "Juticalpa",
+        "Tocoa"
+      ];
+      window.HondurasCities = "";
+
+      for (var ciudad in Honduras) {
+        if (Honduras.hasOwnProperty(ciudad)) {
+          var city = Honduras[ciudad];
+          window.HondurasCities += `<option value="${city}">${city}</option>`;
+        }
+      }
+      return window.HondurasCities;
+    };
+
+    window.today = new Date();
+    window.today.dd = today.getDate();
+    window.today.mm = today.getMonth() + 1;
+    window.today.Mmm = "M" + (today.getMonth() + 1);
+    window.defaultCity = function () {
+      if (window.geoCity !== "GPS no disponible" && window.geoCity !== undefined) {
+        let data = window.HondurasCities;
+        let newData = `<option value="${window.geoCity}">${window.geoCity}</option>`;
+        window.HondurasCities = newData + data;
+      }
+      return window.HondurasCities;
+    };
+    window.addEventListener("DOMContentLoaded", function (event) {
+      window.HondurasCiudades();
+      window.defaultCity();
+      console.log("DOMContentLoaded");
+    });
+  </script>
   <script async src="bundle.js"></script>
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106538829-1"></script>

@@ -90,16 +90,7 @@ window.monthsYear = [
   "Noviembre",
   "Diciembre"
 ];
-window.defaultCity = function() {
-  if (window.geoCity != "GPS no disponible" && window.geoCity != "undefined") {
-    let data = window.HondurasCities;
-    let newData = `<option value="${window.geoCity}">${window.geoCity}</option>`;
-    window.HondurasCities = newData + data;
-  }
-  return window.HondurasCities;
-};
 
-window.defaultCity();
 const createMonthSets = function() {
   for (var index = 1; index <= 12; index++) {
     const name = "M" + index;
@@ -360,12 +351,12 @@ window.formPost = function() {
   }
 };
 
-const importMovies = (function() {
+const importMovies = function() {
   const imported = require("./export.json");
   imported.export.forEach(function(item) {
     new Movie(item);
   });
-})();
+};
 
 const movieSection = document.getElementById("movieCard");
 window.listMovies = function(set) {
@@ -434,16 +425,16 @@ window.navTabPopulate = function() {
   // $("ul.tabs").tabs();
   $("ul.tabs").tabs();
 };
-navTabPopulate();
-roundListMovies(Peliculas);
-roundListMovies([window.today.Mmm]);
-$("ul.tabs").tabs("select_tab", window.today.Mmm);
-window.addEventListener("load", function() {
-  document.getElementById(
-    "city"
-  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;
-  // function nextCarousel() {
-  //   $(".carousel").carousel("next");
-  // }
-  // window.setInterval(nextCarousel, 8000);
+
+document.getElementById(
+  "city"
+).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;
+window.addEventListener("load", function(event) {
+  console.log("Load Finished");
+  window.defaultCity();
+  importMovies();
+  navTabPopulate();
+  roundListMovies(Peliculas);
+  roundListMovies([window.today.Mmm]);
+  $("ul.tabs").tabs("select_tab", window.today.Mmm);
 });
