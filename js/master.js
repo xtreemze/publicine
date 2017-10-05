@@ -277,7 +277,7 @@ class Movie {
       <div class="input-field col s12">
       <i class="material-icons prefix">location_city</i>
       <select id="ciudad" required>
-      ${window.HondurasCiudades()}
+      ${window.HondurasCities}
       </select>
       <label for="ciudad">Ciudad:</label>
       </div>
