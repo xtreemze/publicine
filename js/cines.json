@@ -1,1 +1,76 @@
-cines
+{
+  "export": [
+    {
+      "Ciudad": "Tegucigalpa",
+      "Nombre": "City Mall",
+      "Cadena": "Cinemark",
+      "Salas": "7",
+      "Pais": "Honduras",
+      "WebURL": "https://www.cinemarkca.com/es",
+      "Ubicacion":
+        "https://www.google.com/maps/place/Cinemark+-+City+Mall+TGU/@14.0621176,-87.2229567,17z/data=!3m1!4b1!4m5!3m4!1s0x8f6fbd5fc1fddf57:0x8a651901b894fbce!8m2!3d14.0621124!4d-87.220768?hl=en-AU",
+      "TandaLunes": "3:00, 5:00, 7:00 ",
+      "TandaMartes": " 3:00, 5:00, 7:00",
+      "TandaMiercoles": " 5:00, 7:00",
+      "TandaJueves": " 7:00",
+      "TandaViernes": "5:00, 7:00",
+      "TandaSabado": "11:00, 1:00, 3:00, 5:00, 7:00",
+      "TandaDomingo": "11:00, 1:00, 3:00, 5:00, 7:00",
+      "Timestamp": "Thu Oct 05 2017 18:41:21 GMT-0400 (EDT)"
+    },
+    {
+      "Ciudad": "Tegucigalpa",
+      "Nombre": "Mall Multiplaza",
+      "Cadena": "Cinemark",
+      "Salas": "5",
+      "Pais": "Honduras",
+      "WebURL": "https://www.cinemarkca.com/es",
+      "Ubicacion":
+        "https://www.google.com/maps/place/Cinemark+-+City+Mall+TGU/@14.0621176,-87.2229567,17z/data=!3m1!4b1!4m5!3m4!1s0x8f6fbd5fc1fddf57:0x8a651901b894fbce!8m2!3d14.0621124!4d-87.220768?hl=en-AU",
+      "TandaLunes": "3:00, 5:00, 7:00, 9:00",
+      "TandaMartes": " 5:00, 7:00, 9:00",
+      "TandaMiercoles": "5:00, 7:00, 9:00",
+      "TandaJueves": "11:00, 1:00, 3:00, 5:00, 7:00, 9:00",
+      "TandaViernes": "11:00, 1:00, 3:00, 5:00, 7:00, 9:00",
+      "TandaSabado": "11:00, 1:00, 3:00, 5:00, 7:00, 9:00",
+      "TandaDomingo": "11:00, 1:00, 3:00, 5:00, 7:00, 9:00",
+      "Timestamp": "Thu Oct 05 2017 18:43:56 GMT-0400 (EDT)"
+    },
+    {
+      "Ciudad": "Tegucigalpa",
+      "Nombre": "Cascadas Mall",
+      "Cadena": "Cinépolis",
+      "Salas": "5",
+      "Pais": "Honduras",
+      "WebURL": "https://www.cinepolis.com.hn/",
+      "Ubicacion":
+        "https://www.google.com/maps/place/Cin%C3%A9polis/@14.0770262,-87.2023648,17z/data=!3m1!4b1!4m5!3m4!1s0x8f6fbd3666116eb7:0x86a96446dd5b6e8d!8m2!3d14.077021!4d-87.2001761?hl=en-AU",
+      "TandaLunes": "4:50, 7:15, 9:20",
+      "TandaMartes": " 4:50, 7:15, 9:20",
+      "TandaMiercoles": " 4:50, 7:15, 9:20",
+      "TandaJueves": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaViernes": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaSabado": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaDomingo": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "Timestamp": "Thu Oct 05 2017 18:47:22 GMT-0400 (EDT)"
+    },
+    {
+      "Ciudad": "Tegucigalpa",
+      "Nombre": "Mall Premier",
+      "Cadena": "Cinépolis",
+      "Salas": "5",
+      "Pais": "Honduras",
+      "WebURL": "https://www.cinepolis.com.hn/",
+      "Ubicacion":
+        "https://www.google.com/maps/place/Cinepolis+Mall+Premier/@14.1050831,-87.236277,17z/data=!3m1!4b1!4m5!3m4!1s0x8f6f9812fbe89c4d:0xc8d54015bb00b934!8m2!3d14.1050779!4d-87.2340883?hl=en-AU",
+      "TandaLunes": "4:50, 7:15, 9:20",
+      "TandaMartes": "4:50, 7:15, 9:20",
+      "TandaMiercoles": "4:50, 7:15, 9:20",
+      "TandaJueves": "1:00, 3:00, 7:15, 9:20",
+      "TandaViernes": "1:00, 3:00, 7:15, 9:20",
+      "TandaSabado": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaDomingo": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "Timestamp": "Thu Oct 05 2017 10:48:55 GMT-0400 (EDT)"
+    }
+  ]
+}

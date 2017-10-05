@@ -121,24 +121,24 @@ window.Honduras = [
   "Tocoa"
 ];
 
-window.HondurasCiudades = function() {
-  let content = "";
+window.HondurasCiudades = (function() {
+  window.HondurasCities = "";
   if (window.geoCity != "GPS no disponible" && window.geoCity != "undefined") {
-    content += `<option value="${window.geoCity}">${window.geoCity}</option>`;
+    window.HondurasCities += `<option value="${window.geoCity}">${window.geoCity}</option>`;
   } else if (window.geoCity == "undefined") {
     if (!navigator.geolocation === false) {
       window.getPosition();
-      content += `<option value="${window.geoCity}">${window.geoCity}</option>`;
+      window.HondurasCities += `<option value="${window.geoCity}">${window.geoCity}</option>`;
     }
   }
   for (var ciudad in window.Honduras) {
     if (window.Honduras.hasOwnProperty(ciudad)) {
       var city = window.Honduras[ciudad];
-      content += `<option value="${city}">${city}</option>`;
+      window.HondurasCities += `<option value="${city}">${city}</option>`;
     }
   }
-  return content;
-};
+  return window.HondurasCities;
+})();
 
 class Cines {
   /**
@@ -159,7 +159,13 @@ class Cines {
     Ciudad,
     Nombre,
     Cadena,
-    Tandas,
+    TandaLunes,
+    TandaMartes,
+    TandaMiercoles,
+    TandaJueves,
+    TandaViernes,
+    TandaSabado,
+    TandaDomingo,
     Salas,
     Pais,
     WebURL,
@@ -168,8 +174,14 @@ class Cines {
     this.ciudad = Ciudad || "No disponible";
     this.nombre = Nombre || "No disponible";
     this.cadena = Cadena || "No disponible";
-    this.tandas = Tandas || "No disponible";
-    this.salas = Salas || "No disponible";
+    this.lunes = TandaLunes || "No disponible";
+    this.lunes = TandaMartes || "No disponible";
+    this.martes = TandaMiercoles || "No disponible";
+    this.miercoles = TandaJueves || "No disponible";
+    this.jueves = TandaViernes || "No disponible";
+    this.viernes = TandaSabado || "No disponible";
+    this.sabado = TandaDomingo || "No disponible";
+    this.domingo = Salas || "No disponible";
     this.pais = Pais || "Honduras";
     this.web = WebURL || "No disponible";
     this.ubicacion = Ubicacion || "No disponible";
@@ -228,7 +240,6 @@ class Movie {
       ""
     );
     const month = "M" + parseInt(estreno[3] + estreno[4], 10);
-    console.log(month);
     window[month].add(this);
     this.duracion = duracion.trim() || "No disponible";
     this.genero = genero.trim() || "No disponible";
@@ -290,7 +301,7 @@ class Movie {
       <div class="input-field col s12">
       <i class="material-icons prefix">location_city</i>
       <select id="ciudad" required>
-      ${window.HondurasCiudades()}
+      ${window.HondurasCities}
       </select>
       <label for="ciudad">Ciudad:</label>
       </div>
