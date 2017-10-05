@@ -1,6 +1,141 @@
 {
   "export": [
     {
+      "titulo": "Kingsman: El Círculo Dorado",
+      "estreno": "28/09/2017",
+      "genero": "Acción ",
+      "clasificacion": "C",
+      "duracion": "2h 21min",
+      "director": "Matthew Vaughn",
+      "lenguaje": "Subtitulado",
+      "formato": "2D",
+      "ciudad": "",
+      "cines": "",
+      "elenco":
+        "Taron Egerton, Edward Holcroft, Mark Strong, Julianne Moore, Channing Tatum, Halle Berry, Jeff Bridges",
+      "synopsis":
+        "Después de que la base de operaciones de los Kingsman en Londres explote por los aires, Gary 'Eggsy' Unwin (Taron Egerton), que ya es un Kingsman de pleno derecho, y su compañero Merlin (Mark Strong) se verán obligados a viajar juntos hasta Estados Unidos. Allí, ambos deberán unirse a sus homólogos norteamericanos, los integrantes de una asociación secreta conocida como Statesman, que está liderada por el agente Champ (Jeff Bridges) y que, además, cuenta con los agentes Tequila (Channing Tatum), Whiskey (Pedro Pascal) y la gurú de la tecnología Ginger (Halle Berry).",
+      "cartelera":
+        "https://drive.google.com/open?id=0B06jgNMPyWDAYWo3MFJTYkg4ejA",
+      "trailer": "https://www.youtube.com/watch?v=T8MbXQitTrY",
+      "Marca temporal": "Wed Sep 27 2017 19:27:08 GMT-0400 (EDT)"
+    },
+    {
+      "titulo": "Asesino: Misión Venganza",
+      "estreno": "28/09/2017",
+      "genero": "Acción ",
+      "clasificacion": "C",
+      "duracion": "1h 52min ",
+      "director": "Michael Cuesta",
+      "lenguaje": "Subtitulado",
+      "formato": "2D",
+      "ciudad": "",
+      "cines": "",
+      "elenco": "Dylan O'Brien, Michael Keaton, Sanaa Lathan",
+      "synopsis":
+        "Esta película es la adaptación cinematográfica de la novela homónima de Vince Flynnm, cuya trama presenta a Mitch Rapp (Dylan O'Brien), un estudiante ejemplar que, tras la terrible muerte de su novia en una playa a manos de unos terorristas, decide cambiar el rumbo de su vida y dedicarse a la caza de esta clase de delincuentes. Un año más tarde, entra en las filas de la CIA, institución en la que estará a las órdenes de su mentor, Stan Hurley (Michael Keaton).",
+      "cartelera":
+        "https://drive.google.com/open?id=0B06jgNMPyWDAQkdxZnNJNThPLWc",
+      "trailer": "https://www.youtube.com/watch?v=Qk6aScz33-I",
+      "Marca temporal": "Wed Sep 27 2017 19:41:02 GMT-0400 (EDT)"
+    },
+    {
+      "titulo": "7 Deseos",
+      "estreno": "28/09/2017",
+      "genero": "Terror",
+      "clasificacion": "C",
+      "duracion": "1h 30min",
+      "director": "John R. Leonetti",
+      "lenguaje": "Subtitulado",
+      "formato": "2D",
+      "ciudad": "",
+      "cines": "",
+      "elenco": " Joey King, Ryan Phillippe, Ki Hong Lee",
+      "synopsis":
+        "Claire, una adolescente de 16 años, acaba de descubrir una caja con poderes mágicos. El misterioso objeto puede concederle a la joven hasta siete deseos, con los que podría alcanzar la vida que siempre ha querido. Pero no será tan fácil, pues el poderoso objeto oculta un terrible secreto y ella tendrá que enfrentarse a las sangrientas consecuencias de sus peticiones. ",
+      "cartelera":
+        "https://drive.google.com/open?id=0B06jgNMPyWDATVhVSzlDT2JGQjA",
+      "trailer": "https://www.youtube.com/watch?v=YYriP0gHaaM",
+      "Marca temporal": "Wed Sep 27 2017 19:43:31 GMT-0400 (EDT)"
+    },
+    {
+      "titulo": "Más allá de la Montaña (The Mountain Between Us)",
+      "estreno": "19/10/2017",
+      "genero": "Drama",
+      "clasificacion": "B",
+      "duracion": "1h 43min",
+      "director": "Hany Abu-Assad",
+      "lenguaje": "Subtitulado",
+      "formato": "2D",
+      "ciudad": "",
+      "cines": "",
+      "elenco": " Idris Elba, Kate Winslet, Beau Bridges",
+      "synopsis":
+        "La historia de La montaña entre nosotros se centra en dos personajes. Por un lado tenemos al reputado cirujano Ben Bass (Idris Elba, La torre oscura) que tiene que desplazarse hasta Baltimore para realizar una operación de urgencia. Por otro, tenemos a Alex Martin (Kate Winslet, Steve Jobs) que va camino de su boda. Como andan algo ajustados de tiempo, y hay problemas con sus vuelos, Alex propone a Ben alquilar una avioneta y llegar sin problemas a sus destinos. ",
+      "cartelera":
+        "https://drive.google.com/open?id=0B06jgNMPyWDAOGhVVE8wYk52elU",
+      "trailer": "https://www.youtube.com/watch?v=78jhbgygt9c",
+      "Marca temporal": "Fri Sep 29 2017 01:29:29 GMT-0400 (EDT)"
+    },
+    {
+      "titulo": "Geo-Tormenta (Geostorm)",
+      "estreno": "19/10/2017",
+      "genero": "Acción / Ciencia ficción ",
+      "clasificacion": "B",
+      "duracion": " 1h 49min",
+      "director": " Dean Devlin",
+      "lenguaje": "Subtitulado",
+      "formato": "2D",
+      "ciudad": "",
+      "cines": "",
+      "elenco":
+        "Jeremy Ray Taylor, Gerard Butler, Abbie  Cornish, Ed Harris, Zazie Beetz, Andy Garcia, Eugenio Derbez",
+      "synopsis":
+        "Después de una serie sin precedentes de desastres naturales que amenazaron al planeta, los líderes del mundo se unen para crear una compleja red de satélites para controlar el clima global y mantener a todos seguros. Pero ahora algo ha fallado — el sistema construido para proteger a la Tierra lo está atacando, y hay una carrera contra el reloj para descubrir la verdadera amenaza antes de que geostorm acabe con todo ... y todo el mundo junto con él. ",
+      "cartelera":
+        "https://drive.google.com/open?id=0B06jgNMPyWDAa2lZS1lZaVJucDQ",
+      "trailer": "https://www.youtube.com/watch?v=APBDcmrUNe0",
+      "Marca temporal": "Fri Sep 29 2017 01:08:23 GMT-0400 (EDT)"
+    },
+    {
+      "titulo": "Condorito: La Película",
+      "estreno": "12/10/2017",
+      "genero": "Animación",
+      "clasificacion": "A",
+      "duracion": "1h 23min",
+      "director": "Alex Orrelle, Eduardo Schuldt",
+      "lenguaje": "Subtitulado",
+      "formato": "2D",
+      "ciudad": "",
+      "cines": "",
+      "elenco": "Omar Chaparro, Jessica Cediel, Cristián de la Fuente",
+      "synopsis":
+        "Condorito emprenderá, junto a su tenaz sobrino Coné, una peligrosa aventura para rescatar a su desaparecida suegra Doña Tremebunda, abducida misteriosamente por una banda alienígena.",
+      "cartelera":
+        "https://drive.google.com/open?id=0B06jgNMPyWDAc2libFJWTkRESDA",
+      "trailer": "https://www.youtube.com/watch?v=2K5pQcCvJPg",
+      "Marca temporal": "Fri Sep 29 2017 00:19:48 GMT-0400 (EDT)"
+    },
+    {
+      "titulo": "Línea Mortal: Al Límite",
+      "estreno": "12/10/2017",
+      "genero": "Drama / Terror",
+      "clasificacion": "B",
+      "duracion": "1h 48min ",
+      "director": " Niels Arden Oplev",
+      "lenguaje": "Subtitulado",
+      "formato": "2D",
+      "ciudad": "",
+      "cines": "",
+      "elenco": "Ellen Page, Diego Luna, Nina Dobrev",
+      "synopsis":
+        "Un grupo de jóvenes estudiantes de medicina llevan a cabo un experimento que implica la muerte provocada y la posterior resucitación de su compañera Courtney (Ellen Page). El objetivo de parar su corazón durante un minuto es lograr investigar el más allá. Al principio todo parece un absoluto éxito, por lo que los demás se animan a probarlo para descubrir qué hay al otro lado. Pero las cosas empiezan a ir mal cuando Courtney se da cuenta de que ahora puede ver a los no muertos y de que, poco a poco, empieza a ser incapaz de distinguir entre lo que es real y lo que no. Así los estudiantes descubrirán que no es fácil engañar a la muerte. ",
+      "cartelera":
+        "https://drive.google.com/open?id=0B06jgNMPyWDAUUsyVGh6LWdYZUk",
+      "trailer": "https://www.youtube.com/watch?v=uc15Dvn1u9Q",
+      "Marca temporal": "Fri Sep 29 2017 00:45:50 GMT-0400 (EDT)"
+    },
+    {
       "titulo": "Logan Lucky (La Estafa de Los Logan)",
       "estreno": "05/10/2017",
       "genero": "Comedia",
@@ -77,139 +212,25 @@
       "Marca temporal": "Thu Sep 28 2017 00:57:49 GMT-0400 (EDT)"
     },
     {
-      "titulo": "Condorito: La Película",
-      "estreno": "12/10/2017",
-      "genero": "Animación",
+      "titulo": "Thor: Ragnarok",
+      "estreno": "Thu Oct 26 2017 02:00:00 GMT-0400 (EDT)",
+      "genero": "Acción",
       "clasificacion": "A",
-      "duracion": "1h 23min",
-      "director": "Alex Orrelle, Eduardo Schuldt",
-      "lenguaje": "Subtitulado",
-      "formato": "2D",
-      "ciudad": "",
-      "cines": "",
-      "elenco": "Omar Chaparro, Jessica Cediel, Cristián de la Fuente",
+      "duracion": "2h 10min",
+      "director": "Taika Waititi",
+      "lenguaje": "Inglés con subtítulos en español",
+      "formato": "3D",
+      "ciudad":
+        "Tegucigalpa, San Pedro Sula, Comayagua, Choluteca, Siguatepeque, El Progreso, Choloma, La Ceiba, Tela, Puerto Cortes",
+      "cines":
+        "Tegucigalpa, San Pedro Sula, Comayagua, Choluteca, Siguatepeque, El Progreso, Choloma, La Ceiba, Tela, Puerto Cortes",
+      "elenco": " Chris Hemsworth, Tom Hiddleston, Cate Blanchett",
       "synopsis":
-        "Condorito emprenderá, junto a su tenaz sobrino Coné, una peligrosa aventura para rescatar a su desaparecida suegra Doña Tremebunda, abducida misteriosamente por una banda alienígena.",
+        "Asgard se encuentra en manos de una poderosa amenaza, la despiadada y todopoderosa Hela (Cate Blanchett), que ha robado el trono y ha encarcelado a Thor (Chris Hemsworth), enviándole como prisionero hasta el otro extremo de la galaxia. Sin su martillo, el mítico y poderoso Mjölnir, el Dios del Trueno se encontrará a sí mismo en una carrera contra el tiempo. ",
       "cartelera":
-        "https://drive.google.com/open?id=0B06jgNMPyWDAc2libFJWTkRESDA",
-      "trailer": "https://www.youtube.com/watch?v=2K5pQcCvJPg",
-      "Marca temporal": "Fri Sep 29 2017 00:19:48 GMT-0400 (EDT)"
-    },
-    {
-      "titulo": "Línea Mortal: Al Límite",
-      "estreno": "12/10/2017",
-      "genero": "Drama / Terror",
-      "clasificacion": "B",
-      "duracion": "1h 48min ",
-      "director": " Niels Arden Oplev",
-      "lenguaje": "Subtitulado",
-      "formato": "2D",
-      "ciudad": "",
-      "cines": "",
-      "elenco": "Ellen Page, Diego Luna, Nina Dobrev",
-      "synopsis":
-        "Un grupo de jóvenes estudiantes de medicina llevan a cabo un experimento que implica la muerte provocada y la posterior resucitación de su compañera Courtney (Ellen Page). El objetivo de parar su corazón durante un minuto es lograr investigar el más allá. Al principio todo parece un absoluto éxito, por lo que los demás se animan a probarlo para descubrir qué hay al otro lado. Pero las cosas empiezan a ir mal cuando Courtney se da cuenta de que ahora puede ver a los no muertos y de que, poco a poco, empieza a ser incapaz de distinguir entre lo que es real y lo que no. Así los estudiantes descubrirán que no es fácil engañar a la muerte. ",
-      "cartelera":
-        "https://drive.google.com/open?id=0B06jgNMPyWDAUUsyVGh6LWdYZUk",
-      "trailer": "https://www.youtube.com/watch?v=uc15Dvn1u9Q",
-      "Marca temporal": "Fri Sep 29 2017 00:45:50 GMT-0400 (EDT)"
-    },
-    {
-      "titulo": "Más allá de la Montaña (The Mountain Between Us)",
-      "estreno": "19/10/2017",
-      "genero": "Drama",
-      "clasificacion": "B",
-      "duracion": "1h 43min",
-      "director": "Hany Abu-Assad",
-      "lenguaje": "Subtitulado",
-      "formato": "2D",
-      "ciudad": "",
-      "cines": "",
-      "elenco": " Idris Elba, Kate Winslet, Beau Bridges",
-      "synopsis":
-        "La historia de La montaña entre nosotros se centra en dos personajes. Por un lado tenemos al reputado cirujano Ben Bass (Idris Elba, La torre oscura) que tiene que desplazarse hasta Baltimore para realizar una operación de urgencia. Por otro, tenemos a Alex Martin (Kate Winslet, Steve Jobs) que va camino de su boda. Como andan algo ajustados de tiempo, y hay problemas con sus vuelos, Alex propone a Ben alquilar una avioneta y llegar sin problemas a sus destinos. ",
-      "cartelera":
-        "https://drive.google.com/open?id=0B06jgNMPyWDAOGhVVE8wYk52elU",
-      "trailer": "https://www.youtube.com/watch?v=78jhbgygt9c",
-      "Marca temporal": "Fri Sep 29 2017 01:29:29 GMT-0400 (EDT)"
-    },
-    {
-      "titulo": "Geo-Tormenta (Geostorm)",
-      "estreno": "19/10/2017",
-      "genero": "Acción / Ciencia ficción ",
-      "clasificacion": "B",
-      "duracion": " 1h 49min",
-      "director": " Dean Devlin",
-      "lenguaje": "Subtitulado",
-      "formato": "2D",
-      "ciudad": "",
-      "cines": "",
-      "elenco":
-        "Jeremy Ray Taylor, Gerard Butler, Abbie  Cornish, Ed Harris, Zazie Beetz, Andy Garcia, Eugenio Derbez",
-      "synopsis":
-        "Después de una serie sin precedentes de desastres naturales que amenazaron al planeta, los líderes del mundo se unen para crear una compleja red de satélites para controlar el clima global y mantener a todos seguros. Pero ahora algo ha fallado — el sistema construido para proteger a la Tierra lo está atacando, y hay una carrera contra el reloj para descubrir la verdadera amenaza antes de que geostorm acabe con todo ... y todo el mundo junto con él. ",
-      "cartelera":
-        "https://drive.google.com/open?id=0B06jgNMPyWDAa2lZS1lZaVJucDQ",
-      "trailer": "https://www.youtube.com/watch?v=APBDcmrUNe0",
-      "Marca temporal": "Fri Sep 29 2017 01:08:23 GMT-0400 (EDT)"
-    },
-    {
-      "titulo": "Kingsman: El Círculo Dorado",
-      "estreno": "28/09/2017",
-      "genero": "Acción ",
-      "clasificacion": "C",
-      "duracion": "2h 21min",
-      "director": "Matthew Vaughn",
-      "lenguaje": "Subtitulado",
-      "formato": "2D",
-      "ciudad": "",
-      "cines": "",
-      "elenco":
-        "Taron Egerton, Edward Holcroft, Mark Strong, Julianne Moore, Channing Tatum, Halle Berry, Jeff Bridges",
-      "synopsis":
-        "Después de que la base de operaciones de los Kingsman en Londres explote por los aires, Gary 'Eggsy' Unwin (Taron Egerton), que ya es un Kingsman de pleno derecho, y su compañero Merlin (Mark Strong) se verán obligados a viajar juntos hasta Estados Unidos. Allí, ambos deberán unirse a sus homólogos norteamericanos, los integrantes de una asociación secreta conocida como Statesman, que está liderada por el agente Champ (Jeff Bridges) y que, además, cuenta con los agentes Tequila (Channing Tatum), Whiskey (Pedro Pascal) y la gurú de la tecnología Ginger (Halle Berry).",
-      "cartelera":
-        "https://drive.google.com/open?id=0B06jgNMPyWDAYWo3MFJTYkg4ejA",
-      "trailer": "https://www.youtube.com/watch?v=T8MbXQitTrY",
-      "Marca temporal": "Wed Sep 27 2017 19:27:08 GMT-0400 (EDT)"
-    },
-    {
-      "titulo": "Asesino: Misión Venganza",
-      "estreno": "28/09/2017",
-      "genero": "Acción ",
-      "clasificacion": "C",
-      "duracion": "1h 52min ",
-      "director": "Michael Cuesta",
-      "lenguaje": "Subtitulado",
-      "formato": "2D",
-      "ciudad": "",
-      "cines": "",
-      "elenco": "Dylan O'Brien, Michael Keaton, Sanaa Lathan",
-      "synopsis":
-        "Esta película es la adaptación cinematográfica de la novela homónima de Vince Flynnm, cuya trama presenta a Mitch Rapp (Dylan O'Brien), un estudiante ejemplar que, tras la terrible muerte de su novia en una playa a manos de unos terorristas, decide cambiar el rumbo de su vida y dedicarse a la caza de esta clase de delincuentes. Un año más tarde, entra en las filas de la CIA, institución en la que estará a las órdenes de su mentor, Stan Hurley (Michael Keaton).",
-      "cartelera":
-        "https://drive.google.com/open?id=0B06jgNMPyWDAQkdxZnNJNThPLWc",
-      "trailer": "https://www.youtube.com/watch?v=Qk6aScz33-I",
-      "Marca temporal": "Wed Sep 27 2017 19:41:02 GMT-0400 (EDT)"
-    },
-    {
-      "titulo": "7 Deseos",
-      "estreno": "28/09/2017",
-      "genero": "Terror",
-      "clasificacion": "C",
-      "duracion": "1h 30min",
-      "director": "John R. Leonetti",
-      "lenguaje": "Subtitulado",
-      "formato": "2D",
-      "ciudad": "",
-      "cines": "",
-      "elenco": " Joey King, Ryan Phillippe, Ki Hong Lee",
-      "synopsis":
-        "Claire, una adolescente de 16 años, acaba de descubrir una caja con poderes mágicos. El misterioso objeto puede concederle a la joven hasta siete deseos, con los que podría alcanzar la vida que siempre ha querido. Pero no será tan fácil, pues el poderoso objeto oculta un terrible secreto y ella tendrá que enfrentarse a las sangrientas consecuencias de sus peticiones. ",
-      "cartelera":
-        "https://drive.google.com/open?id=0B06jgNMPyWDATVhVSzlDT2JGQjA",
-      "trailer": "https://www.youtube.com/watch?v=YYriP0gHaaM",
-      "Marca temporal": "Wed Sep 27 2017 19:43:31 GMT-0400 (EDT)"
+        "https://drive.google.com/open?id=0B06jgNMPyWDARzZQenRlNlQzX1E",
+      "trailer": "https://www.youtube.com/watch?v=6fdK9bTM7ig",
+      "Marca temporal": "Thu Oct 05 2017 10:02:51 GMT-0400 (EDT)"
     }
   ]
 }

@@ -50,17 +50,17 @@ window.delayedTouch = function(movie) {
   window.timer2 = window.setTimeout(function() {
     window["img" + movie.shortTitle].click();
     window.clearTimeout(window.timer2);
-  }, 100);
+  }, 92);
   window.timer = window.setTimeout(function() {
     window.listMovie(movie);
     window.clearTimeout(window.timer);
-  }, 1000);
+  }, 600);
   window.timer3 = window.setTimeout(function() {
     document
       .getElementById("intro")
       .scrollIntoView({ block: "end", inline: "nearest", behavior: "smooth" });
     window.clearTimeout(window.timer3);
-  }, 3000);
+  }, 600);
 };
 
 window.clearTimer = function() {
@@ -113,7 +113,7 @@ window.HondurasCiudades = function() {
     if (!navigator.geolocation === false) {
       window.getPosition();
     }
-    content += `<option value="${window.geoCity}">${window.geoCity}</option>`;
+    content += `<option value="${window.getPosition()}">${window.geoCity}</option>`;
   }
   for (var ciudad in window.Honduras) {
     if (window.Honduras.hasOwnProperty(ciudad)) {
@@ -291,7 +291,7 @@ class Movie {
       </article>
      </div>
      <div class="card-action">
-     <a onclick="window.formPost()" class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event_seat</i></a>
+     <a onclick="window.formPost()" class="btn-floating halfway-fab btn-large waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event_seat</i></a>
   <a class="yellow-text text-darken-3">Taquilla</a>
   </div>
   </form>`;
@@ -454,7 +454,7 @@ window.addEventListener("load", function() {
   $("ul.tabs").tabs("select_tab", window.today.Mmm);
   document.getElementById(
     "city"
-  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity}, ${window.geoCountry}`;
+  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;
   // function nextCarousel() {
   //   $(".carousel").carousel("next");
   // }
