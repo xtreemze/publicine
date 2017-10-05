@@ -90,6 +90,21 @@ window.monthsYear = [
   "Noviembre",
   "Diciembre"
 ];
+const createMonthSets = function() {
+  for (var index = 1; index <= 12; index++) {
+    const name = "M" + index;
+    window[name] = new Set();
+    window.Months.add(window[name]);
+    window[name].name = monthsYear[index - 1];
+    window[name].month = name;
+    window[
+      name
+    ].tabContent = `<li class="tab pointer"><a href="#${name}" onclick="roundListMovies(${name})">${window[
+      name
+    ].name}</a></li>`;
+  }
+};
+createMonthSets();
 window.Honduras = [
   "Tegucigalpa",
   "San Pedro Sula",
@@ -105,6 +120,7 @@ window.Honduras = [
   "Juticalpa",
   "Tocoa"
 ];
+
 window.HondurasCiudades = function() {
   let content = "";
   if (window.geoCity != "GPS no disponible" && window.geoCity != "undefined") {
@@ -112,8 +128,8 @@ window.HondurasCiudades = function() {
   } else if (window.geoCity == "undefined") {
     if (!navigator.geolocation === false) {
       window.getPosition();
+      content += `<option value="${window.geoCity}">${window.geoCity}</option>`;
     }
-    content += `<option value="${window.getPosition()}">${window.geoCity}</option>`;
   }
   for (var ciudad in window.Honduras) {
     if (window.Honduras.hasOwnProperty(ciudad)) {
@@ -211,8 +227,8 @@ class Movie {
       "https://www.youtube.com/watch?v=",
       ""
     );
-    const month =
-      "M" + parseInt(estreno[3] + estreno[4], 10) || "No disponible";
+    const month = "M" + parseInt(estreno[3] + estreno[4], 10);
+    console.log(month);
     window[month].add(this);
     this.duracion = duracion.trim() || "No disponible";
     this.genero = genero.trim() || "No disponible";
@@ -357,24 +373,13 @@ window.formPost = function() {
   }
 };
 
-const importJSON = (function() {
-  for (var index = 1; index <= 12; index++) {
-    const name = "M" + index;
-    window[name] = new Set();
-    Months.add(window[name]);
-    window[name].name = monthsYear[index - 1];
-    window[name].month = name;
-    window[
-      name
-    ].tabContent = `<li class="tab pointer"><a href="#${name}" onclick="roundListMovies(${name})">${window[
-      name
-    ].name}</a></li>`;
-  }
+const importMovies = (function() {
   const imported = require("./export.json");
   imported.export.forEach(function(item) {
     new Movie(item);
   });
 })();
+
 const movieSection = document.getElementById("movieCard");
 window.listMovies = function(set) {
   movieSection.innerHTML = "";
