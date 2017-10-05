@@ -18,6 +18,34 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
+  <script>
+    window.getPosition = function () {
+      navigator.geolocation.getCurrentPosition(success, error);
+
+      function success(position) {
+        var GEOCODING =
+          "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
+          position.coords.latitude +
+          "%2C" +
+          position.coords.longitude +
+          "&language=es";
+
+        $.getJSON(GEOCODING).done(function (geoLocation) {
+          window.geo = geoLocation;
+          // console.log(window.geo);
+          window.geoCity =
+            window.geo.results[0].address_components[5].long_name ||
+            "GPS no disponible";
+        });
+      }
+      function error(err) {
+        // console.log(err);
+        window.geoCity = "GPS no disponible";
+      }
+      return window.geoCity;
+    };
+    window.getPosition();
+  </script>
 </head>
 
 <body>

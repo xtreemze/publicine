@@ -49,37 +49,6 @@ jQuery.extend(jQuery.fn.pickadate.defaults, {
 jQuery.extend(jQuery.fn.pickatime.defaults, {
   clear: "borrar"
 });
-
-navigator.geolocation.getCurrentPosition(success, error);
-
-function success(position) {
-  var GEOCODING =
-    "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
-    position.coords.latitude +
-    "%2C" +
-    position.coords.longitude +
-    "&language=es";
-
-  $.getJSON(GEOCODING).done(function(geoLocation) {
-    window.geo = geoLocation;
-    console.log(window.geo);
-    window.yourCity();
-  });
-}
-
-function error(err) {
-  console.log(err);
-  window.yourCity();
-}
-window.yourCity = function() {
-  if (!window.geoCity && window.geo) {
-    window.geoCity = window.geo.results[4].formatted_address;
-  } else if (!window.geoCity && !window.geo) {
-    window.geoCity = "GPS no disponible";
-  }
-  return window.geoCity;
-};
-window.yourCity();
 window.Peliculas = new Set();
 window.Cines = new Set();
 window.EnCines = new Set();
@@ -115,6 +84,9 @@ window.Honduras = [
 ];
 window.HondurasCiudades = function() {
   let content = "";
+  if (window.geoCity != "GPS no disponible") {
+    content += `<option value="${window.geoCity}">${window.geoCity}</option>`;
+  }
   for (var ciudad in window.Honduras) {
     if (window.Honduras.hasOwnProperty(ciudad)) {
       var city = window.Honduras[ciudad];
@@ -125,6 +97,20 @@ window.HondurasCiudades = function() {
 };
 
 class Cines {
+  /**
+   * Creates an instance of Cines.
+   * @param {Object} {
+   *     Ciudad,
+   *     Nombre,
+   *     Cadena,
+   *     Tandas,
+   *     Salas,
+   *     Pais,
+   *     WebURL,
+   *     Ubicacion
+   *   } 
+   * @memberof Cines
+   */
   constructor({
     Ciudad,
     Nombre,
@@ -148,6 +134,27 @@ class Cines {
 }
 
 class Movie {
+  /**
+   * Creates an instance of Movie.
+   * @param {Object} {
+   *     titulo,
+   *     estreno,
+   *     trailer,
+   *     mes,
+   *     duracion,
+   *     genero,
+   *     director,
+   *     elenco,
+   *     lenguaje,
+   *     formato,
+   *     ciudad,
+   *     cines,
+   *     clasificacion,
+   *     synopsis,
+   *     cartelera
+   *   } 
+   * @memberof Movie
+   */
   constructor({
     titulo,
     estreno,
@@ -232,50 +239,36 @@ class Movie {
     </div>
   </article>`;
     this.locationCard = `
-    <article class="card grey darken-3">
+    <form class="card grey darken-3">
     <div class="card-content yellow-text text-darken-3">
-    <div class="row">
+    <article class="row">
       <div class="input-field col s12">
       <i class="material-icons prefix">location_city</i>
-      <select id="ciudad">
-      <option value="${window.yourCity()}">${window.yourCity()}</option>
+      <select id="ciudad" required>
       ${window.HondurasCiudades()}
       </select>
       <label for="ciudad">Ciudad:</label>
       </div>
       <div class="input-field col s12 m12 l8">
       <i class="material-icons prefix">event</i>
-        <input id="fecha" type="text" class="datepicker">
+        <input id="fecha" type="date" data-value="${window.Date.now()}" class="datepicker" required>
         <label for="fecha">Fecha:</label> 
       </div>
       <div class="input-field col s12 m12 l4">
       <i class="material-icons prefix">access_time</i>
-      <input id="hora" type="text" class="timepicker">
+      <input id="hora" type="text" value="05:00PM" class="timepicker" required>
       <label for="hora">Hora:</label>
       </div>
-      </div>
+      </article>
      </div>
      <div class="card-action">
-     <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event_seat</i></a>
+     <a onclick="window.formPost()" class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event_seat</i></a>
   <a class="yellow-text text-darken-3">Taquilla</a>
   </div>
-  </article>`;
+  </form>`;
     this.roundListContent = `<a ontouchend="window.listMovie(window['${this
       .titulo}'])" onclick="window.listMovie(window['${this
       .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
-    // this.chips = `  <article class="card grey darken-3"><div class="card-content grey-text text-lighten-2">
-    //   <span class="yellow-text text-darken-3">
-    //   <div class="chip yellow darken-3"><i class="material-icons tiny">movie_filter</i> ${this
-    //     .genero}</div>
-    //   <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> ${this
-    //     .clasificacion}</div>
-    //   <div class="chip yellow darken-3"><i class="material-icons tiny">timer</i> ${this
-    //     .duracion}</div>
-    //   <div class="chip yellow darken-3"><i class="material-icons tiny">new_releases</i> ${this
-    //     .estrenoMonth}</div>
-
-    //   </span>
-    //   </div></article>`;
     this.cardContent = ` <article class="card grey darken-3">
     <div class="card-content grey-text text-lighten-2">
     <p>${this.synopsis}</p></div>
@@ -303,6 +296,27 @@ class Movie {
   `;
   }
 }
+
+window.formPost = function() {
+  if (
+    window.ciudad.value.length > 1 &&
+    window.fecha.value.length > 1 &&
+    window.hora.value.length > 1
+  ) {
+    Materialize.toast(
+      `${window.currentMovie.titulo} en ${window.ciudad.value}, ${window.fecha
+        .value}, ${window.hora.value}`,
+      4000,
+      "rounded yellow darken-3 grey-text text-darken-3"
+    );
+  } else {
+    Materialize.toast(
+      `El formulario esta incompleto. Llenalo para tener resultados.`,
+      4000,
+      "rounded yellow darken-3 grey-text text-darken-3"
+    );
+  }
+};
 
 const importJSON = (function() {
   for (var index = 1; index <= 12; index++) {
@@ -332,10 +346,8 @@ window.listMovies = function(set) {
   movieSection.innerHTML = content;
 };
 window.listMovie = function(movie) {
+  window.currentMovie = movie;
   let content = "";
-  if (window.geoCity == "undefined") {
-    window.yourCity();
-  }
   content += movie.card;
   movieSection.innerHTML = content;
   $(".chips").material_chip();
@@ -360,6 +372,7 @@ window.listMovie = function(movie) {
     ampmclickable: true, // make AM PM clickable
     aftershow: function() {} //Function for after opening timepicker
   });
+  Materialize.updateTextFields();
 };
 
 const roundList = document.getElementById("roundList");
@@ -393,6 +406,7 @@ window.navTabPopulate = function() {
 navTabPopulate();
 
 window.addEventListener("load", function() {
+  roundListMovies(Peliculas);
   window.today = new Date();
   window.today.dd = today.getDate();
   window.today.mm = today.getMonth() + 1;
@@ -401,10 +415,9 @@ window.addEventListener("load", function() {
   $("ul.tabs").tabs("select_tab", window.today.Mmm);
   document.getElementById(
     "city"
-  ).innerHTML = `<i class="material-icons">location_city</i> ${window.yourCity()}`;
+  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity}`;
   // function nextCarousel() {
   //   $(".carousel").carousel("next");
   // }
   // window.setInterval(nextCarousel, 8000);
 });
-// listMovies(Peliculas);
