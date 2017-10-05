@@ -425,13 +425,12 @@ window.navTabPopulate = function() {
   // $("ul.tabs").tabs();
   $("ul.tabs").tabs();
 };
-
-document.getElementById(
-  "city"
-).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;
 window.addEventListener("load", function(event) {
   console.log("Load Finished");
   window.defaultCity();
+  document.getElementById(
+    "city"
+  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;
   importMovies();
   navTabPopulate();
   roundListMovies(Peliculas);
