@@ -25,7 +25,6 @@
         window.geoCity = "GPS no disponible";
         window.geoCountry = "";
       }
-      return window.geoCity;
     };
     if (!navigator.geolocation === false) { window.getPosition(); }
 
@@ -68,6 +67,7 @@
       }
       return window.HondurasCities;
     };
+    window.defaultCity();
     window.addEventListener("DOMContentLoaded", function (event) {
       window.HondurasCiudades();
       window.defaultCity();

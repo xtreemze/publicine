@@ -31,7 +31,7 @@ var __wpo = {
     "./js/jquery-3.2.1.min.js"
   ],
   "hashesMap": {
-    "074fa2274be49acb6687b541ce3ad87ec5fd179d": "./",
+    "8486c1dc167aebe1e33a938db232559db1063d08": "./",
     "02acf9a6077c6fd0ba37b5f16499365bf05eb7c9": "./fonts/materialdesignicons-webfont.eot",
     "ae356d6811285df99e5efa432a27a1ae2efb19b5": "./fonts/materialdesignicons-webfont.woff2",
     "5b560e4a95f2e1efea1b4d2b39d9d545b012ca22": "./fonts/materialdesignicons-webfont.woff",
@@ -53,7 +53,7 @@ var __wpo = {
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-5 18:10:43",
+  "version": "2017-10-5 18:14:58",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true
