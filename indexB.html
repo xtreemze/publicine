@@ -15,9 +15,9 @@
   <link rel="shortcut icon" href="https://xtreemze.github.io/publicine/favicon.ico">
   <meta name="msapplication-config" content="https://xtreemze.github.io/publicine/browserconfig.xml">
   <meta name="theme-color" content="#212121">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script>
     window.getPosition = function () {
       navigator.geolocation.getCurrentPosition(success, error);
@@ -44,7 +44,7 @@
       }
       return window.geoCity;
     };
-    window.getPosition();
+    if (!navigator.geolocation === false) { window.getPosition(); }
   </script>
 </head>
 

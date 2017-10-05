@@ -1,5 +1,5 @@
 // Spanish
-jQuery.extend(jQuery.fn.pickadate.defaults, {
+$.extend($.fn.pickadate.defaults, {
   monthsFull: [
     "enero",
     "febrero",
@@ -46,9 +46,28 @@ jQuery.extend(jQuery.fn.pickadate.defaults, {
   formatSubmit: "yyyy/mm/dd"
 });
 
-jQuery.extend(jQuery.fn.pickatime.defaults, {
-  clear: "borrar"
-});
+window.delayedTouch = function(movie) {
+  window.timer2 = window.setTimeout(function() {
+    window["img" + movie.shortTitle].click();
+    window.clearTimeout(window.timer2);
+  }, 100);
+  window.timer = window.setTimeout(function() {
+    window.listMovie(movie);
+    document.getElementById("synopsis").scrollIntoView({ behavior: "smooth" });
+    window.clearTimeout(window.timer);
+  }, 800);
+  window.timer3 = window.setTimeout(function() {
+    document.getElementById("synopsis").scrollIntoView({ behavior: "smooth" });
+    window.clearTimeout(window.timer3);
+  }, 3400);
+};
+
+window.clearTimer = function() {
+  window.clearTimeout(window.timer);
+  window.clearTimeout(window.timer2);
+  window.clearTimeout(window.timer3);
+};
+
 window.Peliculas = new Set();
 window.Cines = new Set();
 window.EnCines = new Set();
@@ -84,7 +103,7 @@ window.Honduras = [
 ];
 window.HondurasCiudades = function() {
   let content = "";
-  if (window.geoCity != "GPS no disponible") {
+  if (window.geoCity != "GPS no disponible" && window.geoCity != "undefined") {
     content += `<option value="${window.geoCity}">${window.geoCity}</option>`;
   }
   for (var ciudad in window.Honduras) {
@@ -174,6 +193,7 @@ class Movie {
   }) {
     window.Peliculas.add(this);
     this.titulo = titulo.trim() || "No disponible";
+    this.shortTitle = this.titulo.replace(" ", "_");
     window[this.titulo] = this;
     this.estreno = estreno.trim() || "No disponible";
     this.estrenoMonth = this.estreno.replace("/2017", "");
@@ -266,10 +286,11 @@ class Movie {
   <a class="yellow-text text-darken-3">Taquilla</a>
   </div>
   </form>`;
-    this.roundListContent = `<a ontouchend="window.listMovie(window['${this
-      .titulo}'])" onclick="window.listMovie(window['${this
+    this.roundListContent = `<a id="img${this
+      .shortTitle}" ontouchstart="window.delayedTouch(window['${this
+      .titulo}'])" ontouchmove="window.clearTimer()" onclick="window.delayedTouch(window['${this
       .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
-    this.cardContent = ` <article class="card grey darken-3">
+    this.cardContent = ` <article id="synopsis" class="card grey darken-3">
     <div class="card-content grey-text text-lighten-2">
     <p>${this.synopsis}</p></div>
   </article>`;
@@ -304,16 +325,25 @@ window.formPost = function() {
     window.hora.value.length > 1
   ) {
     Materialize.toast(
-      `${window.currentMovie.titulo} en ${window.ciudad.value}, ${window.fecha
-        .value}, ${window.hora.value}`,
-      4000,
-      "rounded yellow darken-3 grey-text text-darken-3"
+      `${window.currentMovie.titulo}`,
+      6000,
+      "rounded yellow darken-4 grey-text text-lighten-3"
+    );
+    Materialize.toast(
+      `${window.ciudad.value} ${window.hora.value}`,
+      6000,
+      "rounded yellow darken-4 grey-text text-lighten-3"
+    );
+    Materialize.toast(
+      `${window.fecha.value}`,
+      6000,
+      "rounded yellow darken-4 grey-text text-lighten-3"
     );
   } else {
     Materialize.toast(
       `El formulario esta incompleto. Llenalo para tener resultados.`,
-      4000,
-      "rounded yellow darken-3 grey-text text-darken-3"
+      6000,
+      "rounded yellow darken-4 grey-text text-lighten-3"
     );
   }
 };
