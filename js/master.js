@@ -53,13 +53,12 @@ window.delayedTouch = function(movie) {
   }, 100);
   window.timer = window.setTimeout(function() {
     window.listMovie(movie);
-    document.getElementById("synopsis").scrollIntoView({ behavior: "smooth" });
     window.clearTimeout(window.timer);
-  }, 800);
+  }, 1000);
   window.timer3 = window.setTimeout(function() {
     document.getElementById("synopsis").scrollIntoView({ behavior: "smooth" });
     window.clearTimeout(window.timer3);
-  }, 3400);
+  }, 4500);
 };
 
 window.clearTimer = function() {
@@ -68,6 +67,9 @@ window.clearTimer = function() {
   window.clearTimeout(window.timer3);
 };
 
+window.addEventListener("scroll", function() {
+  window.clearTimer();
+});
 window.Peliculas = new Set();
 window.Cines = new Set();
 window.EnCines = new Set();
@@ -104,6 +106,11 @@ window.Honduras = [
 window.HondurasCiudades = function() {
   let content = "";
   if (window.geoCity != "GPS no disponible" && window.geoCity != "undefined") {
+    content += `<option value="${window.geoCity}">${window.geoCity}</option>`;
+  } else if (window.geoCity == "undefined") {
+    if (!navigator.geolocation === false) {
+      window.getPosition();
+    }
     content += `<option value="${window.geoCity}">${window.geoCity}</option>`;
   }
   for (var ciudad in window.Honduras) {
@@ -445,7 +452,7 @@ window.addEventListener("load", function() {
   $("ul.tabs").tabs("select_tab", window.today.Mmm);
   document.getElementById(
     "city"
-  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity}`;
+  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity}, ${window.geoCountry}`;
   // function nextCarousel() {
   //   $(".carousel").carousel("next");
   // }

@@ -31,7 +31,7 @@ var __wpo = {
     "./js/jquery-3.2.1.min.js"
   ],
   "hashesMap": {
-    "5eb7a1f0d4c17ba91b391479deea54971784c1d8": "./",
+    "e50b13a7c45876e5bde24a816fa3896f0cd4958f": "./",
     "02acf9a6077c6fd0ba37b5f16499365bf05eb7c9": "./fonts/materialdesignicons-webfont.eot",
     "ae356d6811285df99e5efa432a27a1ae2efb19b5": "./fonts/materialdesignicons-webfont.woff2",
     "5b560e4a95f2e1efea1b4d2b39d9d545b012ca22": "./fonts/materialdesignicons-webfont.woff",
@@ -49,11 +49,11 @@ var __wpo = {
     "e0655b6097eddf9df88cd194eff08436ea086a1c": "./fonts/roboto/Roboto-Bold.woff",
     "cf15046a5c20e6f07032781d00b040bb5276c716": "./img/banner.svg",
     "35c43198fe5d921fe627df3ea4661afa296742fa": "./src/banner-02.svg",
-    "eed3794f5a2c10af001da97f4ae23dd3dd0d8a93": "./bundle.js"
+    "ad7d8b66574f0324167b8073a059e9c8ce2cd6b1": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-5 14:57:43",
+  "version": "2017-10-5 15:27:08",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

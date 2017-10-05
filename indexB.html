@@ -34,13 +34,17 @@
           window.geo = geoLocation;
           // console.log(window.geo);
           window.geoCity =
-            window.geo.results[0].address_components[5].long_name ||
+            window.geo.results[0].address_components[3].long_name ||
             "GPS no disponible";
+          window.geoCountry =
+            window.geo.results[0].address_components[5].long_name ||
+            "";
         });
       }
       function error(err) {
         // console.log(err);
         window.geoCity = "GPS no disponible";
+        window.geoCountry = "";
       }
       return window.geoCity;
     };
