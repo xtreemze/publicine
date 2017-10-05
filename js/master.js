@@ -426,14 +426,14 @@ window.navTabPopulate = function() {
   $("ul.tabs").tabs();
 };
 window.addEventListener("load", function(event) {
-  console.log("Load Finished");
   window.defaultCity();
-  document.getElementById(
-    "city"
-  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;
   importMovies();
   navTabPopulate();
   roundListMovies(Peliculas);
   roundListMovies([window.today.Mmm]);
   $("ul.tabs").tabs("select_tab", window.today.Mmm);
+  document.getElementById(
+    "city"
+  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;
+  console.log("Load Finished");
 });
