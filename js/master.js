@@ -90,6 +90,16 @@ window.monthsYear = [
   "Noviembre",
   "Diciembre"
 ];
+window.defaultCity = function() {
+  if (window.geoCity != "GPS no disponible" && window.geoCity != "undefined") {
+    let data = window.HondurasCities;
+    let newData = `<option value="${window.geoCity}">${window.geoCity}</option>`;
+    window.HondurasCities = newData + data;
+  }
+  return window.HondurasCities;
+};
+
+window.defaultCity();
 const createMonthSets = function() {
   for (var index = 1; index <= 12; index++) {
     const name = "M" + index;

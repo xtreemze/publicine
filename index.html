@@ -46,9 +46,7 @@
         "Tocoa"
       ];
       window.HondurasCities = "";
-      if (window.geoCity != "GPS no disponible" && window.geoCity != "undefined") {
-        window.HondurasCities += `<option value="${window.geoCity}">${window.geoCity}</option>`;
-      }
+
       for (var ciudad in Honduras) {
         if (Honduras.hasOwnProperty(ciudad)) {
           var city = Honduras[ciudad];
