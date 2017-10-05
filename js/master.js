@@ -435,15 +435,10 @@ window.navTabPopulate = function() {
   $("ul.tabs").tabs();
 };
 navTabPopulate();
-
+roundListMovies(Peliculas);
+roundListMovies([window.today.Mmm]);
+$("ul.tabs").tabs("select_tab", window.today.Mmm);
 window.addEventListener("load", function() {
-  roundListMovies(Peliculas);
-  window.today = new Date();
-  window.today.dd = today.getDate();
-  window.today.mm = today.getMonth() + 1;
-  window.today.Mmm = "M" + (today.getMonth() + 1);
-  roundListMovies([window.today.Mmm]);
-  $("ul.tabs").tabs("select_tab", window.today.Mmm);
   document.getElementById(
     "city"
   ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;

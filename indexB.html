@@ -77,6 +77,10 @@
       return window.HondurasCities;
     };
     window.HondurasCiudades();
+    window.today = new Date();
+    window.today.dd = today.getDate();
+    window.today.mm = today.getMonth() + 1;
+    window.today.Mmm = "M" + (today.getMonth() + 1);
   </script>
 </head>
 
