@@ -105,41 +105,7 @@ const createMonthSets = function() {
   }
 };
 createMonthSets();
-window.Honduras = [
-  "Tegucigalpa",
-  "San Pedro Sula",
-  "Comayagua",
-  "Choluteca",
-  "Siguatepeque",
-  "El Progreso",
-  "Choloma",
-  "La Ceiba",
-  "Tela",
-  "Puerto Cortes",
-  "Danli",
-  "Juticalpa",
-  "Tocoa"
-];
 
-window.HondurasCiudades = function() {
-  window.HondurasCities = "";
-  if (window.geoCity != "GPS no disponible" && window.geoCity != "undefined") {
-    window.HondurasCities += `<option value="${window.geoCity}">${window.geoCity}</option>`;
-  } else if (window.geoCity == "undefined") {
-    if (!navigator.geolocation === false) {
-      window.getPosition();
-      window.HondurasCities += `<option value="${window.geoCity}">${window.geoCity}</option>`;
-    }
-  }
-  for (var ciudad in window.Honduras) {
-    if (window.Honduras.hasOwnProperty(ciudad)) {
-      var city = window.Honduras[ciudad];
-      window.HondurasCities += `<option value="${city}">${city}</option>`;
-    }
-  }
-  return window.HondurasCities;
-};
-window.HondurasCiudades();
 class Cines {
   /**
    * Creates an instance of Cines.
