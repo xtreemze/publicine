@@ -71,6 +71,96 @@
       "TandaSabado": "1:00, 3:00, 4:50, 7:15, 9:20",
       "TandaDomingo": "1:00, 3:00, 4:50, 7:15, 9:20",
       "Timestamp": "Thu Oct 05 2017 10:48:55 GMT-0400 (EDT)"
+    },
+    {
+      "Ciudad": "Tegucigalpa",
+      "Nombre": "Novacentro",
+      "Cadena": "Metrocinemas",
+      "Salas": "5",
+      "Pais": "Honduras",
+      "WebURL": "http://www.metrocinemas.hn/main.aspx",
+      "Ubicacion":
+        "https://www.google.com/maps/place/Metrocinemas,+Novacentro/@14.1014408,-87.1888079,17z/data=!3m1!4b1!4m5!3m4!1s0x8f6fa2deada3abb1:0x66855c950caf54c6!8m2!3d14.1014356!4d-87.1866192?hl=en-AU",
+      "TandaLunes": "3:15, 5:20, 7:15, 9:10",
+      "TandaMartes": " 3:15, 5:20, 7:15, 9:10",
+      "TandaMiercoles": "3:15, 5:20, 7:15, 9:10",
+      "TandaJueves": " 1:45, 3:15, 5:20, 7:15, 9:10",
+      "TandaViernes": "1:45, 3:15, 5:20, 7:15, 9:10",
+      "TandaSabado": "11:30, 1:45, 3:15, 5:20, 7:15, 9:10",
+      "TandaDomingo": "11:30, 1:45, 3:15, 5:20, 7:15, 9:10",
+      "Timestamp": "Thu Oct 05 2017 10:51:41 GMT-0400 (EDT)"
+    },
+    {
+      "Ciudad": "Choluteca",
+      "Nombre": "Unimall",
+      "Cadena": "Unicines",
+      "Salas": "4",
+      "Pais": "Honduras",
+      "WebURL": "https://www.facebook.com/UnicinesHonduras/?ref=br_rs",
+      "Ubicacion":
+        "https://www.google.com/maps/place/Unicines/@13.3120548,-87.1794668,17z/data=!3m1!4b1!4m5!3m4!1s0x8f703ce387dccfaf:0xf62769973bfe9310!8m2!3d13.3120496!4d-87.1772781?hl=en-AU",
+      "TandaLunes": "5:20, 7:15, 9:10",
+      "TandaMartes": "5:20, 7:15, 9:10",
+      "TandaMiercoles": "5:20, 7:15, 9:10",
+      "TandaJueves": "11:30, 1:45, 3:15, 5:20, 7:15, 9:10",
+      "TandaViernes": "11:30, 1:45, 3:15, 5:20, 7:15, 9:10",
+      "TandaSabado": "11:30, 1:45, 3:15, 5:20, 7:15, 9:10",
+      "TandaDomingo": "11:30, 1:45, 3:15, 5:20, 7:15, 9:10",
+      "Timestamp": "Thu Oct 05 2017 10:54:42 GMT-0400 (EDT)"
+    },
+    {
+      "Ciudad": "La Ceiba",
+      "Nombre": "Plaza Premiere",
+      "Cadena": "Cines Premiere",
+      "Salas": "2",
+      "Pais": "Honduras",
+      "WebURL": "https://www.facebook.com/CinesPremiere/?ref=br_rs",
+      "Ubicacion":
+        "https://www.google.com/maps/place/Cines+Premiere/@15.7693125,-86.7927944,17z/data=!3m1!4b1!4m5!3m4!1s0x8f69a9d03d81487d:0x46047adae31c1d9c!8m2!3d15.7693073!4d-86.7906057?hl=en-AU",
+      "TandaLunes": "4:00, 6:00, 8:00",
+      "TandaMartes": "4:00, 6:00, 8:00",
+      "TandaMiercoles": "4:00, 6:00, 8:00",
+      "TandaJueves": "4:00, 6:00, 8:00",
+      "TandaViernes": "4:00, 6:00, 8:00",
+      "TandaSabado": "2:00, 4:00, 6:00, 8:00",
+      "TandaDomingo": "2:00, 4:00, 6:00, 8:00",
+      "Timestamp": "Thu Oct 05 2017 10:58:03 GMT-0400 (EDT)"
+    },
+    {
+      "Ciudad": "Puerto Cortes",
+      "Nombre": "Supermall",
+      "Cadena": "Metrocinemas",
+      "Salas": "4",
+      "Pais": "Honduras",
+      "WebURL": "http://www.metrocinemas.hn/main.aspx",
+      "Ubicacion":
+        "https://www.google.com/maps/place/El+Super+Barato/@15.8026272,-87.9523768,12.54z/data=!4m5!3m4!1s0x8f67b37cec52fbf3:0x5b4207a7efd97dab!8m2!3d15.8095556!4d-87.9369736?hl=en-AU",
+      "TandaLunes": "6:00, 8:00",
+      "TandaMartes": " 6:00, 8:00",
+      "TandaMiercoles": "6:00, 8:00",
+      "TandaJueves": " 6:00, 8:00",
+      "TandaViernes": " 6:00, 8:00",
+      "TandaSabado": "2:00, 4:00, 6:00, 8:00",
+      "TandaDomingo": "2:00, 4:00, 6:00, 8:00",
+      "Timestamp": "Thu Oct 05 2017 10:59:55 GMT-0400 (EDT)"
+    },
+    {
+      "Ciudad": "San Pedro Sula",
+      "Nombre": "City Mall",
+      "Cadena": "Cinemark",
+      "Salas": "7",
+      "Pais": "Honduras",
+      "WebURL": "https://www.cinemarkca.com/es",
+      "Ubicacion":
+        "https://www.google.com/maps/place/Cinemark/@15.3928253,-88.0137516,10.42z/data=!4m5!3m4!1s0x8f665b63e1526b31:0xc6a0fe34a22a72e9!8m2!3d15.4963943!4d-88.0363923?hl=en-AU",
+      "TandaLunes": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaMartes": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaMiercoles": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaJueves": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaViernes": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaSabado": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "TandaDomingo": "1:00, 3:00, 4:50, 7:15, 9:20",
+      "Timestamp": "Thu Oct 05 2017 11:01:17 GMT-0400 (EDT)"
     }
   ]
 }
