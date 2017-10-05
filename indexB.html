@@ -81,6 +81,8 @@
     </div>
   </footer>
   <script>
+    window.geoCity = '';
+    window.geoCountry = '';
     window.getPosition = function () {
       navigator.geolocation.getCurrentPosition(success, error);
 
@@ -109,7 +111,7 @@
         window.geoCountry = "";
       }
     };
-    if (!navigator.geolocation === false) { window.getPosition(); }
+
 
     window.HondurasCiudades = function () {
       const Honduras = [
@@ -143,13 +145,14 @@
     window.today.mm = today.getMonth() + 1;
     window.today.Mmm = "M" + (today.getMonth() + 1);
     window.defaultCity = function () {
-      if (window.geoCity !== "GPS no disponible" && window.geoCity !== undefined) {
+      if (window.geoCity.length > 1 && window.geoCity !== "GPS no disponible" && window.geoCity !== undefined) {
         let data = window.HondurasCities;
         let newData = `<option value="${window.geoCity}">${window.geoCity}</option>`;
         window.HondurasCities = newData + data;
       }
       return window.HondurasCities;
     };
+    if (!navigator.geolocation === false) { window.getPosition(); }
     window.defaultCity();
     window.addEventListener("DOMContentLoaded", function (event) {
       window.HondurasCiudades();
