@@ -121,7 +121,7 @@ window.Honduras = [
   "Tocoa"
 ];
 
-window.HondurasCiudades = (function() {
+window.HondurasCiudades = function() {
   window.HondurasCities = "";
   if (window.geoCity != "GPS no disponible" && window.geoCity != "undefined") {
     window.HondurasCities += `<option value="${window.geoCity}">${window.geoCity}</option>`;
@@ -138,8 +138,8 @@ window.HondurasCiudades = (function() {
     }
   }
   return window.HondurasCities;
-})();
-
+};
+window.HondurasCiudades();
 class Cines {
   /**
    * Creates an instance of Cines.
@@ -301,7 +301,7 @@ class Movie {
       <div class="input-field col s12">
       <i class="material-icons prefix">location_city</i>
       <select id="ciudad" required>
-      ${window.HondurasCities}
+      ${window.HondurasCiudades()}
       </select>
       <label for="ciudad">Ciudad:</label>
       </div>
