@@ -1,5 +1,5 @@
 // Spanish
-$.extend($.fn.pickadate.defaults, {
+jQuery.extend(jQuery.fn.pickadate.defaults, {
   monthsFull: [
     "enero",
     "febrero",
