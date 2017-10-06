@@ -15,8 +15,8 @@
   <link rel="shortcut icon" href="https://xtreemze.github.io/publicine/favicon.ico">
   <meta name="msapplication-config" content="https://xtreemze.github.io/publicine/browserconfig.xml">
   <meta name="theme-color" content="#212121">
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/materialize.min.js"></script>
+  <script src="/js/jquery-3.2.1.min.js"></script>
+  <script src="/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -29,7 +29,8 @@
         <section class="grey darken-4">
           <div class="center-align">
             <a href="#" class="brand-logo">
-                  <img src="./src/banner-02.svg" alt=""></a>
+              <img src="./src/banner-02.svg" alt="">
+            </a>
           </div>
         </section>
         <ul id="navTabs" class="tabs tabs-transparent tabs-fixed-width">
@@ -41,7 +42,9 @@
         <section id="movieCard" class="section row">
           <div class="container">
             <div class="card grey darken-3">
-              <div class="card-image"><img src="./img/banner.svg" alt=""></div>
+              <div class="card-image">
+                <img src="./img/banner.svg" alt="">
+              </div>
               <div class="card-content">
               </div>
               <div class="card-action">
@@ -60,15 +63,23 @@
         <div class="col l6 m6 s12">
           <h5 class="white-text">Contactenos</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li>
+              <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+            </li>
+            <li>
+              <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+            </li>
           </ul>
         </div>
         <div class="col l6 m6 s12">
           <h5 class="white-text">Trabaja con Nosotros</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li>
+              <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+            </li>
+            <li>
+              <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -80,88 +91,7 @@
       </div>
     </div>
   </footer>
-  <script>
-    window.geoCity = '';
-    window.geoCountry = '';
-    window.getPosition = function () {
-      navigator.geolocation.getCurrentPosition(success, error);
-
-      function success(position) {
-        var GEOCODING =
-          "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
-          position.coords.latitude +
-          "%2C" +
-          position.coords.longitude +
-          "&language=es";
-
-        $.getJSON(GEOCODING).done(function (geoLocation) {
-          window.geo = geoLocation;
-          // console.log(window.geo);
-          window.geoCity =
-            window.geo.results[0].address_components[3].long_name ||
-            "GPS no disponible";
-          window.geoCountry =
-            window.geo.results[0].address_components[5].long_name ||
-            "";
-        });
-      }
-      function error(err) {
-        // console.log(err);
-        window.geoCity = "GPS no disponible";
-        window.geoCountry = "";
-      }
-    };
-
-
-    window.HondurasCiudades = function () {
-      const Honduras = [
-        "Tegucigalpa",
-        "San Pedro Sula",
-        "Comayagua",
-        "Choluteca",
-        "Siguatepeque",
-        "El Progreso",
-        "Choloma",
-        "La Ceiba",
-        "Tela",
-        "Puerto Cortes",
-        "Danli",
-        "Juticalpa",
-        "Tocoa"
-      ];
-      window.HondurasCities = "";
-
-      for (var ciudad in Honduras) {
-        if (Honduras.hasOwnProperty(ciudad)) {
-          var city = Honduras[ciudad];
-          window.HondurasCities += `<option value="${city}">${city}</option>`;
-        }
-      }
-      return window.HondurasCities;
-    };
-
-    window.today = new Date();
-    window.today.dd = today.getDate();
-    window.today.mm = today.getMonth() + 1;
-    window.today.Mmm = "M" + (today.getMonth() + 1);
-    window.defaultCity = function () {
-      if (window.geoCity.length > 1 && window.geoCity !== "GPS no disponible" && window.geoCity !== undefined) {
-        let data = window.HondurasCities;
-        let newData = `<option value="${window.geoCity}">${window.geoCity}</option>`;
-        window.HondurasCities = newData + data;
-      }
-      return window.HondurasCities;
-    };
-    if (!navigator.geolocation === false) { window.getPosition(); }
-    window.defaultCity();
-    window.addEventListener("DOMContentLoaded", function (event) {
-      window.HondurasCiudades();
-      window.defaultCity();
-      console.log("DOMContentLoaded");
-    });
-  </script>
-  <script async src="bundle.js"></script>
-  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script src="bundle.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106538829-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];

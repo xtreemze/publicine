@@ -141,9 +141,9 @@ select:focus {
   fill: #f9a825;
 }
 
-button.picker__today:focus,
-button.picker__clear:focus,
-button.picker__close:focus {
+.picker__today:focus,
+.picker__clear:focus,
+.picker__close:focus {
   background-color: rgba(128, 128, 128, 0.38);
 }
 
@@ -185,7 +185,6 @@ select {
 option :focus {
   outline: #f9a825 auto 5px;
   outline-color: #f9a825;
-  outline-style: auto;
   outline-width: 5px;
 }
 

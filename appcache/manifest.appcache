@@ -1,14 +1,9 @@
 CACHE MANIFEST
-#ver:2017-10-5 18:23:10
+#ver:2017-10-6 16:47:27
 #plugin:4.8.4
 
 CACHE:
 ../
-../fonts/materialdesignicons-webfont.eot
-../fonts/materialdesignicons-webfont.woff2
-../fonts/materialdesignicons-webfont.woff
-../fonts/materialdesignicons-webfont.ttf
-../fonts/materialdesignicons-webfont.svg
 ../fonts/roboto/Roboto-Thin.woff2
 ../fonts/roboto/Roboto-Thin.woff
 ../fonts/roboto/Roboto-Light.woff2
