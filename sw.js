@@ -26,7 +26,7 @@ var __wpo = {
     "./js/jquery-3.2.1.min.js"
   ],
   "hashesMap": {
-    "ec86c6a7a24eccd6878e7f37dfe8f9aefafc936e": "./",
+    "ab7d908ee19f6e1e31d445fc3427a498e6449e85": "./",
     "c321aeb611cf1dcb25717484a4ced717d8ca76fa": "./fonts/roboto/Roboto-Thin.woff2",
     "cb8f61464f349af887ba96f6a2ae1e318b3cc8d9": "./fonts/roboto/Roboto-Thin.woff",
     "f6daab924b79b4822dc9faa56bbefe1d1efa3e42": "./fonts/roboto/Roboto-Light.woff2",
@@ -43,7 +43,7 @@ var __wpo = {
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-6 17:03:06",
+  "version": "2017-10-6 17:05:43",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true
