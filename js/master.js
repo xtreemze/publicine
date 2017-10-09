@@ -225,14 +225,16 @@ class Movie {
     this.clasificacion = clasificacion || "No disponible";
     this.synopsis = synopsis.trim() || "No disponible";
     this.cartelera = cartelera.trim() || "No disponible";
-    let carteleraCut = this.cartelera.replace(
+    this.carteleraCut = this.cartelera.replace(
       "https://drive.google.com/open?id=",
-      ""
+      "https://drive.google.com/uc?export=download&id="
     );
-    this.image = `<img class="" src="https://drive.google.com/uc?export=download&id=${carteleraCut}">`;
+    this.reqCartelera = `${this.carteleraCut}`;
+    this.image = `<img class="" src="${this.reqCartelera}">`;
     this.posterCard = `<article id="intro" class="card grey darken-3">
     <div class="card-image hide-on-small-only">
-    <a class="cursorZoom materialboxed"> <img class="responsive-img" src="https://drive.google.com/uc?export=download&id=${carteleraCut}"></a>
+    <a class="cursorZoom materialboxed"> <img class="responsive-img" src="${this
+      .reqCartelera}"></a>
    </div>
    <div class="card-content grey-text text-lighten-2">
    <span class="yellow-text text-darken-3">
@@ -449,3 +451,13 @@ window.addEventListener("load", function(event) {
   ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;
   console.log("Load Finished");
 });
+
+window.printList = function() {
+  var content = "";
+  Peliculas.forEach(function(pelicula) {
+    content += '"';
+    content += pelicula.reqCartelera;
+    content += '",\n';
+  }, this);
+  return content;
+};

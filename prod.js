@@ -1,5 +1,5 @@
 //   .default;
-// const ImageminPlugin = require("imagemin-webpack-plugin");
+// import ImageminPlugin from "imagemin-webpack-plugin";
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
 const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const OfflinePlugin = require("offline-plugin");
@@ -41,22 +41,51 @@ module.exports = function prod(env) {
           test: /\.css$/,
           use: ["style-loader", "css-loader"]
         },
+        // {
+        //   test: /\.(png|gif|jpg|webp)$/,
+        //   use: ["file-loader?name=[path][name].[ext]"]
+        // },
         {
-          test: /\.(png|gif|jpg|webp)$/,
-          use: ["file-loader?name=[path][name].[ext]"]
+          test: /\.(gif|png|jpe?g|svg)$/i,
+          loaders: [
+            "file-loader",
+            {
+              loader: "image-webpack-loader",
+              options: {
+                gifsicle: {
+                  interlaced: false
+                },
+                optipng: {
+                  optimizationLevel: 7
+                },
+                pngquant: {
+                  quality: "65-90",
+                  speed: 4
+                },
+                mozjpeg: {
+                  progressive: true,
+                  quality: 65
+                },
+                // Specifying webp here will create a WEBP version of your JPG/PNG images
+                webp: {
+                  quality: 75
+                }
+              }
+            }
+          ]
         },
         {
           test: /\.(eot|ttf|woff|woff2)$/,
           loader: "file-loader?name=[path][name].[ext]"
         },
-        {
-          test: /\.svg$/,
-          use: [
-            {
-              loader: "file-loader?name=[path][name].[ext]"
-            }
-          ]
-        },
+        // {
+        //   test: /\.svg$/,
+        //   use: [
+        //     {
+        //       loader: "file-loader?name=[path][name].[ext]"
+        //     }
+        //   ]
+        // },
         {
           test: /\.js$/,
           exclude: [/node_modules/],
@@ -77,7 +106,7 @@ module.exports = function prod(env) {
       //     quality: "95-100"
       //   }
       // }),
-      // ... other plugins
+      // // ... other plugins
       new HtmlMinifierPlugin({}),
       new OptimizeJsPlugin({
         sourceMap: true
