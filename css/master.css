@@ -1,16 +1,5 @@
 @import "./materialize.min.css";
 
-/* require('./css/materialize.min.css'); */
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
 .pointer {
   cursor: pointer;
 }
@@ -23,13 +12,6 @@ main {
   right: 75px !important;
 }
 
-/* .chip > i,
-.action {
-  float: left;
-  margin: 3px -8px 0px -7px;
-  height: 32px;
-  width: 32px;
-} */
 .chip > i,
 .action {
   float: left;
@@ -47,7 +29,6 @@ main {
     height: 480px;
     width: 246px;
     max-width: 48vw;
-    /* max-height: 30vh; */
   }
 
   .carousel {
@@ -59,13 +40,10 @@ main {
 @media only screen and (max-width: 1099px) {
   .carousel .carousel-item {
     max-height: 54vh;
-    /* height: 480px; */
-    /* width: 330px; */
     max-width: 48vw;
   }
 
   .carousel {
-    /* height: 500px; */
     max-height: 48vh;
     min-height: 390px;
   }
@@ -91,16 +69,13 @@ main {
 }
 
 .picker__box {
-  /* background: #ffffff; */
   background: #414141;
 }
 .picker__day--selected,
 .picker__day--selected:hover,
 .picker--focused .picker__day--selected {
   background-color: #f9a825;
-  /* height: 3.4em; */
   color: #ffffff;
-  /* padding: 1.1em; */
 }
 
 .clockpicker-tick.active,

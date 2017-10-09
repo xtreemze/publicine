@@ -110,11 +110,17 @@ createMonthSets();
 class Cines {
   /**
    * Creates an instance of Cines.
-   * @param {Object} {
+   * @param {any} {
    *     Ciudad,
    *     Nombre,
    *     Cadena,
-   *     Tandas,
+   *     TandaLunes,
+   *     TandaMartes,
+   *     TandaMiercoles,
+   *     TandaJueves,
+   *     TandaViernes,
+   *     TandaSabado,
+   *     TandaDomingo,
    *     Salas,
    *     Pais,
    *     WebURL,
@@ -159,7 +165,7 @@ class Cines {
 class Movie {
   /**
    * Creates an instance of Movie.
-   * @param {Object} {
+   * @param {any} {
    *     titulo,
    *     estreno,
    *     trailer,
@@ -428,7 +434,6 @@ window.navTabPopulate = function() {
       navTabs.innerHTML += item.tabContent;
     }
   });
-  // $("ul.tabs").tabs();
   $("ul.tabs").tabs();
 };
 window.addEventListener("load", function(event) {

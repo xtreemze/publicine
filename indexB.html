@@ -16,13 +16,21 @@
   <meta name="msapplication-config" content="https://xtreemze.github.io/publicine/browserconfig.xml">
   <meta name="theme-color" content="#212121">
   <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/materialize.min.js"></script>
+  <script src="js/materialize.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      background-color: #212121 !important;
+    }
+
+    main {
+      min-height: 98vh;
+    }
+
+  </style>
 </head>
 
 <body>
-  <header>
-  </header>
   <main class="grey darken-4">
     <div class="row ">
       <div class="col s12 m12 l5">
@@ -34,6 +42,12 @@
           </div>
         </section>
         <ul id="navTabs" class="tabs tabs-transparent tabs-fixed-width">
+          <li class="tab">
+            <a href="" class="active">Mes 1</a>
+          </li>
+          <li class="tab">
+            <a href="">Mes 2</a>
+          </li>
         </ul>
         <section id="roundList" class="row">
         </section>
@@ -86,15 +100,22 @@
     </div>
     <div class="footer-copyright yellow darken-4">
       <div class="container">
-        <p class="left">©2017 PubliCine</p>
-        <p id="city" class="right"></p>
+        <div class="row">
+          <p class="col s12 m6 l6">©2017 PubliCine</p>
+          <p id="city" class="col s12 m6 l6"></p>
+        </div>
       </div>
     </div>
   </footer>
   <script>window.geoCity = "";
     window.geoCountry = "";
+
     window.getPosition = function () {
-      navigator.geolocation.getCurrentPosition(success, error);
+      const geoOptions = {
+        maximumAge: 5 * 60 * 1000,
+        timeout: 10 * 1000,
+        enableHighAccuracy: false
+      }
 
       function success(position) {
         var GEOCODING =
@@ -119,6 +140,8 @@
         window.geoCity = "GPS no disponible";
         window.geoCountry = "";
       }
+      navigator.geolocation.getCurrentPosition(success, error, geoOptions);
+
     };
 
     window.HondurasCiudades = function () {
@@ -164,11 +187,11 @@
       }
       return window.HondurasCities;
     };
-    if (!navigator.geolocation === false) {
-      window.getPosition();
-    }
-    window.defaultCity();
     window.addEventListener("DOMContentLoaded", function (event) {
+      if (!navigator.geolocation === false) {
+        window.getPosition();
+        window.defaultCity();
+      }
       window.HondurasCiudades();
       window.defaultCity();
       console.log("DOMContentLoaded");
