@@ -263,8 +263,8 @@ class Movie {
     <div class="">
     <div class="card-content grey-text text-lighten-2">
     <article class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${this
-      .trailerID}?rel=0&amp;controls=1&amp;showinfo=0;autoplay=0" frameborder="0" allowfullscreen></iframe>
+    <iframe width="720" height="480" src="https://www.youtube.com/embed/${this
+      .trailerID}?hl=es&modestbranding=1&playsinline=1&rel=0&showinfo=0&color=red&iv_load_policy=3" frameborder="0" allowfullscreen></iframe>
       </article>
      </div>
     </div>
