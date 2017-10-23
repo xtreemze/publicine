@@ -143,7 +143,14 @@ module.exports = function prod(env) {
       //   ])
       // }),
       new OfflinePlugin({
-        externals: ["./js/materialize.min.js", "./js/jquery-3.2.1.min.js"],
+        externals: [
+          // "./js/materialize.min.js",
+          //  "./js/jquery-3.2.1.min.js",
+          "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css",
+          "https://code.jquery.com/jquery-3.2.1.min.js",
+          "https://fonts.googleapis.com/icon?family=Material+Icons",
+          "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
+        ],
         caches: "all",
         responseStrategy: "network-first",
         updateStrategy: "all",

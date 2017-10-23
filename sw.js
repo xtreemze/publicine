@@ -2,16 +2,6 @@ var __wpo = {
   "assets": {
     "main": [
       "./",
-      "./fonts/roboto/Roboto-Thin.woff2",
-      "./fonts/roboto/Roboto-Thin.woff",
-      "./fonts/roboto/Roboto-Light.woff2",
-      "./fonts/roboto/Roboto-Light.woff",
-      "./fonts/roboto/Roboto-Regular.woff2",
-      "./fonts/roboto/Roboto-Regular.woff",
-      "./fonts/roboto/Roboto-Medium.woff2",
-      "./fonts/roboto/Roboto-Medium.woff",
-      "./fonts/roboto/Roboto-Bold.woff2",
-      "./fonts/roboto/Roboto-Bold.woff",
       "./7a1bc2ea4d224f91b632fef47c1b0608.jpg",
       "./83650f0a2b2a1e9a88e7736d07a29578.jpg",
       "./9e6a3b3ebc615feb6ea9d5fb67a1ff42.jpeg",
@@ -24,31 +14,25 @@ var __wpo = {
       "./4d4a76ff57f294234849eb273af55ff9.jpg",
       "./366fb3c156c5e7cae2181d63dda20221.jpg",
       "./545782ef18fa319cc5a047c031d1fe7a.jpg",
-      "./d7a398038aef51b5290fb6244eef22a4.svg",
       "./8fc8d711eff8d10c406883fe947e9b18.svg",
+      "./d7a398038aef51b5290fb6244eef22a4.svg",
       "./bundle.js",
-      "./js/materialize.min.js",
-      "./js/jquery-3.2.1.min.js"
+      "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css",
+      "https://code.jquery.com/jquery-3.2.1.min.js",
+      "https://fonts.googleapis.com/icon?family=Material+Icons",
+      "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
     ],
     "additional": [],
     "optional": []
   },
   "externals": [
-    "./js/materialize.min.js",
-    "./js/jquery-3.2.1.min.js"
+    "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css",
+    "https://code.jquery.com/jquery-3.2.1.min.js",
+    "https://fonts.googleapis.com/icon?family=Material+Icons",
+    "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
   ],
   "hashesMap": {
-    "60f0d954f38ef6d42d562d28ee91f36382f3a7fa": "./",
-    "c321aeb611cf1dcb25717484a4ced717d8ca76fa": "./fonts/roboto/Roboto-Thin.woff2",
-    "cb8f61464f349af887ba96f6a2ae1e318b3cc8d9": "./fonts/roboto/Roboto-Thin.woff",
-    "f6daab924b79b4822dc9faa56bbefe1d1efa3e42": "./fonts/roboto/Roboto-Light.woff2",
-    "c7494493f62984e2f581598739b5dd340e9e891b": "./fonts/roboto/Roboto-Light.woff",
-    "c193deaa915e7183828400922700567900fb6cc3": "./fonts/roboto/Roboto-Regular.woff2",
-    "6cfb2a5eb3a601ba450dda2d80bacef26c5ba873": "./fonts/roboto/Roboto-Regular.woff",
-    "7c512e2ebddd4dbd08d0f7bfb5b772501f707078": "./fonts/roboto/Roboto-Medium.woff2",
-    "b17bd60107c9ec0fd8c58a9e1fd222da7f1b99f4": "./fonts/roboto/Roboto-Medium.woff",
-    "5a8465896222227807ff29908d8648db510561a5": "./fonts/roboto/Roboto-Bold.woff2",
-    "e0655b6097eddf9df88cd194eff08436ea086a1c": "./fonts/roboto/Roboto-Bold.woff",
+    "7f7196e3d233297296b75fd43e3d8bb1c5d595c0": "./",
     "f425a53e69fe2f303bf3e6a0838d359051fbec65": "./7a1bc2ea4d224f91b632fef47c1b0608.jpg",
     "1bce05b309b95741769d264634c870cb398aac18": "./83650f0a2b2a1e9a88e7736d07a29578.jpg",
     "272bf86e2fbac239211ada9ea13688b4b1b42365": "./9e6a3b3ebc615feb6ea9d5fb67a1ff42.jpeg",
@@ -61,13 +45,13 @@ var __wpo = {
     "141ba66e47cb7c0b6b73fd64707e35f787074ca2": "./4d4a76ff57f294234849eb273af55ff9.jpg",
     "0d2c0d2c0d1ad141e33dacf4e48fcbb65c5c426e": "./366fb3c156c5e7cae2181d63dda20221.jpg",
     "9da4d11b152560ec28fd601f945e96f5f67077b6": "./545782ef18fa319cc5a047c031d1fe7a.jpg",
-    "3cf62170fb31e2bddf2600ac7571690b854b18ec": "./d7a398038aef51b5290fb6244eef22a4.svg",
     "ae0e1d7a8903adbd3fc6fa312fc402c0308a64dc": "./8fc8d711eff8d10c406883fe947e9b18.svg",
-    "c93c5f0e104a641fe0f1798403dd2e1ac5e8e746": "./bundle.js"
+    "3cf62170fb31e2bddf2600ac7571690b854b18ec": "./d7a398038aef51b5290fb6244eef22a4.svg",
+    "f9d5dc649e306eb456415bfcc8dfc49e93d82b41": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-23 11:24:18",
+  "version": "2017-10-23 11:38:15",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

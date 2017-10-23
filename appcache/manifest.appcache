@@ -1,19 +1,9 @@
 CACHE MANIFEST
-#ver:2017-10-23 11:24:18
+#ver:2017-10-23 11:38:15
 #plugin:4.8.4
 
 CACHE:
 ../
-../fonts/roboto/Roboto-Thin.woff2
-../fonts/roboto/Roboto-Thin.woff
-../fonts/roboto/Roboto-Light.woff2
-../fonts/roboto/Roboto-Light.woff
-../fonts/roboto/Roboto-Regular.woff2
-../fonts/roboto/Roboto-Regular.woff
-../fonts/roboto/Roboto-Medium.woff2
-../fonts/roboto/Roboto-Medium.woff
-../fonts/roboto/Roboto-Bold.woff2
-../fonts/roboto/Roboto-Bold.woff
 ../7a1bc2ea4d224f91b632fef47c1b0608.jpg
 ../83650f0a2b2a1e9a88e7736d07a29578.jpg
 ../9e6a3b3ebc615feb6ea9d5fb67a1ff42.jpeg
@@ -26,11 +16,9 @@ CACHE:
 ../4d4a76ff57f294234849eb273af55ff9.jpg
 ../366fb3c156c5e7cae2181d63dda20221.jpg
 ../545782ef18fa319cc5a047c031d1fe7a.jpg
-../d7a398038aef51b5290fb6244eef22a4.svg
 ../8fc8d711eff8d10c406883fe947e9b18.svg
+../d7a398038aef51b5290fb6244eef22a4.svg
 ../bundle.js
-../js/materialize.min.js
-../js/jquery-3.2.1.min.js
 
 NETWORK:
 *
