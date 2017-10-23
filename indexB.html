@@ -140,12 +140,18 @@
             "GPS no disponible";
           window.geoCountry =
             window.geo.results[0].address_components[5].long_name || "";
+          document.getElementById(
+            "city"
+          ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity}, ${window.geoCountry}`;
         });
       }
       function error(err) {
         // console.log(err);
         window.geoCity = "GPS no disponible";
         window.geoCountry = "";
+        document.getElementById(
+          "city"
+        ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity}, ${window.geoCountry}`;
       }
       navigator.geolocation.getCurrentPosition(success, error, geoOptions);
 
@@ -195,13 +201,12 @@
       return window.HondurasCities;
     };
     window.addEventListener("DOMContentLoaded", function (event) {
+      console.log("DOMContentLoaded");
       if (!navigator.geolocation === false) {
         window.getPosition();
-        window.defaultCity();
       }
-      window.HondurasCiudades();
       window.defaultCity();
-      console.log("DOMContentLoaded");
+      window.HondurasCiudades();
     });
   </script>
   <script src="bundle.js"></script>

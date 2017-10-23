@@ -449,9 +449,6 @@ window.addEventListener("load", function(event) {
   window.roundListMovies([window.today.Mmm]);
   // window.listMovies(Peliculas);
   $("ul.tabs").tabs("select_tab", window.today.Mmm);
-  document.getElementById(
-    "city"
-  ).innerHTML = `<i class="material-icons">location_city</i> ${window.geoCity} ${window.geoCountry}`;
   console.log("Load Finished");
 });
 

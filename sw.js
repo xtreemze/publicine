@@ -32,7 +32,7 @@ var __wpo = {
     "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
   ],
   "hashesMap": {
-    "7f7196e3d233297296b75fd43e3d8bb1c5d595c0": "./",
+    "93a0c94414b35c93566c3aca42c5eb3e6c3ab85b": "./",
     "f425a53e69fe2f303bf3e6a0838d359051fbec65": "./7a1bc2ea4d224f91b632fef47c1b0608.jpg",
     "1bce05b309b95741769d264634c870cb398aac18": "./83650f0a2b2a1e9a88e7736d07a29578.jpg",
     "272bf86e2fbac239211ada9ea13688b4b1b42365": "./9e6a3b3ebc615feb6ea9d5fb67a1ff42.jpeg",
@@ -47,11 +47,11 @@ var __wpo = {
     "9da4d11b152560ec28fd601f945e96f5f67077b6": "./545782ef18fa319cc5a047c031d1fe7a.jpg",
     "ae0e1d7a8903adbd3fc6fa312fc402c0308a64dc": "./8fc8d711eff8d10c406883fe947e9b18.svg",
     "3cf62170fb31e2bddf2600ac7571690b854b18ec": "./d7a398038aef51b5290fb6244eef22a4.svg",
-    "f9d5dc649e306eb456415bfcc8dfc49e93d82b41": "./bundle.js"
+    "8f5a588632ce4569a12adfbffabe479d5c628439": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-10-23 11:38:15",
+  "version": "2017-10-23 11:50:05",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true
