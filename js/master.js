@@ -199,7 +199,8 @@ class Movie {
     cines,
     clasificacion,
     synopsis,
-    cartelera
+    cartelera,
+    carteleraNombre
   }) {
     window.Peliculas.add(this);
     this.titulo = titulo.trim() || "No disponible";
@@ -224,12 +225,14 @@ class Movie {
     this.ciudad = ciudad || "No disponible";
     this.clasificacion = clasificacion || "No disponible";
     this.synopsis = synopsis.trim() || "No disponible";
-    this.cartelera = cartelera.trim() || "No disponible";
-    this.carteleraCut = this.cartelera.replace(
-      "https://drive.google.com/open?id=",
-      "https://drive.google.com/uc?export=download&id="
-    );
-    this.reqCartelera = `${this.carteleraCut}`;
+    this.carteleraNombre = carteleraNombre;
+    // this.cartelera = cartelera.trim() || "No disponible";
+    // this.carteleraCut = this.cartelera.replace(
+    //   "https://drive.google.com/open?id=",
+    //   "https://drive.google.com/uc?export=download&id="
+    // );
+    // this.reqCartelera = `${this.carteleraCut}`;
+    this.reqCartelera = require(`../posters/${this.carteleraNombre}`);
     this.image = `<img class="" src="${this.reqCartelera}">`;
     this.posterCard = `<article id="intro" class="card grey darken-3">
     <div class="card-image hide-on-small-only">

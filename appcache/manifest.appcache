@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-10-11 13:54:46
+#ver:2017-10-23 11:17:24
 #plugin:4.8.4
 
 CACHE:
@@ -14,8 +14,20 @@ CACHE:
 ../fonts/roboto/Roboto-Medium.woff
 ../fonts/roboto/Roboto-Bold.woff2
 ../fonts/roboto/Roboto-Bold.woff
-../8fc8d711eff8d10c406883fe947e9b18.svg
+../7a1bc2ea4d224f91b632fef47c1b0608.jpg
+../83650f0a2b2a1e9a88e7736d07a29578.jpg
+../9e6a3b3ebc615feb6ea9d5fb67a1ff42.jpeg
+../61dd1e24b49bb69160737934a37e5a94.jpg
+../f2f7fc8ee4a61d00c1fec60b2195a2cc.jpg
+../c5575b35939447c84738c367da1d73b7.jpg
+../144ca08ef7508569b7a7d5af14ef32e4.jpg
+../7f8b616afeae8dfd4e46aadcd98790a3.jpg
+../b76db57d1fa242967fa1b465519b9e28.jpg
+../4d4a76ff57f294234849eb273af55ff9.jpg
+../366fb3c156c5e7cae2181d63dda20221.jpg
+../545782ef18fa319cc5a047c031d1fe7a.jpg
 ../d7a398038aef51b5290fb6244eef22a4.svg
+../8fc8d711eff8d10c406883fe947e9b18.svg
 ../bundle.js
 ../js/materialize.min.js
 ../js/jquery-3.2.1.min.js
