@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-10-23 11:50:05
+#ver:2017-10-26 13:43:08
 #plugin:4.8.4
 
 CACHE:
@@ -16,8 +16,8 @@ CACHE:
 ../4d4a76ff57f294234849eb273af55ff9.jpg
 ../366fb3c156c5e7cae2181d63dda20221.jpg
 ../545782ef18fa319cc5a047c031d1fe7a.jpg
-../8fc8d711eff8d10c406883fe947e9b18.svg
 ../d7a398038aef51b5290fb6244eef22a4.svg
+../8fc8d711eff8d10c406883fe947e9b18.svg
 ../bundle.js
 
 NETWORK:
