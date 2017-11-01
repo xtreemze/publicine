@@ -243,100 +243,115 @@ class Movie {
     // this.reqCartelera = require(`../posters/${this.carteleraNombre}`);
     this.image = `<img class="" src="${this.reqCartelera}">`;
     this.posterCard = `<article id="intro" class="card grey darken-3">
-    <div class="card-image hide-on-small-only">
-    <a class="cursorZoom materialboxed"> <img class="responsive-img" src="${this
-      .reqCartelera}"></a>
-   </div>
-   <div class="card-content grey-text text-lighten-2">
-   <span class="yellow-text text-darken-3">
-   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">movie_filter</i> ${this
-     .genero}</div>
-   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">person</i> ${this
-     .clasificacion}</div>
-   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">3d_rotation</i> ${this
-     .formato}</div>
-   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">language</i> ${this
-     .lenguaje}</div>
-   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">timer</i> ${this
-     .duracion}</div>
-   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">new_releases</i> ${this
-     .estrenoMonth}</div>
-     <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">movie_creation</i> ${this
-       .director}</div>
-   </span>
-   </div>
-   <div class="card-action">
-<a class="yellow-text text-darken-3">${this.titulo}</a>
-</div>
-  </article>`;
-    this.trailerCard = `
-  <article class="card grey darken-3">
-    <div class="">
+  <div class="card-image hide-on-small-only">
+    <a class="cursorZoom materialboxed">
+      <img class="responsive-img" src="${this.reqCartelera}">
+    </a>
+  </div>
+  <div class="card-content grey-text text-lighten-2">
+    <span class="yellow-text text-darken-3">
+      <div class="chip yellow darken-3 truncate">
+        <i class="material-icons tiny">movie_filter</i> ${this.genero}
+      </div>
+      <div class="chip yellow darken-3 truncate">
+        <i class="material-icons tiny">person</i> ${this.clasificacion}
+      </div>
+      <div class="chip yellow darken-3 truncate">
+        <i class="material-icons tiny">3d_rotation</i> ${this.formato}
+      </div>
+      <div class="chip yellow darken-3 truncate">
+        <i class="material-icons tiny">language</i> ${this.lenguaje}
+      </div>
+      <div class="chip yellow darken-3 truncate">
+        <i class="material-icons tiny">timer</i> ${this.duracion}
+      </div>
+      <div class="chip yellow darken-3 truncate">
+        <i class="material-icons tiny">new_releases</i> ${this.estrenoMonth}
+      </div>
+      <div class="chip yellow darken-3 truncate">
+        <i class="material-icons tiny">movie_creation</i> ${this.director}
+      </div>
+    </span>
+  </div>
+  <div class="card-action">
+    <a class="yellow-text text-darken-3">${this.titulo}</a>
+  </div>
+</article>
+`;
+    this.trailerCard = `<article class="card grey darken-3">
+  <div class="">
     <div class="card-content grey-text text-lighten-2">
-    <article class="video-container">
-    <iframe width="720" height="480" src="https://www.youtube.com/embed/${this
-      .trailerID}?hl=es&modestbranding=1&playsinline=1&rel=0&showinfo=0&color=red&iv_load_policy=3" frameborder="0" allowfullscreen></iframe>
+      <article class="video-container">
+        <iframe width="720" height="480" src="https://www.youtube.com/embed/${this
+          .trailerID}?hl=es&modestbranding=1&playsinline=1&rel=0&showinfo=0&color=red&iv_load_policy=3"
+          frameborder="0" allowfullscreen></iframe>
       </article>
-     </div>
     </div>
-  </article>`;
-    this.locationCard = `
-    <form class="card grey darken-3">
-    <div class="card-content yellow-text text-darken-3">
+  </div>
+</article>
+`;
+    this.locationCard = `<form class="card grey darken-3">
+  <div class="card-content yellow-text text-darken-3">
     <article class="row">
       <div class="input-field col s12">
-      <i class="material-icons prefix">location_city</i>
-      <select id="ciudad" required>
-      ${window.HondurasCities}
-      </select>
-      <label for="ciudad">Ciudad:</label>
+        <i class="material-icons prefix">location_city</i>
+        <select id="ciudad" required>
+          ${window.HondurasCities}
+        </select>
+        <label for="ciudad">Ciudad:</label>
       </div>
       <div class="input-field col s12 m12 l8">
-      <i class="material-icons prefix">event</i>
-        <input id="fecha" type="date" data-value="${window.Date.now()}" class="datepicker" required>
-        <label for="fecha">Fecha:</label> 
+        <i class="material-icons prefix">event</i>
+        <input id="fecha" type="date" data-value="${window.Date.now()}" class="datepicker"
+          required>
+        <label for="fecha">Fecha:</label>
       </div>
       <div class="input-field col s12 m12 l4">
-      <i class="material-icons prefix">access_time</i>
-      <input id="hora" type="text" value="05:00PM" class="timepicker" required>
-      <label for="hora">Hora:</label>
+        <i class="material-icons prefix">access_time</i>
+        <input id="hora" type="text" value="05:00PM" class="timepicker" required>
+        <label for="hora">Hora:</label>
       </div>
-      </article>
-     </div>
-     <div class="card-action">
-     <a onclick="window.formPost()" class="btn-floating halfway-fab btn-large waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event_seat</i></a>
-  <a class="yellow-text text-darken-3">Taquilla</a>
+    </article>
   </div>
-  </form>`;
+  <div class="card-action">
+    <a onclick="window.formPost()" class="btn-floating halfway-fab btn-large waves-effect waves-light yellow darken-3 ">
+      <i class="material-icons large grey-text text-darken-3">event_seat</i>
+    </a>
+    <a class="yellow-text text-darken-3">Taquilla</a>
+  </div>
+</form>
+`;
     this.roundListContent = `<a id="img${this
       .shortTitle}" ontouchstart="window.delayedTouch(window['${this
       .titulo}'])" ontouchmove="window.clearTimer()" onclick="window.delayedTouch(window['${this
-      .titulo}'])" class="carousel-item pointer">${this.image}</a>`;
+      .titulo}'])" class="carousel-item pointer">${this.image}</a>
+`;
     this.cardContent = ` <article id="synopsis" class="card grey darken-3">
     <div class="card-content grey-text text-lighten-2">
     <p>${this.synopsis}</p></div>
   </article>`;
     this.cardAction = `<div class="card-action">
-        <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 "><i class="material-icons large grey-text text-darken-3">event</i></a>
+    <a class="btn-floating halfway-fab btn waves-effect waves-light yellow darken-3 ">
+        <i class="material-icons large grey-text text-darken-3">event</i>
+    </a>
     <a class="yellow-text text-darken-3">${this.titulo}</a>
-</div>`;
-    this.card = `
-    <section class="row">
-    <div class="col s12 m5 l4">
-      ${this.posterCard}
-    </div>
-    <div class="col s12 m7 l8">
-      ${this.cardContent}
-    </div>
-    <div class="col s12 m7 l8">
-      ${this.trailerCard}
-    </div>
-    <div class="col s12 m7 l8">
-      ${this.locationCard}
-    </div>
-  </section>
-  
-  `;
+</div>
+`;
+    this.card = `<section class="row">
+  <div class="col s12 m5 l4">
+    ${this.posterCard}
+  </div>
+  <div class="col s12 m7 l8">
+    ${this.cardContent}
+  </div>
+  <div class="col s12 m7 l8">
+    ${this.trailerCard}
+  </div>
+  <div class="col s12 m7 l8">
+    ${this.locationCard}
+  </div>
+</section>
+`;
   }
 }
 
