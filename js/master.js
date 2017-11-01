@@ -100,7 +100,7 @@ const createMonthSets = function() {
     window[name].month = name;
     window[
       name
-    ].tabContent = `<li class="tab pointer"><a href="#${name}" onclick="roundListMovies(${name})">${window[
+    ].tabContent = `<li class="tab pointer truncate"><a href="#${name}" onclick="roundListMovies(${name})">${window[
       name
     ].name}</a></li>`;
   }
@@ -225,14 +225,14 @@ class Movie {
     this.ciudad = ciudad || "No disponible";
     this.clasificacion = clasificacion || "No disponible";
     this.synopsis = synopsis.trim() || "No disponible";
-    this.carteleraNombre = carteleraNombre;
-    // this.cartelera = cartelera.trim() || "No disponible";
-    // this.carteleraCut = this.cartelera.replace(
-    //   "https://drive.google.com/open?id=",
-    //   "https://drive.google.com/uc?export=download&id="
-    // );
-    // this.reqCartelera = `${this.carteleraCut}`;
-    this.reqCartelera = require(`../posters/${this.carteleraNombre}`);
+    this.carteleraNombre = carteleraNombre.replace("Nahun_Banegas.jpg", ".jpg");
+    this.cartelera = cartelera.trim() || "No disponible";
+    this.carteleraCut = this.cartelera.replace(
+      "https://drive.google.com/open?id=",
+      "https://drive.google.com/uc?export=download&id="
+    );
+    this.reqCartelera = `${this.carteleraCut}`;
+    // this.reqCartelera = require(`../posters/${this.carteleraNombre}`);
     this.image = `<img class="" src="${this.reqCartelera}">`;
     this.posterCard = `<article id="intro" class="card grey darken-3">
     <div class="card-image hide-on-small-only">
