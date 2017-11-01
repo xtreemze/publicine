@@ -1,11 +1,11 @@
 CACHE MANIFEST
-#ver:2017-11-1 09:34:42
+#ver:2017-11-1 09:46:32
 #plugin:4.8.4
 
 CACHE:
 ../
-../d7a398038aef51b5290fb6244eef22a4.svg
-../8fc8d711eff8d10c406883fe947e9b18.svg
+../build/banner-02.svg
+../build/banner.svg
 ../bundle.js
 
 NETWORK:

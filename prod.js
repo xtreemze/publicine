@@ -48,7 +48,7 @@ module.exports = function prod(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader",
+            "file-loader?name=build/[name].[ext]",
             {
               loader: "image-webpack-loader",
               options: {
