@@ -20,14 +20,14 @@ var __wpo = {
     "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
   ],
   "hashesMap": {
-    "c7575e370a4962383d9c1bc6765787a93e2e1ecf": "./",
+    "57aaa827f86731f111cc96e72b0952c6cfcdbc88": "./",
     "3cf62170fb31e2bddf2600ac7571690b854b18ec": "./build/banner-02.svg",
     "ae0e1d7a8903adbd3fc6fa312fc402c0308a64dc": "./build/banner.svg",
-    "51fdc3485925ed37270430f8edc6362610b5c621": "./bundle.js"
+    "8083b1e9190647f1ccec95bfb1720e394579703f": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-11-1 10:15:39",
+  "version": "2017-11-1 10:54:28",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

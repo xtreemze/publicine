@@ -99,7 +99,8 @@ const createMonthSets = function() {
     window[name].name = monthsYear[index - 1];
     window[name].month = name;
     window[name].index = index;
-      window[name
+    window[
+      name
     ].tabContent = `<li class="tab pointer truncate"><a href="#${name}" onclick="roundListMovies(${name})">${window[
       name
     ].name}</a></li>`;
@@ -107,7 +108,7 @@ const createMonthSets = function() {
 };
 createMonthSets();
 
-class Cines {
+class Cine {
   /**
    * Creates an instance of Cines.
    * @param {any} {
@@ -126,7 +127,7 @@ class Cines {
    *     WebURL,
    *     Ubicacion
    *   } 
-   * @memberof Cines
+   * @memberof Cine
    */
   constructor({
     Ciudad,
@@ -161,6 +162,13 @@ class Cines {
     window.Cines.add(this);
   }
 }
+
+const importCines = function() {
+  const imported = require("./cines.json");
+  imported.export.forEach(function(item) {
+    new Cine(item);
+  });
+};
 
 class Movie {
   /**
@@ -241,19 +249,19 @@ class Movie {
    </div>
    <div class="card-content grey-text text-lighten-2">
    <span class="yellow-text text-darken-3">
-   <div class="chip yellow darken-3"><i class="material-icons tiny">movie_filter</i> ${this
+   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">movie_filter</i> ${this
      .genero}</div>
-   <div class="chip yellow darken-3"><i class="material-icons tiny">person</i> ${this
+   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">person</i> ${this
      .clasificacion}</div>
-   <div class="chip yellow darken-3"><i class="material-icons tiny">3d_rotation</i> ${this
+   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">3d_rotation</i> ${this
      .formato}</div>
-   <div class="chip yellow darken-3"><i class="material-icons tiny">language</i> ${this
+   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">language</i> ${this
      .lenguaje}</div>
-   <div class="chip yellow darken-3"><i class="material-icons tiny">timer</i> ${this
+   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">timer</i> ${this
      .duracion}</div>
-   <div class="chip yellow darken-3"><i class="material-icons tiny">new_releases</i> ${this
+   <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">new_releases</i> ${this
      .estrenoMonth}</div>
-     <div class="chip yellow darken-3"><i class="material-icons tiny">movie_creation</i> ${this
+     <div class="chip yellow darken-3 truncate"><i class="material-icons tiny">movie_creation</i> ${this
        .director}</div>
    </span>
    </div>
@@ -435,17 +443,22 @@ window.navTabPopulate = function() {
   const navTabs = document.getElementById("navTabs");
   navTabs.innerHTML = "";
   window.Months.forEach(function(item) {
-    if (item.size > 0 && (item.index >= window.today.mm || (item.index < window.today.mm - 9)) ) {
+    if (
+      item.size > 0 &&
+      (item.index >= window.today.mm || item.index < window.today.mm - 9)
+    ) {
       navTabs.innerHTML += item.tabContent;
-    } 
+    }
   });
   $("ul.tabs").tabs();
 };
+
 window.addEventListener("load", function(event) {
   window.defaultCity();
+  importCines();
   importMovies();
-  navTabPopulate();
-  window.roundListMovies(Peliculas);
+  window.navTabPopulate();
+  // window.roundListMovies(Peliculas);
   window.roundListMovies([window.today.Mmm]);
   // window.listMovies(Peliculas);
   $("ul.tabs").tabs("select_tab", window.today.Mmm);
