@@ -98,8 +98,8 @@ const createMonthSets = function() {
     window.Months.add(window[name]);
     window[name].name = monthsYear[index - 1];
     window[name].month = name;
-    window[
-      name
+    window[name].index = index;
+      window[name
     ].tabContent = `<li class="tab pointer truncate"><a href="#${name}" onclick="roundListMovies(${name})">${window[
       name
     ].name}</a></li>`;
@@ -435,9 +435,9 @@ window.navTabPopulate = function() {
   const navTabs = document.getElementById("navTabs");
   navTabs.innerHTML = "";
   window.Months.forEach(function(item) {
-    if (item.size > 0) {
+    if (item.size > 0 && (item.index >= window.today.mm || (item.index < window.today.mm - 9)) ) {
       navTabs.innerHTML += item.tabContent;
-    }
+    } 
   });
   $("ul.tabs").tabs();
 };
