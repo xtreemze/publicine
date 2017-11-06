@@ -1,9 +1,9 @@
 //   .default;
 // import ImageminPlugin from "imagemin-webpack-plugin";
+const OfflinePlugin = require("offline-plugin");
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
 const ClosureCompiler = require("google-closure-compiler-js").webpack;
-const OfflinePlugin = require("offline-plugin");
-const OptimizeJsPlugin = require("optimize-js-plugin");
+// const OptimizeJsPlugin = require("optimize-js-plugin");
 // const path = require("path");
 // const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const PurifyCSSPlugin = require("purifycss-webpack");
@@ -19,7 +19,7 @@ module.exports = function prod(env) {
     stats: {
       warnings: false
     },
-    devtool: "cheap-module-source-map",
+    devtool: "cheap-source-map",
     module: {
       rules: [
         {
@@ -30,21 +30,12 @@ module.exports = function prod(env) {
             "html-loader"
           ]
         },
-        // {
-        //   test: /\.css$/,
-        //   loader: ExtractTextPlugin.extract({
-        //     fallback: "style-loader",
-        //     use: "css-loader"
-        //   })
-        // },
+
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader"]
+          use: ["style-loader", "css-loader", "postcss-loader"]
         },
-        // {
-        //   test: /\.(png|gif|jpg|webp)$/,
-        //   use: ["file-loader?name=[path][name].[ext]"]
-        // },
+
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
@@ -55,9 +46,9 @@ module.exports = function prod(env) {
                 gifsicle: {
                   interlaced: false
                 },
-                optipng: {
-                  optimizationLevel: 7
-                },
+                // optipng: {
+                //   optimizationLevel: 7
+                // },
                 pngquant: {
                   quality: "65-90",
                   speed: 4
@@ -65,33 +56,25 @@ module.exports = function prod(env) {
                 mozjpeg: {
                   progressive: true,
                   quality: 65
-                },
-                // Specifying webp here will create a WEBP version of your JPG/PNG images
-                webp: {
-                  quality: 75
                 }
+                // Specifying webp here will create a WEBP version of your JPG/PNG images
+                // webp: {
+                //   quality: 75
+                // }
               }
             }
           ]
         },
         {
           test: /\.(eot|ttf|woff|woff2)$/,
-          loader: "file-loader?name=[path][name].[ext]"
+          loader: "url-loader?limit=1000000"
         },
-        // {
-        //   test: /\.svg$/,
-        //   use: [
-        //     {
-        //       loader: "file-loader?name=[path][name].[ext]"
-        //     }
-        //   ]
-        // },
         {
           test: /\.js$/,
           exclude: [/node_modules/],
           use: [
             {
-              loader: "babel-loader",
+              loader: "babel-loader?cacheDirectory",
               options: {
                 presets: [["env", { modules: false }]]
               }
@@ -101,16 +84,8 @@ module.exports = function prod(env) {
       ]
     },
     plugins: [
-      // new ImageminPlugin({
-      //   pngquant: {
-      //     quality: "95-100"
-      //   }
-      // }),
-      // // ... other plugins
       new HtmlMinifierPlugin({}),
-      new OptimizeJsPlugin({
-        sourceMap: true
-      }),
+
       new ClosureCompiler({
         compiler: {
           language_in: "ECMASCRIPT6",
@@ -155,6 +130,7 @@ module.exports = function prod(env) {
         responseStrategy: "network-first",
         updateStrategy: "all",
         minify: "true",
+        autoUpdate: 1000 * 60 * 60 * 2,
         ServiceWorker: {
           events: "true"
         },

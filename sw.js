@@ -2,8 +2,8 @@ var __wpo = {
   "assets": {
     "main": [
       "./",
-      "./build/banner-02.svg",
       "./build/banner.svg",
+      "./build/banner-02.svg",
       "./bundle.js",
       "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css",
       "https://code.jquery.com/jquery-3.2.1.min.js",
@@ -21,13 +21,13 @@ var __wpo = {
   ],
   "hashesMap": {
     "57aaa827f86731f111cc96e72b0952c6cfcdbc88": "./",
-    "3cf62170fb31e2bddf2600ac7571690b854b18ec": "./build/banner-02.svg",
     "ae0e1d7a8903adbd3fc6fa312fc402c0308a64dc": "./build/banner.svg",
-    "f721afc5b0d7c70a3b0df00ba289e444e55dc6c4": "./bundle.js"
+    "3cf62170fb31e2bddf2600ac7571690b854b18ec": "./build/banner-02.svg",
+    "0986c61e0fb4f4b024e7abdb5e31629ca882fd80": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-11-1 11:24:13",
+  "version": "2017-11-6 13:01:22",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

@@ -8,7 +8,7 @@ module.exports = function dev(env) {
     stats: {
       warnings: false
     },
-    devtool: "cheap-module-eval-source-map",
+    devtool: "cheap-module-source-map",
     module: {
       rules: [
         {
@@ -20,16 +20,8 @@ module.exports = function dev(env) {
           ]
         },
         {
-          test: /embedEnB.html$/,
-          loaders: [
-            "file-loader?name=embedEn.[ext]",
-            "extract-loader",
-            "html-loader"
-          ]
-        },
-        {
           test: /\.css$/,
-          use: ["style-loader", "css-loader"]
+          use: ["style-loader", "css-loader", "postcss-loader"]
         },
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
@@ -37,47 +29,20 @@ module.exports = function dev(env) {
             "file-loader?name=[path][name].[ext]",
             {
               loader: "image-webpack-loader",
-              options: {
-                gifsicle: {
-                  interlaced: false
-                },
-                optipng: {
-                  optimizationLevel: 7
-                },
-                pngquant: {
-                  quality: "65-90",
-                  speed: 4
-                },
-                mozjpeg: {
-                  progressive: true,
-                  quality: 65
-                },
-                // Specifying webp here will create a WEBP version of your JPG/PNG images
-                webp: {
-                  quality: 75
-                }
-              }
+              options: {}
             }
           ]
         },
         {
           test: /\.(eot|ttf|woff|woff2)$/,
-          loader: "file-loader?name=[path][name].[ext]"
+          loader: "url-loader?limit=1000000"
         },
-        // {
-        //   test: /\.svg$/,
-        //   use: [
-        //     {
-        //       loader: "file-loader?name=[path][name].[ext]"
-        //     }
-        //   ]
-        // },
         {
           test: /\.js$/,
           exclude: [/node_modules/],
           use: [
             {
-              loader: "babel-loader",
+              loader: "babel-loader?cacheDirectory",
               options: {
                 presets: [["env", { modules: false }]]
               }
