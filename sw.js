@@ -2,8 +2,8 @@ var __wpo = {
   "assets": {
     "main": [
       "./",
-      "./build/banner.svg",
       "./build/banner-02.svg",
+      "./build/banner.svg",
       "./bundle.js",
       "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css",
       "https://code.jquery.com/jquery-3.2.1.min.js",
@@ -20,14 +20,14 @@ var __wpo = {
     "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
   ],
   "hashesMap": {
-    "57aaa827f86731f111cc96e72b0952c6cfcdbc88": "./",
-    "ae0e1d7a8903adbd3fc6fa312fc402c0308a64dc": "./build/banner.svg",
+    "3e80ba9f12c664fc24e5c4551c2830b1bf6e3696": "./",
     "3cf62170fb31e2bddf2600ac7571690b854b18ec": "./build/banner-02.svg",
-    "0986c61e0fb4f4b024e7abdb5e31629ca882fd80": "./bundle.js"
+    "ae0e1d7a8903adbd3fc6fa312fc402c0308a64dc": "./build/banner.svg",
+    "58d1e3c4d823042f2768af77e7f3690bb45eab07": "./bundle.js"
   },
   "strategy": "all",
   "responseStrategy": "network-first",
-  "version": "2017-11-6 13:01:22",
+  "version": "2017-11-6 13:13:19",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true
