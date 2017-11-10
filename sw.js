@@ -1,33 +1,33 @@
 var __wpo = {
   "assets": {
     "main": [
+      "./build/vendor.bundle.6d45b7befbfc1f57b368.js",
+      "./build/entry.bundle.a3a54280114013f29633.js",
+      "./build/manifest.bundle.89539b981b93b34d0a0a.js",
+      "./build/vendor.bundle.6d45b7befbfc1f57b368.js.map",
+      "./build/entry.bundle.a3a54280114013f29633.js.map",
+      "./build/manifest.bundle.89539b981b93b34d0a0a.js.map",
       "./",
-      "./build/banner-02.svg",
-      "./build/banner.svg",
-      "./bundle.js",
-      "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css",
-      "https://code.jquery.com/jquery-3.2.1.min.js",
-      "https://fonts.googleapis.com/icon?family=Material+Icons",
-      "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
+      "https://fonts.googleapis.com/icon?family=Material+Icons"
     ],
     "additional": [],
     "optional": []
   },
   "externals": [
-    "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css",
-    "https://code.jquery.com/jquery-3.2.1.min.js",
-    "https://fonts.googleapis.com/icon?family=Material+Icons",
-    "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
+    "https://fonts.googleapis.com/icon?family=Material+Icons"
   ],
   "hashesMap": {
-    "3e80ba9f12c664fc24e5c4551c2830b1bf6e3696": "./",
-    "3cf62170fb31e2bddf2600ac7571690b854b18ec": "./build/banner-02.svg",
-    "ae0e1d7a8903adbd3fc6fa312fc402c0308a64dc": "./build/banner.svg",
-    "58d1e3c4d823042f2768af77e7f3690bb45eab07": "./bundle.js"
+    "f397569412df1eb49fa04e60ea5a73ad1091ca28": "./build/vendor.bundle.6d45b7befbfc1f57b368.js",
+    "e6ee1c5231dbf9a8b66ed352c80b954ccad9efda": "./build/entry.bundle.a3a54280114013f29633.js",
+    "45358c8e077b64f4b0aa440c155e1635ea1f44bd": "./build/manifest.bundle.89539b981b93b34d0a0a.js",
+    "31f044a168210c0a6a0141ab845edbeb7bfe7f24": "./build/vendor.bundle.6d45b7befbfc1f57b368.js.map",
+    "e28b2257d1ca5d61d5d0d43dc302baba7c75b8af": "./build/entry.bundle.a3a54280114013f29633.js.map",
+    "582d38dd550d814eed879e9d536a569dc7283a6f": "./build/manifest.bundle.89539b981b93b34d0a0a.js.map",
+    "a6ab08a6e6d3ce5a9a9e75c5d06139a7419b60a3": "./"
   },
-  "strategy": "all",
-  "responseStrategy": "network-first",
-  "version": "2017-11-6 13:13:19",
+  "strategy": "changed",
+  "responseStrategy": "cache-first",
+  "version": "2017-11-10 10:54:11",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": true

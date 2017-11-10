@@ -1,12 +1,15 @@
 CACHE MANIFEST
-#ver:2017-11-6 13:13:19
+#ver:2017-11-10 10:54:11
 #plugin:4.8.4
 
 CACHE:
+../build/vendor.bundle.6d45b7befbfc1f57b368.js
+../build/entry.bundle.a3a54280114013f29633.js
+../build/manifest.bundle.89539b981b93b34d0a0a.js
+../build/vendor.bundle.6d45b7befbfc1f57b368.js.map
+../build/entry.bundle.a3a54280114013f29633.js.map
+../build/manifest.bundle.89539b981b93b34d0a0a.js.map
 ../
-../build/banner-02.svg
-../build/banner.svg
-../bundle.js
 
 NETWORK:
 *

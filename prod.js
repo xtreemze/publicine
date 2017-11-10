@@ -1,45 +1,51 @@
-//   .default;
-// import ImageminPlugin from "imagemin-webpack-plugin";
 const OfflinePlugin = require("offline-plugin");
+const webpack = require("webpack");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+// const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
-const ClosureCompiler = require("google-closure-compiler-js").webpack;
-// const OptimizeJsPlugin = require("optimize-js-plugin");
-// const path = require("path");
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const PurifyCSSPlugin = require("purifycss-webpack");
-// const glob = require("glob-all");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 //
-module.exports = function prod(env) {
+module.exports = function e(env) {
   return {
-    entry: "./entry.js",
+    entry: {
+      vendor: [
+        "jquery",
+        "hammerjs",
+        "./node_modules/materialize-css/dist/js/materialize",
+        "./node_modules/materialize-css/dist/css/materialize.css",
+        "materialize-css",
+        "./js/offlineRuntimeInstall"
+      ],
+      entry: "./entry.js"
+    },
     output: {
       path: __dirname,
-      filename: "bundle.js"
+      filename: "./build/[name].bundle.[chunkhash].js"
     },
     stats: {
       warnings: false
     },
-    devtool: "cheap-source-map",
+    devtool: "cheap-module-source-map",
     module: {
       rules: [
-        {
-          test: /indexB.html$/,
-          loaders: [
-            "file-loader?name=index.[ext]",
-            "extract-loader",
-            "html-loader"
-          ]
-        },
+        // {
+        //   test: /indexB.html$/,
+        //   loaders: [
+        //     "file-loader?name=index.[ext]",
+        //     "extract-loader",
+        //     "html-loader"
+        //   ]
+        // },
 
         {
           test: /\.css$/,
           use: ["style-loader", "css-loader", "postcss-loader"]
         },
-
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=build/[name].[ext]",
+            "file-loader?name=build/[name].[hash].[ext]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -71,64 +77,73 @@ module.exports = function prod(env) {
         },
         {
           test: /\.js$/,
-          exclude: [/node_modules/],
-          use: [
-            {
-              loader: "babel-loader?cacheDirectory",
-              options: {
-                presets: [["env", { modules: false }]]
-              }
-            }
-          ]
+          exclude: [/node_modules/]
+          // use: [
+          //   {
+          //     loader: "babel-loader?cacheDirectory",
+          //     options: {
+          //       presets: [["env", { modules: false }]]
+          //     }
+          //   }
+          // ]
         }
       ]
     },
     plugins: [
-      new HtmlMinifierPlugin({}),
-
-      new ClosureCompiler({
-        compiler: {
-          language_in: "ECMASCRIPT6",
-          language_out: "ECMASCRIPT5",
-          compilation_level: "ADVANCED",
-          warning_level: "QUIET",
-          externs: [
-            {
-              src: `
-                      var jQuery = {};
-                      
-                      var $ = {}  
-
-                      Materialize.toast();
-               `
-            }
-          ]
-        },
-        makeSourceMaps: true,
-        concurrency: 4
+      new HtmlWebpackPlugin({
+        title: "Publicine",
+        template: "indexB.html"
       }),
-      // new ExtractTextPlugin("[name].css"),
-      // new PurifyCSSPlugin({
-      //   minimize: true,
-      //   verbose: true,
-      //   // Give paths to parse for rules. These should be absolute!
-      //   paths: glob.sync([
-      //     path.join(__dirname, "*.html"),
-      //     path.join(__dirname, "js/*.js")
-      //   ])
-      // }),
+      // ... other plugins
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "vendor",
+        // filename: "build/vendor.bundle.[chunkhash].js",
+        // (Give the chunk a different name)
+
+        minChunks: Infinity
+        // (with more entries, this ensures that no other module
+        //  goes into the vendor chunk)
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: "manifest",
+        minChunks: Infinity
+      }),
+      new UglifyJSPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+        uglifyOptions: {
+          ecma: 8,
+          output: {
+            comments: false
+          }
+        }
+      }),
+      new HtmlMinifierPlugin({
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeEmtpyElements: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeStyleLinkTypeAttributes: true,
+        sortAttributes: true,
+        sortClassName: true,
+        minifyURLs: true,
+        collapseWhitespace: true,
+        collapseInlineTagWhitespace: true,
+        collapseBooleanAttributes: true
+      }),
+
       new OfflinePlugin({
-        externals: [
-          // "./js/materialize.min.js",
-          //  "./js/jquery-3.2.1.min.js",
-          "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css",
-          "https://code.jquery.com/jquery-3.2.1.min.js",
-          "https://fonts.googleapis.com/icon?family=Material+Icons",
-          "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
-        ],
+        externals: ["https://fonts.googleapis.com/icon?family=Material+Icons"],
         caches: "all",
-        responseStrategy: "network-first",
-        updateStrategy: "all",
+        // responseStrategy: "network-first",
+        responseStrategy: "cache-first",
+        // updateStrategy: "all",
+        updateStrategy: "changed",
         minify: "true",
         autoUpdate: 1000 * 60 * 60 * 2,
         ServiceWorker: {
