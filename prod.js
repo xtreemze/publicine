@@ -47,6 +47,7 @@ module.exports = function e(env) {
                 loader: "css-loader",
                 options: {
                   autoprefixer: false,
+                  minimize: true,
                   sourceMap: true,
                   importLoaders: 1
                 }
@@ -108,7 +109,7 @@ module.exports = function e(env) {
         title: "Publicine",
         template: "./indexB.html"
       }),
-      new ExtractTextPlugin("styles.[chunkhash].css"),
+      new ExtractTextPlugin("[name].[chunkhash].css"),
       // ... other plugins
       new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",

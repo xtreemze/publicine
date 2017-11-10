@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:2017-11-10 21:07:21
+#ver:2017-11-10 21:33:46
 #plugin:4.8.4
 
 CACHE:
@@ -8,8 +8,8 @@ CACHE:
 ../vendor.74f5306e21976f2638ff.js
 ../entry.923ce2214d97d32ab202.js
 ../manifest.28c9629338476474a397.js
-../styles.74f5306e21976f2638ff.css
-../styles.923ce2214d97d32ab202.css
+../vendor.74f5306e21976f2638ff.css
+../entry.923ce2214d97d32ab202.css
 ../vendor.74f5306e21976f2638ff.js.map
 ../entry.923ce2214d97d32ab202.js.map
 ../manifest.28c9629338476474a397.js.map
