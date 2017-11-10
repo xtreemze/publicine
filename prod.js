@@ -10,11 +10,11 @@ module.exports = function e(env) {
   return {
     entry: {
       vendor: [
-        "jquery",
-        "hammerjs",
+        // "jquery",
+        // "hammerjs",
         "./node_modules/materialize-css/dist/js/materialize",
         "./node_modules/materialize-css/dist/css/materialize.css",
-        "materialize-css",
+        // "materialize-css",
         "./js/offlineRuntimeInstall"
       ],
       entry: "./entry.js"
