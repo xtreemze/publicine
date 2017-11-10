@@ -13,11 +13,11 @@ module.exports = function e(env) {
         // "materialize-css",
         "./js/offlineRuntimeInstall"
       ],
-      entry: "./entry.js"
+      app: "./app.js"
     },
     output: {
       path: __dirname + "/public",
-      filename: "./[name].[hash].js"
+      filename: "./1/[name].[hash].js"
     },
     stats: {
       warnings: false
@@ -36,12 +36,12 @@ module.exports = function e(env) {
 
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader", "postcss-loader"]
+          use: ["style-loader", "css-loader"]
         },
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=[path]/[name].[hash].[ext]",
+            "file-loader?name=1/[name].[hash].[ext]",
             {
               loader: "image-webpack-loader",
               options: {
