@@ -17,12 +17,12 @@ module.exports = function e(env) {
         // "materialize-css",
         "./js/offlineRuntimeInstall"
       ],
-      entry: "./entry.js"
+      app: "./app.js"
     },
     output: {
       path: __dirname + "/public",
-      filename: "./[name].[chunkhash].js",
-      chunkFilename: "[id].[chunkhash].js"
+      filename: "./1/[name].[chunkhash].js",
+      chunkFilename: "./1/[id].[chunkhash].js"
     },
     stats: {
       warnings: false
@@ -60,7 +60,7 @@ module.exports = function e(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=[path]/[name].[hash].[ext]",
+            "file-loader?name=1/[name].[hash].[ext]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -109,7 +109,7 @@ module.exports = function e(env) {
         title: "Publicine",
         template: "./indexB.html"
       }),
-      new ExtractTextPlugin("[name].[chunkhash].css"),
+      new ExtractTextPlugin("1/[name].[chunkhash].css"),
       // ... other plugins
       new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",

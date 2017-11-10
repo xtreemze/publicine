@@ -1,2 +1,2 @@
 const rmdir = require("rimraf");
-rmdir("./public", function(error) {});
+rmdir("./public/1", function(error) {});
