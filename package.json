@@ -4,7 +4,7 @@
   "description": "Cine",
   "main": "index.html",
   "scripts": {
-    "test": "none",
+    "test": "node ./js/rmDir.js && webpack --env=prod --profile --progress",
     "dev":
       "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile --open",
     "debugHot":

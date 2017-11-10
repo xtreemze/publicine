@@ -20,8 +20,9 @@ module.exports = function e(env) {
       entry: "./entry.js"
     },
     output: {
-      path: __dirname,
-      filename: "./build/[name].bundle.[chunkhash].js"
+      path: __dirname + "/public",
+      filename: "./[name].[chunkhash].js",
+      chunkFilename: "[id].[chunkhash].js"
     },
     stats: {
       warnings: false
@@ -37,15 +38,28 @@ module.exports = function e(env) {
         //     "html-loader"
         //   ]
         // },
-
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader", "postcss-loader"]
+          use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: [
+              {
+                loader: "css-loader",
+                options: {
+                  autoprefixer: false,
+                  sourceMap: true,
+                  importLoaders: 1
+                }
+              },
+              "postcss-loader"
+            ]
+          })
         },
+
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=build/[name].[hash].[ext]",
+            "file-loader?name=[path]/[name].[hash].[ext]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -92,8 +106,9 @@ module.exports = function e(env) {
     plugins: [
       new HtmlWebpackPlugin({
         title: "Publicine",
-        template: "indexB.html"
+        template: "./indexB.html"
       }),
+      new ExtractTextPlugin("styles.[chunkhash].css"),
       // ... other plugins
       new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",
