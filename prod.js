@@ -107,7 +107,7 @@ module.exports = function e(env) {
     plugins: [
       new HtmlWebpackPlugin({
         title: "Publicine",
-        template: "./index.ejs?[chunkhash]",
+        template: "./index.ejs",
         hash: true
       }),
       new ExtractTextPlugin("./1/[name].css?[chunkhash]"),
