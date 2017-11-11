@@ -60,7 +60,7 @@ module.exports = function e(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=1/[name].[ext]?[hash]",
+            "file-loader?name=./1/[name].[ext]?[hash]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -110,7 +110,7 @@ module.exports = function e(env) {
         template: "./index.ejs?[chunkhash]",
         hash: true
       }),
-      new ExtractTextPlugin("1/[name].css?[chunkhash]"),
+      new ExtractTextPlugin("./1/[name].css?[chunkhash]"),
       // ... other plugins
       new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",
