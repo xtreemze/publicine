@@ -21,8 +21,8 @@ module.exports = function e(env) {
     },
     output: {
       path: __dirname + "/public",
-      filename: "./1/[name].[chunkhash].js",
-      chunkFilename: "./1/[id].[chunkhash].js"
+      filename: "./1/[name].js?[chunkhash]",
+      chunkFilename: "./1/[id].js?[chunkhash]"
     },
     stats: {
       warnings: false
@@ -60,7 +60,7 @@ module.exports = function e(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=1/[name].[hash].[ext]",
+            "file-loader?name=1/[name].[ext]?[hash]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -87,7 +87,7 @@ module.exports = function e(env) {
           ]
         },
         {
-          test: /\.(eot|ttf|woff|woff2)$/,
+          test: /\.(eot|ttf|woff|woff2|ico)$/,
           loader: "url-loader?limit=1000000"
         },
         {
@@ -107,9 +107,10 @@ module.exports = function e(env) {
     plugins: [
       new HtmlWebpackPlugin({
         title: "Publicine",
-        template: "./indexB.html"
+        template: "./index.ejs?[chunkhash]",
+        hash: true
       }),
-      new ExtractTextPlugin("1/[name].[chunkhash].css"),
+      new ExtractTextPlugin("1/[name].css?[chunkhash]"),
       // ... other plugins
       new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",

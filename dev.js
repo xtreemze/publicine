@@ -68,7 +68,7 @@ module.exports = function e(env) {
           ]
         },
         {
-          test: /\.(eot|ttf|woff|woff2)$/,
+          test: /\.(eot|ttf|woff|woff2|ico)$/,
           loader: "url-loader?limit=1000000"
         },
         {
@@ -88,7 +88,7 @@ module.exports = function e(env) {
     plugins: [
       new HtmlWebpackPlugin({
         title: "Publicine",
-        template: "indexB.html"
+        template: "index.ejs"
       }),
       // ... other plugins
       new webpack.optimize.CommonsChunkPlugin({
