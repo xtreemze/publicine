@@ -5,35 +5,38 @@
   "main": "index.html",
   "scripts": {
     "test": "node ./js/rmDir.js && webpack --env=prod --profile --progress",
-    "dev":
-      "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile --open",
-    "debugHot":
-      "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile",
-    "debug":
-      "webpack-dev-server --host localhost --port 8080 --env=dev --profile",
-    "net":
-      "webpack-dev-server --public --host 192.168.0.170 --port 80 --env=dev --profile --open",
-    "net2":
-      "webpack-dev-server --public --host 192.168.0.117 --port 80 --env=dev --profile --open",
-    "devHTML":
-      "webpack-dev-server --progress --colors --host localhost --port 8080 --env=dev --profile --open",
+    "dev": "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile --open",
+    "debugHot": "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile",
+    "debug": "webpack-dev-server --host localhost --port 8080 --env=dev --profile",
+    "net": "webpack-dev-server --public --host 192.168.0.170 --port 80 --env=dev --profile --open",
+    "net2": "webpack-dev-server --public --host 192.168.0.117 --port 80 --env=dev --profile --open",
+    "devHTML": "webpack-dev-server --progress --colors --host localhost --port 8080 --env=dev --profile --open",
     "watch": "webpack --progress --colors --env=dev --profile --watch",
-    "exportp": "node ./js/rmDir.js && webpack --env=prod --profile --progress",
+    "exportp": "node ./app/js/rmDir.js && webpack --env=prod --profile --progress",
     "rm": "node ./js/rmDir.js",
-    "clean": "node ./js/clean.js && npm i -D && npm up -D"
+    "clean": "node ./app/js/clean.js && npm i -D && npm up -D"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xtreemze/publicine.git"
   },
-  "keywords": ["cine", "progressive", "webapp", "materialize", "JavaScript"],
+  "keywords": [
+    "cine",
+    "progressive",
+    "webapp",
+    "materialize",
+    "JavaScript"
+  ],
   "author": "Carlos Velasco",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/xtreemze/publicine/issues"
   },
   "homepage": "https://github.com/xtreemze/publicine#readme",
-  "browserslist": ["> 1%", "last 2 versions"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^7.1.6",

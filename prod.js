@@ -15,9 +15,9 @@ module.exports = function e(env) {
         "./node_modules/materialize-css/dist/js/materialize",
         "./node_modules/materialize-css/dist/css/materialize.css",
         // "materialize-css",
-        "./js/offlineRuntimeInstall"
+        "./app/js/offlineRuntimeInstall"
       ],
-      app: "./app.js"
+      entry: "./app/entry.js"
     },
     output: {
       path: __dirname + "/public",
@@ -107,7 +107,7 @@ module.exports = function e(env) {
     plugins: [
       new HtmlWebpackPlugin({
         title: "Publicine",
-        template: "./index.ejs",
+        template: "./app/index.ejs",
         hash: true
       }),
       new ExtractTextPlugin("./1/[name].css?[chunkhash]"),

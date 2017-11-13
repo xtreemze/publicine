@@ -13,7 +13,7 @@ module.exports = function e(env) {
         // "materialize-css",
         "./js/offlineRuntimeInstall"
       ],
-      app: "./app.js"
+      app: "./app/entry.js"
     },
     output: {
       path: __dirname + "/public",
@@ -41,7 +41,7 @@ module.exports = function e(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=1/[name].[hash].[ext]",
+            "file-loader?name=./1/[name].[hash].[ext]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -88,7 +88,7 @@ module.exports = function e(env) {
     plugins: [
       new HtmlWebpackPlugin({
         title: "Publicine",
-        template: "index.ejs"
+        template: "./app/index.ejs"
       }),
       // ... other plugins
       new webpack.optimize.CommonsChunkPlugin({
