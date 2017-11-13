@@ -11,7 +11,7 @@ module.exports = function e(env) {
         "./node_modules/materialize-css/dist/js/materialize",
         "./node_modules/materialize-css/dist/css/materialize.css",
         // "materialize-css",
-        "./js/offlineRuntimeInstall"
+        "./app/js/offlineRuntimeInstall"
       ],
       app: "./app/entry.js"
     },
