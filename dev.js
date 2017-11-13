@@ -6,18 +6,15 @@ module.exports = function e(env) {
   return {
     entry: {
       vendor: [
-        // "jquery",
-        // "hammerjs",
         "./node_modules/materialize-css/dist/js/materialize",
         "./node_modules/materialize-css/dist/css/materialize.css",
-        // "materialize-css",
         "./app/js/offlineRuntimeInstall"
       ],
       app: "./app/entry.js"
     },
     output: {
       path: __dirname + "/public",
-      filename: "./1/[name].js?[hash]"
+      filename: "./js/[name].js?[hash]"
     },
     stats: {
       warnings: false
@@ -25,15 +22,6 @@ module.exports = function e(env) {
     devtool: "cheap-module-source-map",
     module: {
       rules: [
-        // {
-        //   test: /indexB.html$/,
-        //   loaders: [
-        //     "file-loader?name=index.[ext]",
-        //     "extract-loader",
-        //     "html-loader"
-        //   ]
-        // },
-
         {
           test: /\.css$/,
           use: ["style-loader", "css-loader"]
@@ -41,7 +29,7 @@ module.exports = function e(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=./1/[name].[ext]?[hash]",
+            "file-loader?name=./img/[name].[ext]?[hash]",
             {
               loader: "image-webpack-loader",
               options: {

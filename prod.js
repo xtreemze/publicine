@@ -1,7 +1,6 @@
 const OfflinePlugin = require("offline-plugin");
 const webpack = require("webpack");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
-// const ClosureCompiler = require("google-closure-compiler-js").webpack;
 const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -10,19 +9,16 @@ module.exports = function e(env) {
   return {
     entry: {
       vendor: [
-        // "jquery",
-        // "hammerjs",
         "./node_modules/materialize-css/dist/js/materialize",
         "./node_modules/materialize-css/dist/css/materialize.css",
-        // "materialize-css",
         "./app/js/offlineRuntimeInstall"
       ],
       entry: "./app/entry.js"
     },
     output: {
       path: __dirname + "/public",
-      filename: "./1/[name].js?[chunkhash]",
-      chunkFilename: "./1/[id].js?[chunkhash]"
+      filename: "./js/[name].js?[chunkhash]",
+      chunkFilename: "./js/[id].js?[chunkhash]"
     },
     stats: {
       warnings: false
@@ -30,14 +26,6 @@ module.exports = function e(env) {
     devtool: "cheap-module-source-map",
     module: {
       rules: [
-        // {
-        //   test: /indexB.html$/,
-        //   loaders: [
-        //     "file-loader?name=index.[ext]",
-        //     "extract-loader",
-        //     "html-loader"
-        //   ]
-        // },
         {
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
@@ -60,7 +48,7 @@ module.exports = function e(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=./1/[name].[ext]?[hash]",
+            "file-loader?name=./img/[name].[ext]?[hash]",
             {
               loader: "image-webpack-loader",
               options: {
@@ -110,7 +98,7 @@ module.exports = function e(env) {
         template: "./app/index.ejs",
         hash: true
       }),
-      new ExtractTextPlugin("./1/[name].css?[chunkhash]"),
+      new ExtractTextPlugin("./css/[name].css?[chunkhash]"),
       // ... other plugins
       new webpack.optimize.CommonsChunkPlugin({
         name: "vendor",
