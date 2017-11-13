@@ -17,7 +17,7 @@ module.exports = function e(env) {
     },
     output: {
       path: __dirname + "/public",
-      filename: "./1/[name].[hash].js"
+      filename: "./1/[name].js?[hash]"
     },
     stats: {
       warnings: false
@@ -41,7 +41,7 @@ module.exports = function e(env) {
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            "file-loader?name=./1/[name].[hash].[ext]",
+            "file-loader?name=./1/[name].[ext]?[hash]",
             {
               loader: "image-webpack-loader",
               options: {
