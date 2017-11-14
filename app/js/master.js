@@ -1,20 +1,3 @@
-import * as OfflinePluginRuntime from "offline-plugin/runtime";
-
-OfflinePluginRuntime.install({
-  onInstalled: function() {},
-
-  onUpdating: function() {},
-
-  onUpdateReady: function() {
-    OfflinePlugin.applyUpdate();
-  },
-  onUpdated: function() {
-    setTimeout(function() {
-      window.location.reload();
-    }, 10000);
-  }
-});
-
 // Spanish
 jQuery.extend(jQuery.fn.pickadate.defaults, {
   monthsFull: [
