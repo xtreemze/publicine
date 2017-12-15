@@ -4,6 +4,7 @@ node_js:
 cache:
   directories:
     - "node_modules"
+script: node ./rmDir.js && webpack --env=prod --profile --colors
 deploy:
   provider: pages
   skip_cleanup: true

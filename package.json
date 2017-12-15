@@ -4,7 +4,7 @@
   "description": "Cine",
   "main": "index.html",
   "scripts": {
-    "test": "node ./rmDir.js && webpack --env=prod --profile",
+    "build": "node ./rmDir.js && webpack --env=prod --profile",
     "dev":
       "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile --open",
     "hotDebug":
@@ -14,7 +14,8 @@
     "net2":
       "webpack-dev-server --host 192.168.0.130 --port 80 --env=dev --profile --open",
     "watch": "webpack --progress --colors --env=dev --profile --watch",
-    "exportp": "node ./rmDir.js && webpack --env=prod --profile --progress",
+    "exportp":
+      "node ./rmDir.js && webpack --env=prod --profile --progress",
     "rm": "node ./rmDir.js",
     "clean": "node ./clean.js && npm i -D && npm up -D"
   },
@@ -22,7 +23,13 @@
     "type": "git",
     "url": "git+https://github.com/xtreemze/publicine.git"
   },
-  "keywords": ["cine", "progressive", "webapp", "materialize", "JavaScript"],
+  "keywords": [
+    "cine",
+    "progressive",
+    "webapp",
+    "materialize",
+    "JavaScript"
+  ],
   "author": "Carlos Velasco",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
@@ -32,8 +39,8 @@
   "browserslist": ["> 1%", "last 2 versions"],
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
-    "browserslist": "^2.8.0",
+    "autoprefixer": "^7.2.3",
+    "browserslist": "^2.10.0",
     "css-loader": "^0.28.7",
     "extract-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -44,14 +51,14 @@
     "image-webpack-loader": "^3.4.2",
     "jquery": "^3.2.1",
     "materialize-css": "^0.100.2",
-    "offline-plugin": "^4.8.4",
+    "offline-plugin": "^4.8.5",
     "postcss": "^6.0.14",
-    "postcss-loader": "^2.0.8",
+    "postcss-loader": "^2.0.9",
     "rimraf": "^2.6.2",
-    "style-loader": "^0.19.0",
-    "uglifyjs-webpack-plugin": "^1.0.1",
+    "style-loader": "^0.19.1",
+    "uglifyjs-webpack-plugin": "^1.1.4",
     "url-loader": "^0.6.2",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
   }
 }

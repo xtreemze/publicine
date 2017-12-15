@@ -11,12 +11,9 @@ webpackJsonp([1],[
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-// window.jQuery = require("jquery");
-// window.$ = require("jquery");
-// require("hammerjs");
+__webpack_require__(3);
 __webpack_require__(1);
 __webpack_require__(2);
-__webpack_require__(3);
 __webpack_require__(10);
 __webpack_require__(11);
 __webpack_require__(12);
@@ -129,28 +126,7 @@ window.addEventListener("DOMContentLoaded", function(event) {
 
 /***/ }),
 /* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__);
-
-
-__WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__["install"]({
-  onInstalled: function() {},
-
-  onUpdating: function() {},
-
-  onUpdateReady: function() {
-    OfflinePlugin.applyUpdate();
-  },
-  onUpdated: function() {
-    setTimeout(function() {
-      window.location.reload();
-    }, 10000);
-  }
-});
+/***/ (function(module, exports, __webpack_require__) {
 
 // Spanish
 jQuery.extend(jQuery.fn.pickadate.defaults, {
@@ -204,7 +180,7 @@ window.delayedTouch = function(movie) {
   window.timer2 = window.setTimeout(function() {
     window["img" + movie.shortTitle].click();
     window.clearTimeout(window.timer2);
-  }, 92);
+  }, 130);
   window.timer = window.setTimeout(function() {
     window.listMovie(movie);
     window.clearTimeout(window.timer);
@@ -212,7 +188,11 @@ window.delayedTouch = function(movie) {
   window.timer3 = window.setTimeout(function() {
     document
       .getElementById("intro")
-      .scrollIntoView({ block: "end", inline: "nearest", behavior: "smooth" });
+      .scrollIntoView({
+        block: "end",
+        inline: "nearest",
+        behavior: "smooth"
+      });
     window.clearTimeout(window.timer3);
   }, 600);
 };
@@ -255,9 +235,9 @@ const createMonthSets = function() {
     window[name].index = index;
     window[
       name
-    ].tabContent = `<li class="tab pointer truncate"><a href="#${name}" onclick="roundListMovies(${name})">${window[
-      name
-    ].name}</a></li>`;
+    ].tabContent = `<li class="tab pointer truncate"><a href="#${name}" onclick="roundListMovies(${name})">${
+      window[name].name
+    }</a></li>`;
   }
 };
 createMonthSets();
@@ -280,7 +260,7 @@ class Cine {
    *     Pais,
    *     WebURL,
    *     Ubicacion
-   *   } 
+   *   }
    * @memberof Cine
    */
   constructor({
@@ -343,7 +323,7 @@ class Movie {
    *     clasificacion,
    *     synopsis,
    *     cartelera
-   *   } 
+   *   }
    * @memberof Movie
    */
   constructor({
@@ -387,7 +367,10 @@ class Movie {
     this.ciudad = ciudad || "No disponible";
     this.clasificacion = clasificacion || "No disponible";
     this.synopsis = synopsis.trim() || "No disponible";
-    this.carteleraNombre = carteleraNombre.replace("Nahun_Banegas.jpg", ".jpg");
+    this.carteleraNombre = carteleraNombre.replace(
+      "Nahun_Banegas.jpg",
+      ".jpg"
+    );
     this.cartelera = cartelera.trim() || "No disponible";
     this.carteleraCut = this.cartelera.replace(
       "https://drive.google.com/open?id=",
@@ -420,7 +403,9 @@ class Movie {
         <i class="material-icons tiny">timer</i> ${this.duracion}
       </div>
       <div class="chip yellow darken-3 truncate">
-        <i class="material-icons tiny">new_releases</i> ${this.estrenoMonth}
+        <i class="material-icons tiny">new_releases</i> ${
+          this.estrenoMonth
+        }
       </div>
       <div class="chip yellow darken-3 truncate">
         <i class="material-icons tiny">movie_creation</i> ${this.director}
@@ -436,8 +421,9 @@ class Movie {
   <div class="">
     <div class="card-content grey-text text-lighten-2">
       <article class="video-container">
-        <iframe width="720" height="480" src="https://www.youtube.com/embed/${this
-          .trailerID}?hl=es&modestbranding=1&playsinline=1&rel=0&showinfo=0&color=red&iv_load_policy=3"
+        <iframe width="720" height="480" src="https://www.youtube.com/embed/${
+          this.trailerID
+        }?hl=es&modestbranding=1&playsinline=1&rel=0&showinfo=0&color=red&iv_load_policy=3"
           frameborder="0" allowfullscreen></iframe>
       </article>
     </div>
@@ -475,10 +461,13 @@ class Movie {
   </div>
 </form>
 `;
-    this.roundListContent = `<a id="img${this
-      .shortTitle}" ontouchstart="window.delayedTouch(window['${this
-      .titulo}'])" ontouchmove="window.clearTimer()" onclick="window.delayedTouch(window['${this
-      .titulo}'])" class="carousel-item pointer">${this.image}</a>
+    this.roundListContent = `<a id="img${
+      this.shortTitle
+    }" ontouchstart="window.delayedTouch(window['${
+      this.titulo
+    }'])" ontouchmove="window.clearTimer()" onclick="window.delayedTouch(window['${
+      this.titulo
+    }'])" class="carousel-item pointer">${this.image}</a>
 `;
     this.cardContent = ` <article id="synopsis" class="card grey darken-3">
     <div class="card-content grey-text text-lighten-2">
@@ -659,4 +648,4 @@ module.exports = {"export":[{"titulo":"Kingsman: El Círculo Dorado","estreno":"
 
 /***/ })
 ],[9]);
-//# sourceMappingURL=entry.js.map?0cd8bba6baccae8cc713
+//# sourceMappingURL=entry.js.map?e6dc89fb8c0a79a7a4fe

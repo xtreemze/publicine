@@ -10215,9 +10215,9 @@ jQuery.nodeName = nodeName;
 // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
 if ( true ) {
-	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
+	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
 		return jQuery;
-	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
 
@@ -10291,9 +10291,9 @@ if (typeof jQuery === 'undefined') {
 
 (function (factory) {
   if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_RESULT__ = function ($) {
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_RESULT__ = (function ($) {
       return factory($);
-    }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+    }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   } else if (typeof module === "object" && typeof module.exports === "object") {
     exports = factory(require('jquery'));
@@ -11481,13 +11481,13 @@ jQuery.Velocity ? console.log("Velocity is already loaded. You may be needlessly
       }
     }, destroy: function () {
       this.element && lc(this, !1), this.handlers = {}, this.session = {}, this.input.destroy(), this.element = null;
-    } }, n(hc, { INPUT_START: O, INPUT_MOVE: P, INPUT_END: Q, INPUT_CANCEL: R, STATE_POSSIBLE: Rb, STATE_BEGAN: Sb, STATE_CHANGED: Tb, STATE_ENDED: Ub, STATE_RECOGNIZED: Vb, STATE_CANCELLED: Wb, STATE_FAILED: Xb, DIRECTION_NONE: S, DIRECTION_LEFT: T, DIRECTION_RIGHT: U, DIRECTION_UP: V, DIRECTION_DOWN: W, DIRECTION_HORIZONTAL: X, DIRECTION_VERTICAL: Y, DIRECTION_ALL: Z, Manager: kc, Input: ab, TouchAction: Pb, TouchInput: Eb, MouseInput: rb, PointerEventInput: wb, TouchMouseInput: Gb, SingleTouchInput: Ab, Recognizer: Yb, AttrRecognizer: ac, Tap: gc, Pan: bc, Swipe: fc, Pinch: cc, Rotate: ec, Press: dc, on: t, off: u, each: m, merge: o, extend: n, inherit: p, bindFn: q, prefixed: B }), "function" == g && __webpack_require__(7) ? !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+    } }, n(hc, { INPUT_START: O, INPUT_MOVE: P, INPUT_END: Q, INPUT_CANCEL: R, STATE_POSSIBLE: Rb, STATE_BEGAN: Sb, STATE_CHANGED: Tb, STATE_ENDED: Ub, STATE_RECOGNIZED: Vb, STATE_CANCELLED: Wb, STATE_FAILED: Xb, DIRECTION_NONE: S, DIRECTION_LEFT: T, DIRECTION_RIGHT: U, DIRECTION_UP: V, DIRECTION_DOWN: W, DIRECTION_HORIZONTAL: X, DIRECTION_VERTICAL: Y, DIRECTION_ALL: Z, Manager: kc, Input: ab, TouchAction: Pb, TouchInput: Eb, MouseInput: rb, PointerEventInput: wb, TouchMouseInput: Gb, SingleTouchInput: Ab, Recognizer: Yb, AttrRecognizer: ac, Tap: gc, Pan: bc, Swipe: fc, Pinch: cc, Rotate: ec, Press: dc, on: t, off: u, each: m, merge: o, extend: n, inherit: p, bindFn: q, prefixed: B }), "function" == g && __webpack_require__(6) ? !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
     return hc;
-  }.call(exports, __webpack_require__, exports, module),
+  }).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : "undefined" != typeof module && module.exports ? module.exports = hc : a[c] = hc;
 }(window, document, "Hammer");;(function (factory) {
   if (true) {
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(8)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(7)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -20293,7 +20293,7 @@ if (Vel) {
   };
 })(jQuery);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)(module)))
 
 /***/ }),
 /* 2 */
@@ -20307,7 +20307,7 @@ if (Vel) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__);
 
 
@@ -20329,243 +20329,6 @@ __WEBPACK_IMPORTED_MODULE_0_offline_plugin_runtime__["install"]({
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports) {
-
-var appCacheIframe;
-
-function hasSW() {
-  return 'serviceWorker' in navigator &&
-    // This is how I block Chrome 40 and detect Chrome 41, because first has
-    // bugs with history.pustState and/or hashchange
-    (window.fetch || 'imageRendering' in document.documentElement.style) &&
-    (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname.indexOf('127.') === 0)
-}
-
-function install(options) {
-  options || (options = {});
-
-  
-    if (hasSW()) {
-      var registration = navigator.serviceWorker
-        .register(
-          "sw.js"
-          
-        );
-
-      
-        var handleUpdating = function(registration) {
-          var sw = registration.installing || registration.waiting;
-          var ignoreInstalling;
-          var ignoreWaiting;
-
-          // No SW or already handled
-          if (!sw || sw.onstatechange) return;
-
-          var stateChangeHandler;
-
-          // Already has SW
-          if (registration.active) {
-            onUpdateStateChange();
-            stateChangeHandler = onUpdateStateChange;
-          } else {
-            onInstallStateChange();
-            stateChangeHandler = onInstallStateChange;
-          }
-
-          ignoreInstalling = true;
-          if (registration.waiting) {
-            ignoreWaiting = true;
-          }
-
-          sw.onstatechange = stateChangeHandler;
-
-          function onUpdateStateChange() {
-            switch (sw.state) {
-              case 'redundant': {
-                sendEvent('onUpdateFailed');
-                sw.onstatechange = null;
-              } break;
-
-              case 'installing': {
-                if (!ignoreInstalling) {
-                  sendEvent('onUpdating');
-                }
-              } break;
-
-              case 'installed': {
-                if (!ignoreWaiting) {
-                  sendEvent('onUpdateReady');
-                }
-              } break;
-
-              case 'activated': {
-                sendEvent('onUpdated');
-                sw.onstatechange = null;
-              } break;
-            }
-          }
-
-          function onInstallStateChange() {
-            switch (sw.state) {
-              case 'redundant': {
-                // Failed to install, ignore
-                sw.onstatechange = null;
-              } break;
-
-              case 'installing': {
-                // Installing, ignore
-              } break;
-
-              case 'installed': {
-                // Installed, wait activation
-              } break;
-
-              case 'activated': {
-                sendEvent('onInstalled');
-                sw.onstatechange = null;
-              } break;
-            }
-          }
-        };
-
-        var sendEvent = function(event) {
-          if (typeof options[event] === 'function') {
-            options[event]({
-              source: 'ServiceWorker'
-            });
-          }
-        };
-
-        registration.then(function(reg) {
-          // WTF no reg?
-          if (!reg) return;
-
-          // Installed but Shift-Reloaded (page is not controller by SW),
-          // update might be ready at this point (more than one tab opened).
-          // Anyway, if page is hard-reloaded, then it probably already have latest version
-          // but it's not controlled by SW yet. Applying update will claim this page
-          // to be controlled by SW. Maybe set flag to not reload it?
-          // if (!navigator.serviceWorker.controller) return;
-
-          handleUpdating(reg);
-          reg.onupdatefound = function() {
-            handleUpdating(reg);
-          };
-        }).catch(function(err) {
-          sendEvent('onError');
-          return Promise.reject(err);
-        });
-      
-
-      return;
-    }
-  
-
-  
-    if (window.applicationCache) {
-      var directory = "appcache/";
-      var name = "manifest";
-
-      var doLoad = function() {
-        var page = directory + name + '.html';
-        var iframe = document.createElement('iframe');
-
-        
-          window.addEventListener('message', function(e) {
-            if (e.source !== iframe.contentWindow) return;
-
-            var match = (e.data + '').match(/__offline-plugin_AppCacheEvent:(\w+)/);
-            if (!match) return;
-            var event = match[1];
-
-            if (typeof options[event] === 'function') {
-              options[event]({
-                source: 'AppCache'
-              });
-            }
-          });
-        
-
-        iframe.src = page;
-        iframe.style.display = 'none';
-
-        appCacheIframe = iframe;
-        document.body.appendChild(iframe);
-      };
-
-      if (document.readyState === 'complete') {
-        setTimeout(doLoad);
-      } else {
-        window.addEventListener('load', doLoad);
-      }
-
-      return;
-    }
-  
-}
-
-function applyUpdate(callback, errback) {
-  
-    if (hasSW()) {
-      navigator.serviceWorker.getRegistration().then(function(registration) {
-        if (!registration || !registration.waiting) {
-          errback && errback();
-          return;
-        }
-
-        registration.waiting.postMessage({
-          action: 'skipWaiting'
-        });
-
-        callback && callback();
-      });
-
-      return;
-    }
-  
-
-  
-    if (appCacheIframe) {
-      try {
-        appCacheIframe.contentWindow.__applyUpdate();
-        callback && setTimeout(callback);
-      } catch (e) {
-        errback && setTimeout(errback);
-      }
-    }
-  
-}
-
-function update() {
-  
-    if (hasSW()) {
-      navigator.serviceWorker.getRegistration().then(function(registration) {
-        if (!registration) return;
-        return registration.update();
-      });
-    }
-  
-
-  
-    if (appCacheIframe) {
-      try {
-        appCacheIframe.contentWindow.applicationCache.update();
-      } catch (e) {}
-    }
-  
-}
-
-
-  setInterval(update, 7200000);
-
-
-exports.install = install;
-exports.applyUpdate = applyUpdate;
-exports.update = update;
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
@@ -20574,7 +20337,7 @@ module.exports = __webpack_require__(3);
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -20602,7 +20365,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
@@ -20611,7 +20374,7 @@ module.exports = __webpack_amd_options__;
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*! Hammer.JS - v2.0.7 - 2016-04-22
@@ -23247,9 +23010,9 @@ var freeGlobal = (typeof window !== 'undefined' ? window : (typeof self !== 'und
 freeGlobal.Hammer = Hammer;
 
 if (true) {
-    !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
         return Hammer;
-    }.call(exports, __webpack_require__, exports, module),
+    }).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 } else if (typeof module != 'undefined' && module.exports) {
     module.exports = Hammer;
@@ -23258,6 +23021,243 @@ if (true) {
 }
 
 })(window, document, 'Hammer');
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+var appCacheIframe;
+
+function hasSW() {
+  return 'serviceWorker' in navigator &&
+    // This is how I block Chrome 40 and detect Chrome 41, because first has
+    // bugs with history.pustState and/or hashchange
+    (window.fetch || 'imageRendering' in document.documentElement.style) &&
+    (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname.indexOf('127.') === 0)
+}
+
+function install(options) {
+  options || (options = {});
+
+  
+    if (hasSW()) {
+      var registration = navigator.serviceWorker
+        .register(
+          "sw.js"
+          
+        );
+
+      
+        var handleUpdating = function(registration) {
+          var sw = registration.installing || registration.waiting;
+          var ignoreInstalling;
+          var ignoreWaiting;
+
+          // No SW or already handled
+          if (!sw || sw.onstatechange) return;
+
+          var stateChangeHandler;
+
+          // Already has SW
+          if (registration.active) {
+            onUpdateStateChange();
+            stateChangeHandler = onUpdateStateChange;
+          } else {
+            onInstallStateChange();
+            stateChangeHandler = onInstallStateChange;
+          }
+
+          ignoreInstalling = true;
+          if (registration.waiting) {
+            ignoreWaiting = true;
+          }
+
+          sw.onstatechange = stateChangeHandler;
+
+          function onUpdateStateChange() {
+            switch (sw.state) {
+              case 'redundant': {
+                sendEvent('onUpdateFailed');
+                sw.onstatechange = null;
+              } break;
+
+              case 'installing': {
+                if (!ignoreInstalling) {
+                  sendEvent('onUpdating');
+                }
+              } break;
+
+              case 'installed': {
+                if (!ignoreWaiting) {
+                  sendEvent('onUpdateReady');
+                }
+              } break;
+
+              case 'activated': {
+                sendEvent('onUpdated');
+                sw.onstatechange = null;
+              } break;
+            }
+          }
+
+          function onInstallStateChange() {
+            switch (sw.state) {
+              case 'redundant': {
+                // Failed to install, ignore
+                sw.onstatechange = null;
+              } break;
+
+              case 'installing': {
+                // Installing, ignore
+              } break;
+
+              case 'installed': {
+                // Installed, wait activation
+              } break;
+
+              case 'activated': {
+                sendEvent('onInstalled');
+                sw.onstatechange = null;
+              } break;
+            }
+          }
+        };
+
+        var sendEvent = function(event) {
+          if (typeof options[event] === 'function') {
+            options[event]({
+              source: 'ServiceWorker'
+            });
+          }
+        };
+
+        registration.then(function(reg) {
+          // WTF no reg?
+          if (!reg) return;
+
+          // Installed but Shift-Reloaded (page is not controller by SW),
+          // update might be ready at this point (more than one tab opened).
+          // Anyway, if page is hard-reloaded, then it probably already have latest version
+          // but it's not controlled by SW yet. Applying update will claim this page
+          // to be controlled by SW. Maybe set flag to not reload it?
+          // if (!navigator.serviceWorker.controller) return;
+
+          handleUpdating(reg);
+          reg.onupdatefound = function() {
+            handleUpdating(reg);
+          };
+        }).catch(function(err) {
+          sendEvent('onError');
+          return Promise.reject(err);
+        });
+      
+
+      return;
+    }
+  
+
+  
+    if (window.applicationCache) {
+      var directory = "appcache/";
+      var name = "manifest";
+
+      var doLoad = function() {
+        var page = directory + name + '.html';
+        var iframe = document.createElement('iframe');
+
+        
+          window.addEventListener('message', function(e) {
+            if (e.source !== iframe.contentWindow) return;
+
+            var match = (e.data + '').match(/__offline-plugin_AppCacheEvent:(\w+)/);
+            if (!match) return;
+            var event = match[1];
+
+            if (typeof options[event] === 'function') {
+              options[event]({
+                source: 'AppCache'
+              });
+            }
+          });
+        
+
+        iframe.src = page;
+        iframe.style.display = 'none';
+
+        appCacheIframe = iframe;
+        document.body.appendChild(iframe);
+      };
+
+      if (document.readyState === 'complete') {
+        setTimeout(doLoad);
+      } else {
+        window.addEventListener('load', doLoad);
+      }
+
+      return;
+    }
+  
+}
+
+function applyUpdate(callback, errback) {
+  
+    if (hasSW()) {
+      navigator.serviceWorker.getRegistration().then(function(registration) {
+        if (!registration || !registration.waiting) {
+          errback && errback();
+          return;
+        }
+
+        registration.waiting.postMessage({
+          action: 'skipWaiting'
+        });
+
+        callback && callback();
+      });
+
+      return;
+    }
+  
+
+  
+    if (appCacheIframe) {
+      try {
+        appCacheIframe.contentWindow.__applyUpdate();
+        callback && setTimeout(callback);
+      } catch (e) {
+        errback && setTimeout(errback);
+      }
+    }
+  
+}
+
+function update() {
+  
+    if (hasSW()) {
+      navigator.serviceWorker.getRegistration().then(function(registration) {
+        if (!registration) return;
+        return registration.update();
+      });
+    }
+  
+
+  
+    if (appCacheIframe) {
+      try {
+        appCacheIframe.contentWindow.applicationCache.update();
+      } catch (e) {}
+    }
+  
+}
+
+
+  setInterval(update, 7200000);
+
+
+exports.install = install;
+exports.applyUpdate = applyUpdate;
+exports.update = update;
 
 
 /***/ }),
@@ -23349,5 +23349,5 @@ function toComment(sourceMap) {
 
 
 /***/ })
-],[5]);
-//# sourceMappingURL=vendor.js.map?ce8ccc2c7b5f668d65ac
+],[4]);
+//# sourceMappingURL=vendor.js.map?d590f06f814589c54f1f
