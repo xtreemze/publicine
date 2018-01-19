@@ -1,21 +1,21 @@
 CACHE MANIFEST
-#ver:2017-12-15 11:16:23
-#plugin:4.8.5
+#ver:2018-1-19 10:47:42
+#plugin:4.9.0
 
 CACHE:
 ../img/android-chrome-512x512.png?0458df3568e314354657b36494399493
 ../img/banner.svg?8fc8d711eff8d10c406883fe947e9b18
 ../img/banner-02.svg?d7a398038aef51b5290fb6244eef22a4
 ../js/vendor.js?d590f06f814589c54f1f
-../js/entry.js?e6dc89fb8c0a79a7a4fe
-../js/manifest.js?152e8a84c0130d80e0ee
+../js/entry.js?49d24ee6713143f8796d
+../js/manifest.js?b6f5cca121d2d2a84767
 ../css/vendor.css?d590f06f814589c54f1f
-../css/entry.css?e6dc89fb8c0a79a7a4fe
+../css/entry.css?49d24ee6713143f8796d
 ../js/vendor.js.map?d590f06f814589c54f1f
 ../css/vendor.css.map?d590f06f814589c54f1f
-../js/entry.js.map?e6dc89fb8c0a79a7a4fe
-../css/entry.css.map?e6dc89fb8c0a79a7a4fe
-../js/manifest.js.map?152e8a84c0130d80e0ee
+../js/entry.js.map?49d24ee6713143f8796d
+../css/entry.css.map?49d24ee6713143f8796d
+../js/manifest.js.map?b6f5cca121d2d2a84767
 ../
 
 NETWORK:

@@ -5,17 +5,12 @@
   "main": "index.html",
   "scripts": {
     "build": "node ./rmDir.js && webpack --env=prod --profile",
-    "dev":
-      "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile --open",
-    "hotDebug":
-      "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile",
-    "debug":
-      "webpack-dev-server --host localhost --port 8080 --env=dev --profile",
-    "net2":
-      "webpack-dev-server --host 192.168.0.130 --port 80 --env=dev --profile --open",
+    "dev": "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile --open",
+    "hotDebug": "webpack-dev-server --host localhost --port 8080 --env=dev --inline --hot --profile",
+    "debug": "webpack-dev-server --host localhost --port 8080 --env=dev --profile",
+    "net2": "webpack-dev-server --host 192.168.0.130 --port 80 --env=dev --profile --open",
     "watch": "webpack --progress --colors --env=dev --profile --watch",
-    "exportp":
-      "node ./rmDir.js && webpack --env=prod --profile --progress",
+    "exportp": "node ./rmDir.js && webpack --env=prod --profile --progress",
     "rm": "node ./rmDir.js",
     "clean": "node ./clean.js && npm i -D && npm up -D"
   },
@@ -36,29 +31,32 @@
     "url": "https://github.com/xtreemze/publicine/issues"
   },
   "homepage": "https://github.com/xtreemze/publicine#readme",
-  "browserslist": ["> 1%", "last 2 versions"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^7.2.3",
-    "browserslist": "^2.10.0",
-    "css-loader": "^0.28.7",
-    "extract-loader": "^1.0.1",
+    "autoprefixer": "^7.2.5",
+    "browserslist": "^2.11.3",
+    "css-loader": "^0.28.9",
+    "extract-loader": "^1.0.2",
     "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.5",
-    "html-loader": "^0.5.1",
+    "file-loader": "^1.1.6",
+    "html-loader": "^0.5.5",
     "html-minifier-webpack-plugin": "^1.1.1",
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
     "jquery": "^3.2.1",
     "materialize-css": "^0.100.2",
-    "offline-plugin": "^4.8.5",
-    "postcss": "^6.0.14",
-    "postcss-loader": "^2.0.9",
+    "offline-plugin": "^4.9.0",
+    "postcss": "^6.0.16",
+    "postcss-loader": "^2.0.10",
     "rimraf": "^2.6.2",
     "style-loader": "^0.19.1",
-    "uglifyjs-webpack-plugin": "^1.1.4",
+    "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "webpack-dev-server": "^2.11.0"
   }
 }
