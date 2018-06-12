@@ -4,16 +4,16 @@ var __wpo = {
       "./img/android-chrome-512x512.png?0458df3568e314354657b36494399493",
       "./img/banner.svg?8fc8d711eff8d10c406883fe947e9b18",
       "./img/banner-02.svg?d7a398038aef51b5290fb6244eef22a4",
-      "./js/vendor.js?d590f06f814589c54f1f",
-      "./js/entry.js?49d24ee6713143f8796d",
-      "./js/manifest.js?b6f5cca121d2d2a84767",
-      "./css/vendor.css?d590f06f814589c54f1f",
-      "./css/entry.css?49d24ee6713143f8796d",
-      "./js/vendor.js.map?d590f06f814589c54f1f",
-      "./css/vendor.css.map?d590f06f814589c54f1f",
-      "./js/entry.js.map?49d24ee6713143f8796d",
-      "./css/entry.css.map?49d24ee6713143f8796d",
-      "./js/manifest.js.map?b6f5cca121d2d2a84767",
+      "./js/vendor.js?cf8b3d94248a047922e8",
+      "./js/entry.js?62de7c17987a28ff4694",
+      "./js/manifest.js?05a86d58108d235613ba",
+      "./css/vendor.css?cf8b3d94248a047922e8",
+      "./css/entry.css?62de7c17987a28ff4694",
+      "./js/vendor.js.map?cf8b3d94248a047922e8",
+      "./css/vendor.css.map?cf8b3d94248a047922e8",
+      "./js/entry.js.map?62de7c17987a28ff4694",
+      "./css/entry.css.map?62de7c17987a28ff4694",
+      "./js/manifest.js.map?05a86d58108d235613ba",
       "./",
       "https://fonts.googleapis.com/icon?family=Material+Icons"
     ],
@@ -27,23 +27,23 @@ var __wpo = {
     "9392bd7d96efe2d67e057b85d53e6915f8ddcc3d": "./img/android-chrome-512x512.png?0458df3568e314354657b36494399493",
     "ae0e1d7a8903adbd3fc6fa312fc402c0308a64dc": "./img/banner.svg?8fc8d711eff8d10c406883fe947e9b18",
     "3cf62170fb31e2bddf2600ac7571690b854b18ec": "./img/banner-02.svg?d7a398038aef51b5290fb6244eef22a4",
-    "e2708c0442b6c253d0a7a60a2f8deecc1ab3f32c": "./js/vendor.js?d590f06f814589c54f1f",
-    "a241aeb6333aab870040156fc4eb70fb4d30d59a": "./js/entry.js?49d24ee6713143f8796d",
-    "088ee942794de9c60368c6308bb2edaa8b032b86": "./js/manifest.js?b6f5cca121d2d2a84767",
-    "f4e75b5f1d05ae0c16f43122aa56eeed52ffd6a8": "./css/vendor.css?d590f06f814589c54f1f",
-    "08ffd73c22e89e32f690a1e6c3248301b5e9063d": "./css/entry.css?49d24ee6713143f8796d",
-    "f8dfcd994d47743fff4a8a30b4ada29488ce9543": "./js/vendor.js.map?d590f06f814589c54f1f",
-    "c17f7f0bff9a6a036e24ebf8b7c5cb5e1aadbf4e": "./css/vendor.css.map?d590f06f814589c54f1f",
-    "f918901408631edc722d93b951fcc952df83dba5": "./js/entry.js.map?49d24ee6713143f8796d",
-    "d4a7d6963324c434620d875967d4a83fdeb514e0": "./css/entry.css.map?49d24ee6713143f8796d",
-    "a23cbef223e4a9e2c95be85e205596563ad787ff": "./js/manifest.js.map?b6f5cca121d2d2a84767",
-    "128f48fab5d6ba84f75ee054ebaa4ddd78cfffb5": "./"
+    "c294eb8b8fef67c6b9a1f1d65281dbd4758c5154": "./js/vendor.js?cf8b3d94248a047922e8",
+    "b87db104d42a13f1ba6281b2c50fc915c211785f": "./js/entry.js?62de7c17987a28ff4694",
+    "8f47d5980691de9837b5ba6d58bee1662b1ecb1e": "./js/manifest.js?05a86d58108d235613ba",
+    "3b37a7d165d4a4b24a214c7b67c038f43b58262a": "./css/vendor.css?cf8b3d94248a047922e8",
+    "7b92a2f7373a112244468606709ccdf6a61c0572": "./css/entry.css?62de7c17987a28ff4694",
+    "d939efcb55b41f03abff8590b656574b9e69ef0a": "./js/vendor.js.map?cf8b3d94248a047922e8",
+    "bd0d10c32b3a6ba0427b9805d8a8f55ad9680e98": "./css/vendor.css.map?cf8b3d94248a047922e8",
+    "148105bdebf5ce23e2768eefbd3c0645b7b01a08": "./js/entry.js.map?62de7c17987a28ff4694",
+    "0389a259a5634ccda10d25277657da6d6b797cd0": "./css/entry.css.map?62de7c17987a28ff4694",
+    "ff02f8628d5fd667d6edc6908294156cc8772778": "./js/manifest.js.map?05a86d58108d235613ba",
+    "a6773bbbf778fd3ba3883b53f6d4da6146b5d271": "./"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "2018-1-19 10:47:42",
+  "version": "2018-6-12 17:45:57",
   "name": "webpack-offline",
-  "pluginVersion": "4.9.0",
+  "pluginVersion": "4.9.1",
   "relativePaths": true
 };
 
@@ -869,7 +869,7 @@ function cachesMatch(request, cacheName) {
   return caches.match(request, {
     cacheName: cacheName
   }).then(function (response) {
-    if (isNotRedirectedResponse()) {
+    if (isNotRedirectedResponse(response)) {
       return response;
     }
 
