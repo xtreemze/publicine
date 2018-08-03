@@ -56,13 +56,11 @@ window.delayedTouch = function(movie) {
     window.clearTimeout(window.timer);
   }, 600);
   window.timer3 = window.setTimeout(function() {
-    document
-      .getElementById("intro")
-      .scrollIntoView({
-        block: "end",
-        inline: "nearest",
-        behavior: "smooth"
-      });
+    document.getElementById("intro").scrollIntoView({
+      block: "end",
+      inline: "nearest",
+      behavior: "smooth"
+    });
     window.clearTimeout(window.timer3);
   }, 600);
 };
@@ -237,10 +235,7 @@ class Movie {
     this.ciudad = ciudad || "No disponible";
     this.clasificacion = clasificacion || "No disponible";
     this.synopsis = synopsis.trim() || "No disponible";
-    this.carteleraNombre = carteleraNombre.replace(
-      "Nahun_Banegas.jpg",
-      ".jpg"
-    );
+    this.carteleraNombre = carteleraNombre.replace("Nahun_Banegas.jpg", ".jpg");
     this.cartelera = cartelera.trim() || "No disponible";
     this.carteleraCut = this.cartelera.replace(
       "https://drive.google.com/open?id=",
@@ -273,9 +268,7 @@ class Movie {
         <i class="material-icons tiny">timer</i> ${this.duracion}
       </div>
       <div class="chip yellow darken-3 truncate">
-        <i class="material-icons tiny">new_releases</i> ${
-          this.estrenoMonth
-        }
+        <i class="material-icons tiny">new_releases</i> ${this.estrenoMonth}
       </div>
       <div class="chip yellow darken-3 truncate">
         <i class="material-icons tiny">movie_creation</i> ${this.director}
@@ -300,7 +293,7 @@ class Movie {
   </div>
 </article>
 `;
-    this.locationCard = `<form class="card grey darken-3">
+    this.locationCard = `<form class="card grey darken-3 hide">
   <div class="card-content yellow-text text-darken-3">
     <article class="row">
       <div class="input-field col s12">
@@ -452,7 +445,7 @@ const dilligence = function() {
 };
 const roundList = document.getElementById("roundList");
 window.roundListMovies = function(set) {
-  roundList.innerHTML = "";
+  // roundList.innerHTML = "";
   let content = `<div id="${set.month}" class="">
   <div class="carousel">`;
   set.forEach(function(item) {
@@ -472,8 +465,9 @@ window.navTabPopulate = function() {
   navTabs.innerHTML = "";
   window.Months.forEach(function(item) {
     if (
-      item.size > 0 &&
-      (item.index >= window.today.mm || item.index < window.today.mm - 9)
+      item.size > 0
+      // &&
+      // (item.index >= window.today.mm || item.index < window.today.mm - 9)
     ) {
       navTabs.innerHTML += item.tabContent;
     }
@@ -486,8 +480,8 @@ window.addEventListener("load", function(event) {
   importCines();
   importMovies();
   window.navTabPopulate();
-  // window.roundListMovies(Peliculas);
-  window.roundListMovies([window.today.Mmm]);
+  window.roundListMovies(Peliculas);
+    // window.roundListMovies([window.today.Mmm]);
   // window.listMovies(Peliculas);
   $("ul.tabs").tabs("select_tab", window.today.Mmm);
   console.log("Load Finished");
