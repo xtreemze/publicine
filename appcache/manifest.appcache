@@ -1,0 +1,22 @@
+CACHE MANIFEST
+#ver:2018-8-3 14:23:06
+#plugin:4.9.1
+
+CACHE:
+../img/android-chrome-512x512.png?0458df3568e314354657b36494399493
+../img/banner.svg?8fc8d711eff8d10c406883fe947e9b18
+../img/banner-02.svg?d7a398038aef51b5290fb6244eef22a4
+../js/vendor.js?db2c98ece55b64ffd182
+../js/entry.js?8e4183f58375312032c6
+../js/manifest.js?05a86d58108d235613ba
+../css/vendor.css?db2c98ece55b64ffd182
+../css/entry.css?8e4183f58375312032c6
+../js/vendor.js.map?db2c98ece55b64ffd182
+../css/vendor.css.map?db2c98ece55b64ffd182
+../js/entry.js.map?8e4183f58375312032c6
+../css/entry.css.map?8e4183f58375312032c6
+../js/manifest.js.map?05a86d58108d235613ba
+../
+
+NETWORK:
+*
